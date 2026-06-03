@@ -1,0 +1,49 @@
+{
+  "kind": "singleRecord",
+  "name": "Appointment Detail",
+  "slug": "appointment-detail",
+  "inNav": false,
+  "views": [
+    {
+      "kind": "detail",
+      "pageId": "page_1778197948528",
+      "dataSource": {
+        "mode": "anchor",
+        "hops": [],
+        "filterGroups": []
+      },
+      "id": "view_1778763167490",
+      "order": 0,
+      "createdAt": "2026-05-14T12:52:47.490Z",
+      "updatedAt": "2026-05-14T12:54:00.468Z",
+      "formFields": [
+        {
+          "field": "actualstart",
+          "label": "Actual Start",
+          "order": 0
+        },
+        {
+          "field": "description",
+          "label": "Description",
+          "order": 1
+        },
+        {
+          "field": "createdon",
+          "label": "Created On",
+          "order": 2
+        },
+        {
+          "field": "crfc3_position",
+          "label": "Position",
+          "order": 3
+        }
+      ]
+    }
+  ],
+  "parentPageId": "page_1778050524959",
+  "primaryTable": "appointment",
+  "id": "page_1778197948528",
+  "createdAt": "2026-05-07T23:52:28.528Z",
+  "updatedAt": "2026-05-14T12:54:00.468Z",
+  "configVersion": 1
+}

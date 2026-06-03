@@ -1,0 +1,34 @@
+{
+  "kind": "standard",
+  "views": [
+    {
+      "kind": "table",
+      "pageId": "page_1778837286924",
+      "dataSource": {
+        "mode": "userConnected",
+        "hops": [
+          {
+            "fromTable": "systemuser",
+            "toTable": "crfc3_staffappointment",
+            "relationshipSchemaName": "crfc3_StaffAppointment_AppointedUser_SystemUser",
+            "direction": "incoming",
+            "fromField": "systemuserid",
+            "toField": "crfc3_appointeduser"
+          }
+        ],
+        "filterGroups": []
+      },
+      "id": "view_1778837349348",
+      "order": 0,
+      "createdAt": "2026-05-15T09:29:09.348Z",
+      "updatedAt": "2026-05-15T09:29:09.348Z"
+    }
+  ],
+  "name": "Appointments",
+  "slug": "appointments",
+  "inNav": true,
+  "id": "page_1778837286924",
+  "createdAt": "2026-05-15T09:28:06.924Z",
+  "updatedAt": "2026-05-15T09:29:09.348Z",
+  "configVersion": 1
+}

@@ -1,0 +1,74 @@
+{
+  "kind": "standard",
+  "views": [
+    {
+      "kind": "table",
+      "pageId": "page_1778763256820",
+      "dataSource": {
+        "mode": "direct",
+        "table": "systemuser",
+        "filterGroups": [
+          {
+            "conditions": [
+              {
+                "field": "",
+                "operator": "eq",
+                "value": ""
+              },
+              {
+                "field": "",
+                "operator": "eq",
+                "value": ""
+              }
+            ]
+          },
+          {
+            "conditions": [
+              {
+                "field": "",
+                "operator": "eq",
+                "value": ""
+              }
+            ]
+          }
+        ]
+      },
+      "id": "view_1778763263524",
+      "order": 0,
+      "createdAt": "2026-05-14T12:54:23.524Z",
+      "updatedAt": "2026-05-30T14:09:40.591Z",
+      "label": "Users - All",
+      "columnOrder": [
+        "fullname",
+        "islicensed",
+        "isdisabled",
+        "internalemailaddress",
+        "mobilephone",
+        "caltype",
+        "lastname",
+        "link:page_1779450313091"
+      ],
+      "fields": [
+        "fullname",
+        "islicensed",
+        "isdisabled",
+        "internalemailaddress",
+        "mobilephone",
+        "caltype",
+        "lastname"
+      ],
+      "linkedPageIds": [
+        "page_1779450313091"
+      ],
+      "sortField": "fullname",
+      "sortDir": "asc"
+    }
+  ],
+  "name": "Users",
+  "slug": "users",
+  "inNav": true,
+  "id": "page_1778763256820",
+  "createdAt": "2026-05-14T12:54:16.820Z",
+  "updatedAt": "2026-05-30T14:09:40.591Z",
+  "configVersion": 1
+}
