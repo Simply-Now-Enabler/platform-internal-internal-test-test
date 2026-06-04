@@ -1,0 +1,44 @@
+{
+  "kind": "standard",
+  "views": [
+    {
+      "kind": "table",
+      "pageId": "page_1779881150511",
+      "dataSource": {
+        "mode": "direct",
+        "table": "systemuser",
+        "filterGroups": []
+      },
+      "id": "view_1780322931463",
+      "order": 0,
+      "createdAt": "2026-06-01T14:08:51.463Z",
+      "updatedAt": "2026-06-01T14:09:51.097Z",
+      "columnOrder": [
+        "address1_name",
+        "address1_line1",
+        "address1_city",
+        "lastname",
+        "firstname",
+        "positionid"
+      ],
+      "fields": [
+        "address1_name",
+        "address1_line1",
+        "address1_city",
+        "lastname",
+        "firstname",
+        "positionid"
+      ],
+      "linkedPageIds": [],
+      "sortField": "fullname",
+      "sortDir": "asc"
+    }
+  ],
+  "name": "Hidden Users",
+  "slug": "hidden-users",
+  "inNav": false,
+  "id": "page_1779881150511",
+  "createdAt": "2026-05-27T11:25:50.511Z",
+  "updatedAt": "2026-06-01T14:09:51.097Z",
+  "configVersion": 1
+}
