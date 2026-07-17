@@ -299,7 +299,7 @@
   ],
   "createdAt": "2026-05-06T06:55:15.373Z",
   "updatedAt": "2026-07-16T02:10:00.086Z",
-  "deployVersion": "2026-07-17T02:34:07.318Z",
+  "deployVersion": "2026-07-17T02:41:06.065Z",
   "fileFields": [
     {
       "table": "cr_throwawaynew",
@@ -338,10 +338,6 @@
   },
   "lookupDisplay": [
     {
-      "table": "pe_position",
-      "displayField": "pe_displaytitle"
-    },
-    {
       "table": "pe_fileasset",
       "displayField": "pe_name"
     },
@@ -358,14 +354,6 @@
       "displayField": "cr_name"
     },
     {
-      "table": "cr_action",
-      "displayField": "pe_displaytitle"
-    },
-    {
-      "table": "pe_staffappointment",
-      "displayField": "pe_displaytitle"
-    },
-    {
       "table": "cr_directorate",
       "displayField": "cr_name"
     },
@@ -376,6 +364,18 @@
     {
       "table": "cr_department",
       "displayField": "cr_name"
+    },
+    {
+      "table": "pe_position",
+      "displayField": "cr_displaytitle"
+    },
+    {
+      "table": "pe_staffappointment",
+      "displayField": "cr_displaytitle"
+    },
+    {
+      "table": "cr_action",
+      "displayField": "cr_displaytitle"
     }
   ],
   "branding": {
