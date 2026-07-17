@@ -16,7 +16,7 @@
       "id": "view_1783026474373",
       "order": 0,
       "createdAt": "2026-07-02T21:07:54.373Z",
-      "updatedAt": "2026-07-17T02:33:31.183Z",
+      "updatedAt": "2026-07-17T02:46:04.775Z",
       "title": "New position",
       "instructions": "Prepare your proposed new position and submit it for review and approval.",
       "layout": {
@@ -94,7 +94,7 @@
           "field": "pe_reportsto",
           "label": "Reports to",
           "order": 1,
-          "required": "always",
+          "required": "whenVisible",
           "candidateFilter": [
             {
               "conditions": [
@@ -1037,7 +1037,7 @@
   ],
   "configVersion": 2,
   "createdAt": "2026-07-02T21:07:35.504Z",
-  "updatedAt": "2026-07-17T02:33:31.183Z",
+  "updatedAt": "2026-07-17T02:46:04.776Z",
   "kind": "standard",
   "showBreadcrumbs": true,
   "showBackLink": true
