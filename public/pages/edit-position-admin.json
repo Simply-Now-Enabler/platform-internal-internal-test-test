@@ -16,7 +16,7 @@
       "id": "view_1783482430044",
       "order": 0,
       "createdAt": "2026-07-08T03:47:10.044Z",
-      "updatedAt": "2026-07-10T10:19:00.600Z",
+      "updatedAt": "2026-07-17T03:09:19.552Z",
       "label": "Update position",
       "title": "Edit Position",
       "columnOrder": [],
@@ -114,7 +114,7 @@
           "field": "pe_positioncode",
           "label": "Position Code",
           "order": 4,
-          "helpText": "unique position ID - match to payroll system if it has unique codes, else create new here.",
+          "helpText": "unique position ID that MUST match across environments (DEV/TEST/PROD) - match to payroll system if it has unique codes, else create new here.",
           "required": "always"
         },
         {
@@ -586,7 +586,7 @@
   ],
   "configVersion": 2,
   "createdAt": "2026-07-08T03:43:37.255Z",
-  "updatedAt": "2026-07-10T10:19:00.601Z",
+  "updatedAt": "2026-07-17T03:09:19.553Z",
   "kind": "singleRecord",
   "parentPageId": "page_1778050524959",
   "primaryTable": "pe_position"

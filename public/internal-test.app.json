@@ -295,11 +295,21 @@
       "inNav": false,
       "parentPageId": "page_1784115561329",
       "primaryTable": "cr_action"
+    },
+    {
+      "pageId": "page_1784257977934",
+      "pageSlug": "admin-edit-department",
+      "pageName": "Admin Edit Department",
+      "position": 32,
+      "kind": "singleRecord",
+      "inNav": false,
+      "parentPageId": "page_1783474363552",
+      "primaryTable": "cr_department"
     }
   ],
   "createdAt": "2026-05-06T06:55:15.373Z",
-  "updatedAt": "2026-07-16T02:10:00.086Z",
-  "deployVersion": "2026-07-17T02:46:23.416Z",
+  "updatedAt": "2026-07-17T03:12:57.934Z",
+  "deployVersion": "2026-07-17T03:14:57.354Z",
   "fileFields": [
     {
       "table": "cr_throwawaynew",

@@ -178,14 +178,15 @@
       "id": "view_1783475036356",
       "order": 2,
       "createdAt": "2026-07-08T01:43:56.356Z",
-      "updatedAt": "2026-07-16T13:35:41.584Z",
+      "updatedAt": "2026-07-17T03:13:15.448Z",
       "label": "Departments",
       "title": "Departments",
       "columnOrder": [
         "cr_name",
         "cr_ownerposition",
         "cr_directorate",
-        "cr_active"
+        "cr_active",
+        "link:page_1784257977934"
       ],
       "fields": [
         "cr_name",
@@ -193,7 +194,9 @@
         "cr_directorate",
         "cr_active"
       ],
-      "linkedPageIds": [],
+      "linkedPageIds": [
+        "page_1784257977934"
+      ],
       "lookupConfig": {
         "cr_ownerposition": {
           "targetPageId": "page_1783000363434"
@@ -228,6 +231,13 @@
       },
       "runtimeSearch": {
         "enabled": false
+      },
+      "columnConfig": {
+        "link:page_1784257977934": {
+          "label": "Edit",
+          "labelMode": "text",
+          "labelIcon": "fluent:Settings:filled"
+        }
       }
     },
     {
@@ -343,7 +353,7 @@
   ],
   "configVersion": 2,
   "createdAt": "2026-07-08T01:32:43.552Z",
-  "updatedAt": "2026-07-16T13:35:55.718Z",
+  "updatedAt": "2026-07-17T03:13:15.448Z",
   "kind": "standard",
   "showBreadcrumbs": true,
   "showBackLink": true
