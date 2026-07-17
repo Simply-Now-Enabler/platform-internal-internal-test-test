@@ -1,0 +1,378 @@
+{
+  "id": "page_1782299470460",
+  "appId": "8dd58c87-1849-f111-bec5-002248e415a7",
+  "name": "Admin Actions",
+  "slug": "manage-action-areas",
+  "inNav": true,
+  "views": [
+    {
+      "kind": "createForm",
+      "pageId": "page_1782299470460",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_actionarea",
+        "filterGroups": []
+      },
+      "id": "view_1782299480966",
+      "order": 1,
+      "createdAt": "2026-06-24T11:11:20.966Z",
+      "updatedAt": "2026-07-14T03:06:22.490Z",
+      "label": "Create Area",
+      "title": "Create Area",
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_name"
+              }
+            ]
+          }
+        ]
+      },
+      "formFields": [
+        {
+          "field": "cr_name",
+          "label": "Area",
+          "order": 0
+        }
+      ],
+      "submitButtons": [
+        {
+          "id": "btn-mqrz3kqv-0",
+          "label": "Save",
+          "afterSubmit": {
+            "kind": "stayOnPage",
+            "stayMode": "reloadForm",
+            "message": "Area saved"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "createForm",
+      "pageId": "page_1782299470460",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_actionsubarea",
+        "filterGroups": []
+      },
+      "id": "view_1782299525529",
+      "order": 3,
+      "createdAt": "2026-06-24T11:12:05.529Z",
+      "updatedAt": "2026-07-14T03:06:20.640Z",
+      "label": "Create Sub-area",
+      "title": "Create Sub-area",
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_areaid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_name"
+              }
+            ]
+          }
+        ]
+      },
+      "formFields": [
+        {
+          "field": "cr_areaid",
+          "label": "Area",
+          "order": 0,
+          "candidateFilter": [
+            {
+              "conditions": [
+                {
+                  "field": "cr_delete",
+                  "operator": "ne",
+                  "value": "true"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "field": "cr_name",
+          "label": "Sub-area",
+          "order": 1
+        }
+      ],
+      "submitButtons": [
+        {
+          "id": "btn-mqrz4lix-0",
+          "label": "Save",
+          "afterSubmit": {
+            "kind": "stayOnPage",
+            "stayMode": "reloadForm",
+            "message": "Sub-area saved"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "createForm",
+      "pageId": "page_1782299470460",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_actionprocess",
+        "filterGroups": []
+      },
+      "id": "view_1782299589798",
+      "order": 5,
+      "createdAt": "2026-06-24T11:13:09.798Z",
+      "updatedAt": "2026-07-14T03:06:18.919Z",
+      "label": "Create Process",
+      "title": "Create Process",
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_subareaid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_name"
+              },
+              {
+                "kind": "field",
+                "field": "cr_dayswhenconsideredduesoon"
+              }
+            ]
+          }
+        ]
+      },
+      "formFields": [
+        {
+          "field": "cr_subareaid",
+          "label": "Sub-area",
+          "order": 0
+        },
+        {
+          "field": "cr_name",
+          "label": "Process",
+          "order": 1
+        },
+        {
+          "field": "cr_dayswhenconsideredduesoon",
+          "label": "Days when considered due soon",
+          "order": 2
+        }
+      ],
+      "submitButtons": [
+        {
+          "id": "btn-mqrz5w36-0",
+          "label": "Save",
+          "afterSubmit": {
+            "kind": "stayOnPage",
+            "stayMode": "reloadForm",
+            "message": "Process saved"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "createForm",
+      "pageId": "page_1782299470460",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_actionoutcome",
+        "filterGroups": []
+      },
+      "id": "view_1782299642885",
+      "order": 7,
+      "createdAt": "2026-06-24T11:14:02.885Z",
+      "updatedAt": "2026-07-14T03:06:17.002Z",
+      "label": "Create Outcome",
+      "title": "Create Outcome",
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_processid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_name"
+              }
+            ]
+          }
+        ]
+      },
+      "formFields": [
+        {
+          "field": "cr_processid",
+          "label": "Process",
+          "order": 0
+        },
+        {
+          "field": "cr_name",
+          "label": "Outcome",
+          "order": 1
+        }
+      ],
+      "submitButtons": [
+        {
+          "id": "btn-mqrz78uh-0",
+          "label": "Save",
+          "afterSubmit": {
+            "kind": "stayOnPage",
+            "stayMode": "reloadForm",
+            "message": "Outcome saved for selected process"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "pageId": "page_1782299470460",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_actionsubarea",
+        "filterGroups": []
+      },
+      "id": "view_1782299708414",
+      "order": 2,
+      "createdAt": "2026-06-24T11:15:08.414Z",
+      "updatedAt": "2026-07-14T03:06:21.540Z",
+      "label": "Sub-areas",
+      "title": "Sub-areas",
+      "columnOrder": [
+        "cr_areaid",
+        "cr_name",
+        "cr_delete",
+        "link:page_1783483698578"
+      ],
+      "fields": [
+        "cr_areaid",
+        "cr_name",
+        "cr_delete"
+      ],
+      "linkedPageIds": [
+        "page_1783483698578"
+      ]
+    },
+    {
+      "kind": "table",
+      "pageId": "page_1782299470460",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_actionprocess",
+        "filterGroups": []
+      },
+      "id": "view_1782299740767",
+      "order": 4,
+      "createdAt": "2026-06-24T11:15:40.767Z",
+      "updatedAt": "2026-07-14T03:06:19.735Z",
+      "label": "Processes",
+      "title": "Processes",
+      "columnOrder": [
+        "cr_name",
+        "cr_subareaid",
+        "cr_dayswhenconsideredduesoon",
+        "link:page_1783567690510"
+      ],
+      "fields": [
+        "cr_name",
+        "cr_subareaid",
+        "cr_dayswhenconsideredduesoon"
+      ],
+      "linkedPageIds": [
+        "page_1783567690510"
+      ],
+      "columnConfig": {
+        "link:page_1783567690510": {
+          "label": "Add outcomes"
+        }
+      },
+      "runtimeFiltering": {
+        "mode": "configurable"
+      }
+    },
+    {
+      "kind": "table",
+      "pageId": "page_1782299470460",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_actionoutcome",
+        "filterGroups": []
+      },
+      "id": "view_1782299767109",
+      "order": 6,
+      "createdAt": "2026-06-24T11:16:07.109Z",
+      "updatedAt": "2026-07-14T03:06:17.953Z",
+      "label": "Action Outcomes",
+      "title": "Action Outcomes",
+      "columnOrder": [
+        "cr_name",
+        "cr_processid",
+        "cr_delete",
+        "link:page_1783570224915"
+      ],
+      "fields": [
+        "cr_name",
+        "cr_processid",
+        "cr_delete"
+      ],
+      "linkedPageIds": [
+        "page_1783570224915"
+      ],
+      "runtimeFiltering": {
+        "mode": "configurable"
+      }
+    },
+    {
+      "kind": "table",
+      "pageId": "page_1782299470460",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_actionarea",
+        "filterGroups": []
+      },
+      "id": "view_1783998371598",
+      "order": 0,
+      "createdAt": "2026-07-14T03:06:11.598Z",
+      "updatedAt": "2026-07-14T04:22:23.122Z",
+      "columnOrder": [
+        "cr_name",
+        "pe_confidential",
+        "cr_delete",
+        "link:page_1783998391613"
+      ],
+      "fields": [
+        "cr_name",
+        "pe_confidential",
+        "cr_delete"
+      ],
+      "linkedPageIds": [
+        "page_1783998391613"
+      ],
+      "columnConfig": {
+        "link:page_1783998391613": {
+          "label": "Admin",
+          "labelMode": "text",
+          "labelText": "edit"
+        }
+      }
+    }
+  ],
+  "configVersion": 2,
+  "createdAt": "2026-06-24T11:11:10.460Z",
+  "updatedAt": "2026-07-16T02:09:18.429Z",
+  "kind": "standard",
+  "showBreadcrumbs": true,
+  "showBackLink": true
+}

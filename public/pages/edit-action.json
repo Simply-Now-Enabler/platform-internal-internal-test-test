@@ -1,0 +1,345 @@
+{
+  "id": "page_1782305720944",
+  "appId": "8dd58c87-1849-f111-bec5-002248e415a7",
+  "name": "Edit Action",
+  "slug": "edit-action",
+  "inNav": false,
+  "views": [
+    {
+      "kind": "updateForm",
+      "pageId": "page_1782305720944",
+      "dataSource": {
+        "mode": "anchor",
+        "hops": [],
+        "filterGroups": []
+      },
+      "id": "view_1782305760600",
+      "order": 1,
+      "createdAt": "2026-06-24T12:56:00.600Z",
+      "updatedAt": "2026-07-14T12:47:21.794Z",
+      "title": "Edit Action",
+      "columnOrder": [],
+      "fields": [],
+      "linkedPageIds": [],
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_areaid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_subareaid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_processid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_outcomeid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_targetdate"
+              },
+              {
+                "kind": "field",
+                "field": "cr_previousactionid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_ownerposition"
+              }
+            ],
+            "title": "Using the records connected to the selected parents"
+          }
+        ]
+      },
+      "formFields": [
+        {
+          "field": "cr_areaid",
+          "label": "Area",
+          "order": 0,
+          "controlFormat": "radio",
+          "candidateFilter": [
+            {
+              "conditions": [
+                {
+                  "field": "cr_delete",
+                  "operator": "ne",
+                  "value": "true"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "field": "cr_subareaid",
+          "label": "Sub-area",
+          "order": 1,
+          "controlFormat": "radio",
+          "candidateFilter": [
+            {
+              "conditions": [
+                {
+                  "field": "cr_delete",
+                  "operator": "ne",
+                  "value": "true"
+                }
+              ]
+            }
+          ],
+          "candidateScope": {
+            "anchor": "thisFormColumn",
+            "anchorField": "cr_areaid",
+            "hops": [
+              {
+                "fromTable": "cr_actionarea",
+                "toTable": "cr_actionsubarea",
+                "relationshipSchemaName": "cr_cr_actionarea_cr_actionsubarea_areaid",
+                "direction": "incoming",
+                "fromField": "cr_actionareaid",
+                "toField": "cr_areaid",
+                "referencingEntityNavigationPropertyName": "cr_AreaId",
+                "referencedEntityNavigationPropertyName": "cr_cr_actionarea_cr_actionsubarea_areaid"
+              }
+            ]
+          }
+        },
+        {
+          "field": "cr_processid",
+          "label": "Process",
+          "order": 2,
+          "controlFormat": "radio",
+          "candidateFilter": [
+            {
+              "conditions": [
+                {
+                  "field": "cr_delete",
+                  "operator": "ne",
+                  "value": "true"
+                }
+              ]
+            }
+          ],
+          "candidateScope": {
+            "anchor": "thisFormColumn",
+            "anchorField": "cr_subareaid",
+            "hops": [
+              {
+                "fromTable": "cr_actionsubarea",
+                "toTable": "cr_actionprocess",
+                "relationshipSchemaName": "cr_cr_actionsubarea_cr_actionprocess_subareaid",
+                "direction": "incoming",
+                "fromField": "cr_actionsubareaid",
+                "toField": "cr_subareaid",
+                "referencingEntityNavigationPropertyName": "cr_SubareaId",
+                "referencedEntityNavigationPropertyName": "cr_cr_actionsubarea_cr_actionprocess_subareaid"
+              }
+            ]
+          }
+        },
+        {
+          "field": "cr_outcomeid",
+          "label": "Outcome",
+          "order": 3,
+          "controlFormat": "radio",
+          "candidateFilter": [
+            {
+              "conditions": [
+                {
+                  "field": "cr_delete",
+                  "operator": "ne",
+                  "value": "true"
+                }
+              ]
+            }
+          ],
+          "candidateScope": {
+            "anchor": "thisFormColumn",
+            "anchorField": "cr_processid",
+            "hops": [
+              {
+                "fromTable": "cr_actionprocess",
+                "toTable": "cr_actionoutcome",
+                "relationshipSchemaName": "cr_cr_actionprocess_cr_actionoutcome_processid",
+                "direction": "incoming",
+                "fromField": "cr_actionprocessid",
+                "toField": "cr_processid",
+                "referencingEntityNavigationPropertyName": "cr_ProcessId",
+                "referencedEntityNavigationPropertyName": "cr_cr_actionprocess_cr_actionoutcome_processid"
+              }
+            ]
+          }
+        },
+        {
+          "field": "cr_targetdate",
+          "label": "Target Date",
+          "order": 4
+        },
+        {
+          "field": "cr_previousactionid",
+          "label": "Previous Action",
+          "order": 5
+        },
+        {
+          "field": "cr_ownerposition",
+          "label": "Owner",
+          "order": 6
+        }
+      ],
+      "submitButtons": [
+        {
+          "id": "btn-mqs2u4ga-0",
+          "label": "Save",
+          "afterSubmit": {
+            "kind": "returnToParent"
+          }
+        }
+      ],
+      "displayRules": [
+        {
+          "rootActions": [],
+          "nodes": [
+            {
+              "arms": [
+                {
+                  "test": [
+                    {
+                      "conditions": [
+                        {
+                          "field": "cr_processid",
+                          "operator": "notNull",
+                          "value": ""
+                        }
+                      ]
+                    }
+                  ],
+                  "effects": [
+                    {
+                      "action": "show",
+                      "reverseWhenNotMet": true,
+                      "fields": [
+                        "cr_outcomeid"
+                      ]
+                    }
+                  ],
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "updateForm",
+      "pageId": "page_1782305720944",
+      "dataSource": {
+        "mode": "anchor",
+        "hops": [],
+        "filterGroups": []
+      },
+      "id": "view_1784026793119",
+      "order": 2,
+      "createdAt": "2026-07-14T10:59:53.119Z",
+      "updatedAt": "2026-07-14T12:47:21.085Z",
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_ownerposition"
+              },
+              {
+                "kind": "field",
+                "field": "pe_confidential"
+              }
+            ],
+            "title": "Dogfood test of updated owner and confidential only"
+          }
+        ]
+      },
+      "formFields": [
+        {
+          "field": "cr_ownerposition",
+          "label": "Owner",
+          "order": 0
+        },
+        {
+          "field": "pe_confidential",
+          "label": "Confidential",
+          "order": 1
+        }
+      ],
+      "submitButtons": [
+        {
+          "id": "btn-mrkjhosi-0",
+          "label": "Save",
+          "afterSubmit": {
+            "kind": "returnToParent"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "detail",
+      "pageId": "page_1782305720944",
+      "dataSource": {
+        "mode": "anchor",
+        "hops": [],
+        "filterGroups": []
+      },
+      "id": "view_1784033203928",
+      "order": 0,
+      "createdAt": "2026-07-14T12:46:43.928Z",
+      "updatedAt": "2026-07-16T13:27:42.789Z",
+      "formFields": [
+        {
+          "field": "cr_actionidnumber",
+          "label": "Action ID Number",
+          "order": 0
+        },
+        {
+          "field": "cr_areaid",
+          "label": "Area",
+          "order": 1
+        },
+        {
+          "field": "cr_subareaid",
+          "label": "Sub-area",
+          "order": 2
+        },
+        {
+          "field": "cr_processid",
+          "label": "Process",
+          "order": 3
+        },
+        {
+          "field": "cr_relatedstaffappointmentid",
+          "label": "Related Staff Appointment",
+          "order": 4
+        },
+        {
+          "field": "cr_relatedposition",
+          "label": "Related Position",
+          "order": 5
+        }
+      ]
+    }
+  ],
+  "configVersion": 2,
+  "createdAt": "2026-06-24T12:55:20.944Z",
+  "updatedAt": "2026-07-16T13:27:42.789Z",
+  "kind": "singleRecord",
+  "parentPageId": "page_1782298650290",
+  "primaryTable": "cr_action",
+  "showBreadcrumbs": true,
+  "showBackLink": true
+}

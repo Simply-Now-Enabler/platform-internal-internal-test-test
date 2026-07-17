@@ -1,0 +1,593 @@
+{
+  "id": "page_1783482217255",
+  "appId": "8dd58c87-1849-f111-bec5-002248e415a7",
+  "name": "Edit Position admin",
+  "slug": "edit-position-admin",
+  "inNav": false,
+  "views": [
+    {
+      "kind": "updateForm",
+      "pageId": "page_1783482217255",
+      "dataSource": {
+        "mode": "anchor",
+        "hops": [],
+        "filterGroups": []
+      },
+      "id": "view_1783482430044",
+      "order": 0,
+      "createdAt": "2026-07-08T03:47:10.044Z",
+      "updatedAt": "2026-07-10T10:19:00.600Z",
+      "label": "Update position",
+      "title": "Edit Position",
+      "columnOrder": [],
+      "fields": [],
+      "linkedPageIds": [],
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "pe_name"
+              },
+              {
+                "kind": "field",
+                "field": "pe_reportsto"
+              },
+              {
+                "kind": "field",
+                "field": "cr_startingwhen"
+              },
+              {
+                "kind": "field",
+                "field": "pe_startdate"
+              },
+              {
+                "kind": "field",
+                "field": "pe_positioncode"
+              },
+              {
+                "kind": "divider",
+                "id": "divider-mrbjgn18-1"
+              },
+              {
+                "kind": "field",
+                "field": "cr_isexecutive"
+              },
+              {
+                "kind": "field",
+                "field": "cr_ismanager"
+              },
+              {
+                "kind": "field",
+                "field": "cr_issupervisor"
+              },
+              {
+                "kind": "field",
+                "field": "cr_iscoordinator"
+              },
+              {
+                "kind": "divider",
+                "id": "divider-mrbjgpb7-2"
+              },
+              {
+                "kind": "field",
+                "field": "cr_directorate"
+              },
+              {
+                "kind": "field",
+                "field": "cr_department"
+              },
+              {
+                "kind": "field",
+                "field": "cr_coordinatorposition"
+              }
+            ]
+          }
+        ]
+      },
+      "formFields": [
+        {
+          "field": "pe_name",
+          "label": "Name",
+          "order": 0
+        },
+        {
+          "field": "pe_reportsto",
+          "label": "Reports To",
+          "order": 1,
+          "required": "whenVisible"
+        },
+        {
+          "field": "cr_startingwhen",
+          "label": "Starting When",
+          "order": 2
+        },
+        {
+          "field": "pe_startdate",
+          "label": "Start Date",
+          "order": 3,
+          "defaultVisibility": "hidden"
+        },
+        {
+          "field": "pe_positioncode",
+          "label": "Position Code",
+          "order": 4,
+          "helpText": "unique position ID - match to payroll system if it has unique codes, else create new here.",
+          "required": "always"
+        },
+        {
+          "field": "cr_isexecutive",
+          "label": "Is Executive",
+          "order": 5
+        },
+        {
+          "field": "cr_ismanager",
+          "label": "Is Manager",
+          "order": 6
+        },
+        {
+          "field": "cr_issupervisor",
+          "label": "Is Supervisor",
+          "order": 7
+        },
+        {
+          "field": "cr_iscoordinator",
+          "label": "Is Coordinator",
+          "order": 8
+        },
+        {
+          "field": "cr_directorate",
+          "label": "Directorate",
+          "order": 9
+        },
+        {
+          "field": "cr_department",
+          "label": "Department",
+          "order": 10,
+          "candidateFilter": [
+            {
+              "conditions": [
+                {
+                  "field": "cr_active",
+                  "operator": "eq",
+                  "value": "true"
+                },
+                {
+                  "field": "cr_delete",
+                  "operator": "ne",
+                  "value": "true"
+                }
+              ]
+            }
+          ],
+          "candidateScope": {
+            "anchor": "thisFormColumn",
+            "anchorField": "cr_directorate",
+            "hops": [
+              {
+                "fromTable": "cr_directorate",
+                "toTable": "cr_department",
+                "relationshipSchemaName": "cr_cr_directorate_cr_department_directorate",
+                "direction": "incoming",
+                "fromField": "pe_directorateid",
+                "toField": "cr_directorate",
+                "referencingEntityNavigationPropertyName": "cr_Directorate",
+                "referencedEntityNavigationPropertyName": "cr_cr_directorate_cr_department_directorate"
+              }
+            ]
+          }
+        },
+        {
+          "field": "cr_coordinatorposition",
+          "label": "Coordinator",
+          "order": 11,
+          "helpText": "The coordinator that this position reports to",
+          "candidateFilter": [
+            {
+              "conditions": [
+                {
+                  "field": "statecode",
+                  "operator": "eq",
+                  "value": "0"
+                }
+              ]
+            }
+          ],
+          "candidateScope": {
+            "anchor": "thisFormColumn",
+            "anchorField": "cr_department",
+            "hops": [
+              {
+                "fromTable": "cr_department",
+                "toTable": "pe_position",
+                "relationshipSchemaName": "cr_cr_department_pe_position_department",
+                "direction": "incoming",
+                "fromField": "pe_departmentid",
+                "toField": "cr_department",
+                "referencingEntityNavigationPropertyName": "cr_Department",
+                "referencedEntityNavigationPropertyName": "cr_cr_department_pe_position_department"
+              }
+            ]
+          }
+        }
+      ],
+      "submitButtons": [
+        {
+          "id": "btn-mrbjefrw-0",
+          "label": "Save",
+          "afterSubmit": {
+            "kind": "navigatePage",
+            "pageId": "page_1778050524959"
+          }
+        }
+      ],
+      "displayRules": [
+        {
+          "rootActions": [],
+          "nodes": [
+            {
+              "arms": [
+                {
+                  "test": [
+                    {
+                      "conditions": [
+                        {
+                          "field": "cr_startingwhen",
+                          "operator": "eq",
+                          "value": "200"
+                        }
+                      ]
+                    }
+                  ],
+                  "effects": [
+                    {
+                      "action": "show",
+                      "reverseWhenNotMet": true,
+                      "fields": [
+                        "pe_startdate"
+                      ]
+                    }
+                  ],
+                  "children": []
+                }
+              ]
+            },
+            {
+              "arms": [
+                {
+                  "test": [
+                    {
+                      "conditions": [
+                        {
+                          "field": "cr_isexecutive",
+                          "operator": "eq",
+                          "value": "true"
+                        }
+                      ]
+                    }
+                  ],
+                  "effects": [
+                    {
+                      "action": "hide",
+                      "reverseWhenNotMet": false,
+                      "fields": [
+                        "cr_ismanager",
+                        "cr_issupervisor",
+                        "cr_iscoordinator",
+                        "cr_coordinatorposition"
+                      ]
+                    }
+                  ],
+                  "children": []
+                },
+                {
+                  "test": [
+                    {
+                      "conditions": [
+                        {
+                          "field": "cr_ismanager",
+                          "operator": "eq",
+                          "value": "true"
+                        }
+                      ]
+                    }
+                  ],
+                  "effects": [
+                    {
+                      "action": "hide",
+                      "reverseWhenNotMet": false,
+                      "fields": [
+                        "cr_issupervisor",
+                        "cr_iscoordinator",
+                        "cr_coordinatorposition"
+                      ]
+                    }
+                  ],
+                  "children": []
+                },
+                {
+                  "test": [
+                    {
+                      "conditions": [
+                        {
+                          "field": "cr_iscoordinator",
+                          "operator": "eq",
+                          "value": "true"
+                        }
+                      ]
+                    }
+                  ],
+                  "effects": [
+                    {
+                      "action": "hide",
+                      "reverseWhenNotMet": false,
+                      "fields": [
+                        "cr_coordinatorposition",
+                        "cr_issupervisor"
+                      ]
+                    }
+                  ],
+                  "children": []
+                }
+              ],
+              "elseEffects": [
+                {
+                  "action": "show",
+                  "reverseWhenNotMet": false,
+                  "fields": [
+                    "cr_coordinatorposition",
+                    "cr_iscoordinator",
+                    "cr_issupervisor",
+                    "cr_ismanager"
+                  ]
+                }
+              ],
+              "elseChildren": []
+            },
+            {
+              "arms": [
+                {
+                  "test": [
+                    {
+                      "conditions": [
+                        {
+                          "field": "pe_name",
+                          "operator": "eq",
+                          "value": "CEO"
+                        }
+                      ]
+                    },
+                    {
+                      "conditions": [
+                        {
+                          "field": "pe_name",
+                          "operator": "eq",
+                          "value": "Chief Executive Officer"
+                        }
+                      ]
+                    }
+                  ],
+                  "effects": [
+                    {
+                      "action": "hide",
+                      "reverseWhenNotMet": false,
+                      "fields": [
+                        "pe_reportsto"
+                      ]
+                    }
+                  ],
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "postSubmitActions": {
+        "rootActions": [
+          {
+            "type": "createRelated",
+            "targetTable": "cr_action",
+            "relationshipField": "cr_relatedposition",
+            "fields": {
+              "cr_areaid": {
+                "kind": "literal",
+                "value": "c39b0af1-c46f-f111-ab0c-002248972164",
+                "valueLabel": "Staff Establishment"
+              },
+              "cr_subareaid": {
+                "kind": "literal",
+                "value": "bd29f411-c56f-f111-ab0c-002248972164",
+                "valueLabel": "Position Variation"
+              },
+              "cr_processid": {
+                "kind": "literal",
+                "value": ""
+              },
+              "cr_outcomeid": {
+                "kind": "literal",
+                "value": ""
+              },
+              "cr_ownerposition": {
+                "kind": "formField",
+                "field": "pe_reportsto"
+              },
+              "cr_targetdate": {
+                "kind": "token",
+                "token": "$today"
+              },
+              "cr_commentsinternal": {
+                "kind": "literal",
+                "value": "Position modified by admin"
+              },
+              "cr_completionstatus": {
+                "kind": "literal",
+                "value": 5
+              },
+              "cr_originalduedate": {
+                "kind": "token",
+                "token": "$today"
+              },
+              "cr_datecompleted": {
+                "kind": "token",
+                "token": "$now"
+              },
+              "cr_completedby": {
+                "kind": "token",
+                "token": "$currentUser"
+              }
+            },
+            "resultVar": "new-cr_action-1"
+          }
+        ],
+        "nodes": [
+          {
+            "arms": [
+              {
+                "test": [
+                  {
+                    "conditions": [
+                      {
+                        "field": "cr_isexecutive",
+                        "operator": "eq",
+                        "value": "true"
+                      }
+                    ]
+                  }
+                ],
+                "effects": [
+                  {
+                    "type": "updateRecord",
+                    "fields": {
+                      "cr_executiveposition": {
+                        "kind": "token",
+                        "token": "$thisRecord"
+                      },
+                      "cr_managerposition": {
+                        "kind": "token",
+                        "token": "$thisRecord"
+                      },
+                      "cr_ismanager": {
+                        "kind": "literal",
+                        "value": true
+                      },
+                      "cr_issupervisor": {
+                        "kind": "literal",
+                        "value": true
+                      },
+                      "cr_iscoordinator": {
+                        "kind": "literal",
+                        "value": true
+                      },
+                      "cr_coordinatorposition": {
+                        "kind": "token",
+                        "token": "$thisRecord"
+                      }
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "test": [
+                  {
+                    "conditions": [
+                      {
+                        "field": "cr_ismanager",
+                        "operator": "eq",
+                        "value": "true"
+                      },
+                      {
+                        "field": "cr_isexecutive",
+                        "operator": "eq",
+                        "value": "false"
+                      }
+                    ]
+                  }
+                ],
+                "effects": [
+                  {
+                    "type": "updateRecord",
+                    "fields": {
+                      "cr_executiveposition": {
+                        "kind": "relatedField",
+                        "relationshipField": "cr_directorate",
+                        "targetTable": "cr_directorate",
+                        "field": "cr_ownerposition"
+                      },
+                      "cr_managerposition": {
+                        "kind": "token",
+                        "token": "$thisRecord"
+                      },
+                      "cr_issupervisor": {
+                        "kind": "literal",
+                        "value": true
+                      },
+                      "cr_iscoordinator": {
+                        "kind": "literal",
+                        "value": true
+                      },
+                      "cr_coordinatorposition": {
+                        "kind": "token",
+                        "token": "$thisRecord"
+                      }
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "test": [
+                  {
+                    "conditions": [
+                      {
+                        "field": "cr_iscoordinator",
+                        "operator": "eq",
+                        "value": "true"
+                      },
+                      {
+                        "field": "cr_ismanager",
+                        "operator": "eq",
+                        "value": "false"
+                      }
+                    ]
+                  }
+                ],
+                "effects": [],
+                "children": []
+              }
+            ],
+            "elseEffects": [
+              {
+                "type": "updateRecord",
+                "fields": {
+                  "cr_executiveposition": {
+                    "kind": "relatedField",
+                    "relationshipField": "cr_directorate",
+                    "targetTable": "cr_directorate",
+                    "field": "cr_ownerposition"
+                  },
+                  "cr_managerposition": {
+                    "kind": "relatedField",
+                    "relationshipField": "cr_department",
+                    "targetTable": "cr_department",
+                    "field": "cr_ownerposition"
+                  }
+                }
+              }
+            ],
+            "elseChildren": []
+          }
+        ]
+      }
+    }
+  ],
+  "configVersion": 2,
+  "createdAt": "2026-07-08T03:43:37.255Z",
+  "updatedAt": "2026-07-10T10:19:00.601Z",
+  "kind": "singleRecord",
+  "parentPageId": "page_1778050524959",
+  "primaryTable": "pe_position"
+}

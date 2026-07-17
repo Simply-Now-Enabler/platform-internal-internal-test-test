@@ -1,0 +1,358 @@
+{
+  "id": "page_1781153656304",
+  "appId": "8dd58c87-1849-f111-bec5-002248e415a7",
+  "name": "Test",
+  "slug": "04a-testing",
+  "inNav": true,
+  "views": [
+    {
+      "kind": "table",
+      "pageId": "page_1781153656304",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_appointmentcategory",
+        "filterGroups": []
+      },
+      "id": "view_1781153666511",
+      "order": 4,
+      "createdAt": "2026-06-11T04:54:26.511Z",
+      "updatedAt": "2026-07-16T02:08:58.803Z",
+      "columnOrder": [
+        "cr_name",
+        "ownerid",
+        "modifiedon",
+        "createdby",
+        "createdon"
+      ],
+      "fields": [
+        "cr_name",
+        "ownerid",
+        "modifiedon",
+        "createdby",
+        "createdon"
+      ],
+      "linkedPageIds": [],
+      "sortField": "cr_name",
+      "sortDir": "asc",
+      "label": "Appointment category - to test the orys/ories suffix"
+    },
+    {
+      "kind": "createForm",
+      "pageId": "page_1781153656304",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_appointmentcategory",
+        "filterGroups": []
+      },
+      "id": "view_1781570669808",
+      "order": 6,
+      "createdAt": "2026-06-16T00:44:29.808Z",
+      "updatedAt": "2026-07-01T03:07:22.599Z",
+      "formFields": [
+        {
+          "field": "cr_name",
+          "label": "Category",
+          "order": 0
+        },
+        {
+          "field": "importsequencenumber",
+          "label": "Import Sequence Number",
+          "order": 1
+        },
+        {
+          "field": "versionnumber",
+          "label": "Version Number",
+          "order": 2
+        }
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_name"
+              },
+              {
+                "kind": "titleBlock",
+                "id": "title-mqhgp4tv-3",
+                "text": "This is a new title"
+              },
+              {
+                "kind": "divider",
+                "id": "divider-mqhgp0i3-2"
+              }
+            ],
+            "title": "Now can I do spaces"
+          },
+          {
+            "id": "section-mqhgozng-1",
+            "elements": [
+              {
+                "kind": "titleBlock",
+                "id": "title-mqhgr1vn-4",
+                "text": "Now the two column section"
+              },
+              {
+                "kind": "field",
+                "field": "importsequencenumber"
+              },
+              {
+                "kind": "field",
+                "field": "versionnumber"
+              }
+            ],
+            "title": "just-a-labelsa",
+            "columnCount": 2
+          }
+        ]
+      },
+      "label": "Create appointment category",
+      "submitButtons": [
+        {
+          "id": "btn-mqj14ceq-0",
+          "label": "Save",
+          "afterSubmit": {
+            "kind": "stayOnPage",
+            "stayMode": "reloadForm",
+            "message": "Saved - you can add another one if you want:"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "pageId": "page_1781153656304",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_throwawaynew",
+        "filterGroups": []
+      },
+      "id": "view_1782823776513",
+      "order": 1,
+      "createdAt": "2026-06-30T12:49:36.513Z",
+      "updatedAt": "2026-07-17T01:07:19.627Z",
+      "columnOrder": [
+        "link:page_1782858649341",
+        "cr_departmentidcr",
+        "cr_positionownerid",
+        "ownerid",
+        "pe_confidential",
+        "cr_displayfield",
+        "cr_name",
+        "createdon",
+        "cr_secondfile",
+        "cr_firstimage",
+        "cr_secondimage",
+        "cr_thirdimage",
+        "cr_block2",
+        "createdby",
+        "cr_urltest"
+      ],
+      "fields": [
+        "cr_departmentidcr",
+        "cr_positionownerid",
+        "ownerid",
+        "pe_confidential",
+        "cr_displayfield",
+        "cr_name",
+        "createdon",
+        "cr_secondfile",
+        "cr_firstimage",
+        "cr_secondimage",
+        "cr_thirdimage",
+        "cr_block2",
+        "createdby",
+        "cr_urltest"
+      ],
+      "linkedPageIds": [
+        "page_1782858649341"
+      ],
+      "label": "Throwaway",
+      "title": "Throwaway News",
+      "instructions": "Image and file testing",
+      "columnConfig": {
+        "link:page_1782858649341": {
+          "label": "View",
+          "labelMode": "text",
+          "labelIcon": "fluent:Open:filled",
+          "labelIconColor": "#066899",
+          "presentation": {
+            "base": {
+              "icon": "fluent:Eye:filled"
+            }
+          }
+        },
+        "cr_secondfile": {
+          "labelMode": "text",
+          "labelText": "label",
+          "labelIcon": "fluent:DocumentText:filled",
+          "presentation": {
+            "base": {
+              "icon": "fluent:Settings:filled"
+            },
+            "rules": []
+          }
+        },
+        "cr_firstimage": {
+          "openOriginalOnClick": true,
+          "imageSize": "medium"
+        },
+        "cr_secondimage": {
+          "label": "Second Image large",
+          "imageSize": "large"
+        },
+        "cr_thirdimage": {
+          "presentation": {
+            "base": {
+              "icon": "fluent:Eye:filled"
+            }
+          },
+          "openOriginalOnClick": true
+        }
+      },
+      "sortField": "createdon",
+      "sortDir": "desc"
+    },
+    {
+      "kind": "createForm",
+      "pageId": "page_1781153656304",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_throwawaynew",
+        "filterGroups": []
+      },
+      "id": "view_1782858737458",
+      "order": 3,
+      "createdAt": "2026-06-30T22:32:17.458Z",
+      "updatedAt": "2026-07-16T02:08:59.411Z",
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_name"
+              },
+              {
+                "kind": "field",
+                "field": "cr_block2"
+              },
+              {
+                "kind": "titleBlock",
+                "id": "title-mr184pmu-2",
+                "text": "Attachments"
+              },
+              {
+                "kind": "field",
+                "field": "cr_firstimage"
+              },
+              {
+                "kind": "field",
+                "field": "cr_secondfile"
+              }
+            ]
+          },
+          {
+            "id": "section-mr184bv1-1",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_secondimage",
+                "column": 2
+              },
+              {
+                "kind": "field",
+                "field": "cr_newcolumnbool",
+                "column": 2
+              },
+              {
+                "kind": "field",
+                "field": "cr_thirdimage"
+              },
+              {
+                "kind": "field",
+                "field": "cr_urltest"
+              }
+            ],
+            "columnCount": 2,
+            "title": "two columns"
+          }
+        ]
+      },
+      "formFields": [
+        {
+          "field": "cr_name",
+          "label": "Description to throw",
+          "order": 0
+        },
+        {
+          "field": "cr_block2",
+          "label": "block 2",
+          "order": 1
+        },
+        {
+          "field": "cr_firstimage",
+          "label": "First image",
+          "order": 2
+        },
+        {
+          "field": "cr_secondfile",
+          "label": "Second file",
+          "order": 3
+        },
+        {
+          "field": "cr_secondimage",
+          "label": "Second Image",
+          "order": 4
+        },
+        {
+          "field": "cr_newcolumnbool",
+          "label": "new column bool",
+          "order": 5
+        },
+        {
+          "field": "cr_thirdimage",
+          "label": "Third image",
+          "order": 6
+        },
+        {
+          "field": "cr_urltest",
+          "label": "url test",
+          "order": 7
+        }
+      ],
+      "submitButtons": [
+        {
+          "id": "btn-mr182cyi-0",
+          "label": "Save",
+          "afterSubmit": {
+            "kind": "stayOnPage",
+            "stayMode": "reloadForm",
+            "message": "Record created... feel free to add another"
+          }
+        }
+      ],
+      "title": "Create a Throwaway New",
+      "instructions": "silly name I know"
+    },
+    {
+      "kind": "pageLink",
+      "pageId": "page_1781153656304",
+      "id": "view_1784167723449",
+      "order": 0,
+      "createdAt": "2026-07-16T02:08:43.449Z",
+      "updatedAt": "2026-07-16T02:09:00.036Z",
+      "label": "Contacts, Accounts",
+      "targetPageId": "page_1780266518600"
+    }
+  ],
+  "configVersion": 2,
+  "createdAt": "2026-06-11T04:54:16.304Z",
+  "updatedAt": "2026-07-17T01:07:19.628Z",
+  "kind": "standard",
+  "showBreadcrumbs": true,
+  "showBackLink": true
+}

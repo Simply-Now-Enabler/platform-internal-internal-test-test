@@ -1,0 +1,67 @@
+{
+  "id": "page_1783570224915",
+  "appId": "8dd58c87-1849-f111-bec5-002248e415a7",
+  "name": "Edit Action Outcome",
+  "slug": "edit-action-outcome",
+  "inNav": false,
+  "views": [
+    {
+      "kind": "updateForm",
+      "pageId": "page_1783570224915",
+      "dataSource": {
+        "mode": "anchor",
+        "hops": [],
+        "filterGroups": []
+      },
+      "id": "view_1783570235133",
+      "order": 0,
+      "createdAt": "2026-07-09T04:10:35.133Z",
+      "updatedAt": "2026-07-09T04:11:17.610Z",
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_name"
+              },
+              {
+                "kind": "field",
+                "field": "cr_delete"
+              }
+            ]
+          }
+        ]
+      },
+      "formFields": [
+        {
+          "field": "cr_name",
+          "label": "Outcome",
+          "order": 0
+        },
+        {
+          "field": "cr_delete",
+          "label": "Delete",
+          "order": 1
+        }
+      ],
+      "submitButtons": [
+        {
+          "id": "btn-mrczo2h5-0",
+          "label": "Save",
+          "afterSubmit": {
+            "kind": "navigatePage",
+            "pageId": "page_1782299470460"
+          }
+        }
+      ]
+    }
+  ],
+  "configVersion": 2,
+  "createdAt": "2026-07-09T04:10:24.915Z",
+  "updatedAt": "2026-07-09T04:11:17.610Z",
+  "kind": "singleRecord",
+  "parentPageId": "page_1782299470460",
+  "primaryTable": "cr_actionoutcome"
+}

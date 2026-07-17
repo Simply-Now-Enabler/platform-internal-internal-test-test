@@ -1,0 +1,169 @@
+{
+  "id": "page_1783483698578",
+  "appId": "8dd58c87-1849-f111-bec5-002248e415a7",
+  "name": "Sub-area details",
+  "slug": "sub-area-details",
+  "inNav": false,
+  "views": [
+    {
+      "kind": "detail",
+      "pageId": "page_1783483698578",
+      "dataSource": {
+        "mode": "anchor",
+        "hops": [],
+        "filterGroups": []
+      },
+      "id": "view_1783483710122",
+      "order": 0,
+      "createdAt": "2026-07-08T04:08:30.122Z",
+      "updatedAt": "2026-07-08T04:14:26.665Z",
+      "formFields": [
+        {
+          "field": "cr_areaid",
+          "label": "Area",
+          "order": 0
+        },
+        {
+          "field": "cr_name",
+          "label": "Sub-area",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "kind": "createForm",
+      "pageId": "page_1783483698578",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_actionprocess",
+        "filterGroups": []
+      },
+      "parentLink": {
+        "lookupNav": "cr_SubareaId"
+      },
+      "id": "view_1783483755681",
+      "order": 2,
+      "createdAt": "2026-07-08T04:09:15.681Z",
+      "updatedAt": "2026-07-08T04:11:53.282Z",
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_name"
+              },
+              {
+                "kind": "field",
+                "field": "cr_dayswhenconsideredduesoon"
+              }
+            ]
+          }
+        ]
+      },
+      "formFields": [
+        {
+          "field": "cr_name",
+          "label": "Process",
+          "order": 0
+        },
+        {
+          "field": "cr_dayswhenconsideredduesoon",
+          "label": "Days when considered due soon",
+          "order": 1
+        }
+      ],
+      "submitButtons": [
+        {
+          "id": "btn-mrbk74hd-0",
+          "label": "Save",
+          "afterSubmit": {
+            "kind": "stayOnPage",
+            "stayMode": "reloadForm",
+            "message": "New process saved"
+          }
+        }
+      ],
+      "title": "Add process to sub-area"
+    },
+    {
+      "kind": "table",
+      "pageId": "page_1783483698578",
+      "dataSource": {
+        "mode": "anchor",
+        "hops": [
+          {
+            "fromTable": "cr_actionsubarea",
+            "toTable": "cr_actionprocess",
+            "relationshipSchemaName": "cr_cr_actionsubarea_cr_actionprocess_subareaid",
+            "direction": "incoming",
+            "fromField": "cr_actionsubareaid",
+            "toField": "cr_subareaid",
+            "referencingEntityNavigationPropertyName": "cr_SubareaId",
+            "referencedEntityNavigationPropertyName": "cr_cr_actionsubarea_cr_actionprocess_subareaid"
+          }
+        ],
+        "filterGroups": []
+      },
+      "id": "view_1783483857964",
+      "order": 1,
+      "createdAt": "2026-07-08T04:10:57.964Z",
+      "updatedAt": "2026-07-09T12:28:42.277Z",
+      "title": "Processes in this sub-area",
+      "label": "Processes",
+      "columnOrder": [
+        "cr_name",
+        "cr_dayswhenconsideredduesoon",
+        "cr_delete",
+        "link:page_1783567690510"
+      ],
+      "fields": [
+        "cr_name",
+        "cr_dayswhenconsideredduesoon",
+        "cr_delete"
+      ],
+      "linkedPageIds": [
+        "page_1783567690510"
+      ],
+      "runtimeFiltering": {
+        "mode": "tabs",
+        "tabs": [
+          {
+            "id": "t2",
+            "label": "Active",
+            "condition": [
+              {
+                "conditions": [
+                  {
+                    "field": "cr_delete",
+                    "operator": "ne",
+                    "value": "true"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "t1",
+            "label": "All",
+            "condition": []
+          }
+        ]
+      },
+      "columnConfig": {
+        "link:page_1783567690510": {
+          "label": "Outcomes",
+          "labelMode": "text",
+          "labelIcon": "fluent:Settings:filled"
+        }
+      }
+    }
+  ],
+  "configVersion": 2,
+  "createdAt": "2026-07-08T04:08:18.578Z",
+  "updatedAt": "2026-07-09T12:28:42.277Z",
+  "kind": "singleRecord",
+  "parentPageId": "page_1782299470460",
+  "primaryTable": "cr_actionsubarea"
+}

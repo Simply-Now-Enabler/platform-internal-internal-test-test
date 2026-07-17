@@ -13,9 +13,9 @@
         "filterGroups": []
       },
       "id": "view_1779450329403",
-      "order": 0,
+      "order": 1,
       "createdAt": "2026-05-22T11:45:29.403Z",
-      "updatedAt": "2026-05-22T11:46:30.560Z",
+      "updatedAt": "2026-07-15T05:11:21.338Z",
       "formFields": [
         {
           "field": "fullname",
@@ -51,14 +51,218 @@
           "field": "internalemailaddress",
           "label": "Primary Email",
           "order": 6
+        },
+        {
+          "field": "firstname",
+          "label": "First Name",
+          "order": 7
+        },
+        {
+          "field": "lastname",
+          "label": "Last Name",
+          "order": 8
         }
-      ]
+      ],
+      "label": "User detail",
+      "title": "User Detail"
+    },
+    {
+      "kind": "table",
+      "pageId": "page_1779450313091",
+      "dataSource": {
+        "mode": "anchor",
+        "hops": [
+          {
+            "fromTable": "systemuser",
+            "toTable": "pe_staffmember",
+            "relationshipSchemaName": "pe_systemuser_pe_staffmember_user",
+            "direction": "incoming",
+            "fromField": "systemuserid",
+            "toField": "pe_user",
+            "referencingEntityNavigationPropertyName": "pe_User",
+            "referencedEntityNavigationPropertyName": "pe_systemuser_pe_staffmember_user"
+          }
+        ],
+        "filterGroups": []
+      },
+      "id": "view_1783600826223",
+      "order": 1,
+      "createdAt": "2026-07-09T12:40:26.223Z",
+      "updatedAt": "2026-07-09T12:40:43.476Z",
+      "columnOrder": [
+        "pe_firstname",
+        "pe_lastname",
+        "pe_name",
+        "pe_startdate",
+        "pe_enddate",
+        "pe_email",
+        "cr_photo2"
+      ],
+      "fields": [
+        "pe_firstname",
+        "pe_lastname",
+        "pe_name",
+        "pe_startdate",
+        "pe_enddate",
+        "pe_email",
+        "cr_photo2"
+      ],
+      "linkedPageIds": []
+    },
+    {
+      "kind": "table",
+      "pageId": "page_1779450313091",
+      "dataSource": {
+        "mode": "anchor",
+        "hops": [
+          {
+            "fromTable": "systemuser",
+            "toTable": "pe_staffmember",
+            "relationshipSchemaName": "pe_systemuser_pe_staffmember_user",
+            "direction": "incoming",
+            "fromField": "systemuserid",
+            "toField": "pe_user",
+            "referencingEntityNavigationPropertyName": "pe_User",
+            "referencedEntityNavigationPropertyName": "pe_systemuser_pe_staffmember_user"
+          },
+          {
+            "fromTable": "pe_staffmember",
+            "toTable": "pe_staffappointment",
+            "relationshipSchemaName": "pe_pe_staffmember_pe_staffappointment_staffmember",
+            "direction": "incoming",
+            "fromField": "pe_staffmemberid",
+            "toField": "pe_staffmember",
+            "referencingEntityNavigationPropertyName": "pe_StaffMember",
+            "referencedEntityNavigationPropertyName": "pe_pe_staffmember_pe_staffappointment_staffmember"
+          }
+        ],
+        "filterGroups": []
+      },
+      "id": "view_1783600886463",
+      "order": 2,
+      "createdAt": "2026-07-09T12:41:26.463Z",
+      "updatedAt": "2026-07-09T12:43:07.005Z",
+      "label": "Staff Appointments",
+      "title": "Staff Appointments",
+      "columnOrder": [
+        "pe_position",
+        "pe_occupancy",
+        "pe_isprimary",
+        "pe_startdate",
+        "pe_enddate",
+        "pe_status",
+        "pe_holdnote",
+        "pe_staffmember",
+        "pe_systemgenerated"
+      ],
+      "fields": [
+        "pe_position",
+        "pe_occupancy",
+        "pe_isprimary",
+        "pe_startdate",
+        "pe_enddate",
+        "pe_status",
+        "pe_holdnote",
+        "pe_staffmember",
+        "pe_systemgenerated"
+      ],
+      "linkedPageIds": [],
+      "columnConfig": {
+        "pe_holdnote": {
+          "hideWhenEmpty": true
+        }
+      },
+      "lookupConfig": {
+        "pe_position": {
+          "targetPageId": "page_1783000363434"
+        }
+      },
+      "rowPresentation": {
+        "rules": [
+          {
+            "condition": [
+              {
+                "conditions": [
+                  {
+                    "field": "pe_startdate",
+                    "operator": "afterToday",
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "conditions": [
+                  {
+                    "field": "pe_enddate",
+                    "operator": "beforeToday",
+                    "value": ""
+                  }
+                ]
+              }
+            ],
+            "effects": {
+              "background": "#ffd6d6"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "kind": "table",
+      "pageId": "page_1779450313091",
+      "dataSource": {
+        "mode": "anchor",
+        "hops": [
+          {
+            "fromTable": "systemuser",
+            "toTable": "pe_appuserrole",
+            "relationshipSchemaName": "pe_systemuser_pe_appuserrole_user",
+            "direction": "incoming",
+            "fromField": "systemuserid",
+            "toField": "pe_user",
+            "referencingEntityNavigationPropertyName": "pe_User",
+            "referencedEntityNavigationPropertyName": "pe_systemuser_pe_appuserrole_user"
+          }
+        ],
+        "filterGroups": []
+      },
+      "id": "view_1783648063719",
+      "order": 3,
+      "createdAt": "2026-07-10T01:47:43.719Z",
+      "updatedAt": "2026-07-10T01:48:57.727Z",
+      "title": "App User Roles",
+      "columnOrder": [
+        "pe_approle",
+        "pe_name",
+        "pe_lastsyncedat",
+        "pe_source",
+        "pe_sourcedetail",
+        "related:pe_approle.pe_appslug"
+      ],
+      "fields": [
+        "pe_approle",
+        "pe_name",
+        "pe_lastsyncedat",
+        "pe_source",
+        "pe_sourcedetail"
+      ],
+      "linkedPageIds": [],
+      "relatedColumns": {
+        "related:pe_approle.pe_appslug": {
+          "navProperty": "pe_AppRole",
+          "label": "App Slug"
+        }
+      }
     }
   ],
   "parentPageId": "page_1778763256820",
   "primaryTable": "systemuser",
   "id": "page_1779450313091",
   "createdAt": "2026-05-22T11:45:13.091Z",
-  "updatedAt": "2026-05-22T11:46:30.560Z",
-  "configVersion": 1
+  "updatedAt": "2026-07-15T05:11:21.338Z",
+  "configVersion": 2,
+  "instructions": "do this rule instructions - and save",
+  "title": "User Admin",
+  "showBreadcrumbs": true,
+  "showBackLink": true
 }

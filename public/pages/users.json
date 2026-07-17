@@ -7,61 +7,147 @@
       "dataSource": {
         "mode": "direct",
         "table": "systemuser",
-        "filterGroups": [
-          {
-            "conditions": [
-              {
-                "field": "",
-                "operator": "eq",
-                "value": ""
-              },
-              {
-                "field": "",
-                "operator": "eq",
-                "value": ""
-              }
-            ]
-          },
-          {
-            "conditions": [
-              {
-                "field": "",
-                "operator": "eq",
-                "value": ""
-              }
-            ]
-          }
-        ]
+        "filterGroups": []
       },
       "id": "view_1778763263524",
       "order": 0,
       "createdAt": "2026-05-14T12:54:23.524Z",
-      "updatedAt": "2026-05-30T14:09:40.591Z",
+      "updatedAt": "2026-07-15T06:04:34.968Z",
       "label": "Users - All",
       "columnOrder": [
-        "fullname",
-        "islicensed",
-        "isdisabled",
+        "link:page_1779450313091",
         "internalemailaddress",
         "mobilephone",
+        "islicensed",
         "caltype",
+        "isdisabled",
+        "pe_staffmembercreated",
+        "firstname",
         "lastname",
-        "link:page_1779450313091"
+        "invitestatuscode",
+        "emailrouteraccessapproval",
+        "isemailaddressapprovedbyo365admin"
       ],
       "fields": [
-        "fullname",
-        "islicensed",
-        "isdisabled",
         "internalemailaddress",
         "mobilephone",
+        "islicensed",
         "caltype",
-        "lastname"
+        "isdisabled",
+        "pe_staffmembercreated",
+        "firstname",
+        "lastname",
+        "invitestatuscode",
+        "emailrouteraccessapproval",
+        "isemailaddressapprovedbyo365admin"
       ],
       "linkedPageIds": [
         "page_1779450313091"
       ],
-      "sortField": "fullname",
-      "sortDir": "asc"
+      "sortField": "lastname",
+      "sortDir": "desc",
+      "title": "All users",
+      "pageSize": 10,
+      "columnConfig": {
+        "link:page_1779450313091": {
+          "label": "Full Name",
+          "labelField": "fullname",
+          "presentation": {
+            "base": {
+              "bold": true
+            }
+          }
+        },
+        "internalemailaddress": {
+          "presentation": {
+            "rules": [
+              {
+                "condition": [
+                  {
+                    "conditions": [
+                      {
+                        "field": "internalemailaddress",
+                        "operator": "contains",
+                        "value": "simplynow"
+                      }
+                    ]
+                  }
+                ],
+                "effects": {
+                  "textColor": "#62097d",
+                  "bold": true
+                }
+              }
+            ]
+          }
+        },
+        "mobilephone": {
+          "label": "Mobile",
+          "width": 80,
+          "hideWhenEmpty": true
+        },
+        "caltype": {
+          "width": 120,
+          "hideWhenEmpty": true
+        }
+      },
+      "instructions": "filter by just shown columns",
+      "runtimeFiltering": {
+        "mode": "tabs",
+        "tabs": [
+          {
+            "id": "t1",
+            "label": "Simply Now",
+            "condition": [
+              {
+                "conditions": [
+                  {
+                    "field": "internalemailaddress",
+                    "operator": "contains",
+                    "value": "simplynow"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "t2",
+            "label": "Active",
+            "condition": [
+              {
+                "conditions": [
+                  {
+                    "field": "isdisabled",
+                    "operator": "eq",
+                    "value": "false"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "t3",
+            "label": "Inactive",
+            "condition": [
+              {
+                "conditions": [
+                  {
+                    "field": "isdisabled",
+                    "operator": "eq",
+                    "value": "true"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "t4",
+            "label": "All",
+            "condition": []
+          }
+        ]
+      },
+      "rowClickPageId": "page_1779450313091"
     }
   ],
   "name": "Users",
@@ -69,6 +155,6 @@
   "inNav": true,
   "id": "page_1778763256820",
   "createdAt": "2026-05-14T12:54:16.820Z",
-  "updatedAt": "2026-05-30T14:09:40.591Z",
-  "configVersion": 1
+  "updatedAt": "2026-07-15T06:04:34.968Z",
+  "configVersion": 2
 }

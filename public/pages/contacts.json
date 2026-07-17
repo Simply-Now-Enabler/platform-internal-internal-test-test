@@ -1,9 +1,9 @@
 {
   "id": "page_1780266518600",
   "appId": "8dd58c87-1849-f111-bec5-002248e415a7",
-  "name": "Contacts",
+  "name": "Contacts and Accounts",
   "slug": "contacts",
-  "inNav": true,
+  "inNav": false,
   "views": [
     {
       "kind": "table",
@@ -16,7 +16,7 @@
       "id": "view_1780266536817",
       "order": 0,
       "createdAt": "2026-05-31T22:28:56.817Z",
-      "updatedAt": "2026-06-01T03:41:06.132Z",
+      "updatedAt": "2026-06-28T09:58:47.897Z",
       "columnOrder": [
         "fullname",
         "emailaddress1",
@@ -36,31 +36,75 @@
         "page_1780266600820"
       ],
       "sortField": "fullname",
-      "sortDir": "asc"
+      "sortDir": "asc",
+      "label": "Contacts",
+      "columnConfig": {
+        "fullname": {
+          "width": 100
+        },
+        "emailaddress1": {
+          "width": 300
+        },
+        "link:page_1780266600820": {
+          "label": "open",
+          "width": 80
+        }
+      },
+      "pageSize": 10,
+      "exportEnabled": false,
+      "runtimeFiltering": {
+        "mode": "configurable",
+        "scope": "all"
+      }
     },
     {
-      "kind": "pageLink",
+      "kind": "table",
       "pageId": "page_1780266518600",
-      "id": "view_1780266681333",
+      "dataSource": {
+        "mode": "direct",
+        "table": "account",
+        "filterGroups": [
+          {
+            "conditions": [
+              {
+                "field": "ownerid",
+                "operator": "notNull",
+                "value": ""
+              }
+            ]
+          }
+        ]
+      },
+      "id": "view_1781519716425",
       "order": 1,
-      "createdAt": "2026-05-31T22:31:21.333Z",
-      "updatedAt": "2026-05-31T22:31:34.199Z",
-      "label": "Positions",
-      "targetPageId": "page_1778050524959"
-    },
-    {
-      "kind": "pageLink",
-      "pageId": "page_1780266518600",
-      "id": "view_1780266697812",
-      "order": 2,
-      "createdAt": "2026-05-31T22:31:37.812Z",
-      "updatedAt": "2026-05-31T22:31:47.620Z",
-      "label": "Hidden Users",
-      "targetPageId": "page_1779881150511"
+      "createdAt": "2026-06-15T10:35:16.425Z",
+      "updatedAt": "2026-07-01T00:58:58.478Z",
+      "label": "All Accounts",
+      "columnOrder": [
+        "ownerid",
+        "transactioncurrencyid",
+        "name",
+        "emailaddress1",
+        "businesstypecode",
+        "primarycontactid",
+        "createdon"
+      ],
+      "fields": [
+        "ownerid",
+        "transactioncurrencyid",
+        "name",
+        "emailaddress1",
+        "businesstypecode",
+        "primarycontactid",
+        "createdon"
+      ],
+      "linkedPageIds": []
     }
   ],
-  "configVersion": 1,
+  "configVersion": 2,
   "createdAt": "2026-05-31T22:28:38.600Z",
-  "updatedAt": "2026-06-01T03:41:06.132Z",
-  "kind": "standard"
+  "updatedAt": "2026-07-16T02:08:29.178Z",
+  "kind": "standard",
+  "showBreadcrumbs": true,
+  "showBackLink": true
 }

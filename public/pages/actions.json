@@ -1,0 +1,415 @@
+{
+  "id": "page_1782298650290",
+  "appId": "8dd58c87-1849-f111-bec5-002248e415a7",
+  "name": "Actions",
+  "slug": "actions",
+  "inNav": true,
+  "views": [
+    {
+      "kind": "createForm",
+      "pageId": "page_1782298650290",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_action",
+        "filterGroups": []
+      },
+      "id": "view_1782298674868",
+      "order": 1,
+      "createdAt": "2026-06-24T10:57:54.868Z",
+      "updatedAt": "2026-07-13T12:11:14.728Z",
+      "label": "Create Action",
+      "title": "Add Action - admin use only",
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_areaid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_subareaid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_processid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_originalduedate"
+              },
+              {
+                "kind": "field",
+                "field": "cr_commentsinternal"
+              },
+              {
+                "kind": "field",
+                "field": "cr_ownerposition"
+              },
+              {
+                "kind": "field",
+                "field": "pe_confidential"
+              }
+            ],
+            "title": "Only for rough testing"
+          }
+        ]
+      },
+      "formFields": [
+        {
+          "field": "cr_areaid",
+          "label": "Area",
+          "order": 0,
+          "controlFormat": "radio",
+          "candidateFilter": [
+            {
+              "conditions": [
+                {
+                  "field": "cr_delete",
+                  "operator": "ne",
+                  "value": "true"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "field": "cr_subareaid",
+          "label": "Sub-area",
+          "order": 1,
+          "controlFormat": "radio",
+          "candidateFilter": [
+            {
+              "conditions": [
+                {
+                  "field": "cr_delete",
+                  "operator": "ne",
+                  "value": "true"
+                }
+              ]
+            }
+          ],
+          "candidateScope": {
+            "anchor": "thisFormColumn",
+            "anchorField": "cr_areaid",
+            "hops": [
+              {
+                "fromTable": "cr_actionarea",
+                "toTable": "cr_actionsubarea",
+                "relationshipSchemaName": "cr_cr_actionarea_cr_actionsubarea_areaid",
+                "direction": "incoming",
+                "fromField": "cr_actionareaid",
+                "toField": "cr_areaid",
+                "referencingEntityNavigationPropertyName": "cr_AreaId",
+                "referencedEntityNavigationPropertyName": "cr_cr_actionarea_cr_actionsubarea_areaid"
+              }
+            ]
+          }
+        },
+        {
+          "field": "cr_processid",
+          "label": "Process",
+          "order": 2,
+          "controlFormat": "radio",
+          "candidateFilter": [
+            {
+              "conditions": [
+                {
+                  "field": "cr_delete",
+                  "operator": "ne",
+                  "value": "true"
+                }
+              ]
+            }
+          ],
+          "candidateScope": {
+            "anchor": "thisFormColumn",
+            "anchorField": "cr_subareaid",
+            "hops": [
+              {
+                "fromTable": "cr_actionsubarea",
+                "toTable": "cr_actionprocess",
+                "relationshipSchemaName": "cr_cr_actionsubarea_cr_actionprocess_subareaid",
+                "direction": "incoming",
+                "fromField": "cr_actionsubareaid",
+                "toField": "cr_subareaid",
+                "referencingEntityNavigationPropertyName": "cr_SubareaId",
+                "referencedEntityNavigationPropertyName": "cr_cr_actionsubarea_cr_actionprocess_subareaid"
+              }
+            ]
+          }
+        },
+        {
+          "field": "cr_originalduedate",
+          "label": "Original Due Date",
+          "order": 3
+        },
+        {
+          "field": "cr_commentsinternal",
+          "label": "Comments Internal",
+          "order": 4
+        },
+        {
+          "field": "cr_ownerposition",
+          "label": "Owner",
+          "order": 5,
+          "candidateFilter": [
+            {
+              "conditions": [
+                {
+                  "field": "statecode",
+                  "operator": "eq",
+                  "value": "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "field": "pe_confidential",
+          "label": "Confidential",
+          "order": 6
+        }
+      ],
+      "submitButtons": [
+        {
+          "id": "btn-mqrymfw0-0",
+          "label": "Save",
+          "afterSubmit": {
+            "kind": "stayOnPage",
+            "stayMode": "showReloadButton",
+            "message": "Saved new action"
+          }
+        }
+      ],
+      "displayRules": [
+        {
+          "rootActions": [],
+          "nodes": [
+            {
+              "arms": [
+                {
+                  "test": [
+                    {
+                      "conditions": [
+                        {
+                          "field": "cr_areaid",
+                          "operator": "notNull",
+                          "value": ""
+                        }
+                      ]
+                    }
+                  ],
+                  "effects": [
+                    {
+                      "action": "show",
+                      "reverseWhenNotMet": true,
+                      "fields": [
+                        "cr_subareaid"
+                      ]
+                    }
+                  ],
+                  "children": [
+                    {
+                      "arms": [
+                        {
+                          "test": [
+                            {
+                              "conditions": [
+                                {
+                                  "field": "cr_subareaid",
+                                  "operator": "notNull",
+                                  "value": ""
+                                }
+                              ]
+                            }
+                          ],
+                          "effects": [
+                            {
+                              "action": "show",
+                              "reverseWhenNotMet": true,
+                              "fields": [
+                                "cr_processid",
+                                "cr_originalduedate",
+                                "cr_commentsinternal",
+                                "cr_ownerposition"
+                              ]
+                            }
+                          ],
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "postSubmitActions": {
+        "rootActions": [
+          {
+            "type": "updateRecord",
+            "fields": {
+              "cr_targetdate": {
+                "kind": "formField",
+                "field": "cr_originalduedate"
+              }
+            }
+          }
+        ],
+        "nodes": []
+      }
+    },
+    {
+      "kind": "table",
+      "pageId": "page_1782298650290",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_action",
+        "filterGroups": []
+      },
+      "id": "view_1782303138136",
+      "order": 0,
+      "createdAt": "2026-06-24T12:12:18.136Z",
+      "updatedAt": "2026-07-14T02:19:32.596Z",
+      "label": "Actions",
+      "title": "All Actions",
+      "columnOrder": [
+        "link:page_1782305720944",
+        "cr_subareaid",
+        "cr_processid",
+        "cr_completionstatus",
+        "cr_ownerposition",
+        "ownerid",
+        "related:cr_ownerposition.pe_currentincumbentuser",
+        "related:cr_ownerposition.pe_temporaryincumbentuser",
+        "cr_targetdate",
+        "cr_originalduedate",
+        "cr_outcomeid",
+        "cr_commentsinternal",
+        "cr_areaid",
+        "cr_previousactionid",
+        "cr_commentsexternal",
+        "cr_completedby",
+        "cr_datecompleted"
+      ],
+      "fields": [
+        "cr_subareaid",
+        "cr_processid",
+        "cr_completionstatus",
+        "cr_ownerposition",
+        "ownerid",
+        "cr_targetdate",
+        "cr_originalduedate",
+        "cr_outcomeid",
+        "cr_commentsinternal",
+        "cr_areaid",
+        "cr_previousactionid",
+        "cr_commentsexternal",
+        "cr_completedby",
+        "cr_datecompleted"
+      ],
+      "linkedPageIds": [
+        "page_1782305720944"
+      ],
+      "sortField": "cr_targetdate",
+      "sortDir": "asc",
+      "rowClickPageId": "page_1782305720944",
+      "columnConfig": {
+        "link:page_1782305720944": {
+          "label": "Edit",
+          "labelField": "cr_actionidnumber"
+        },
+        "cr_ownerposition": {
+          "label": "Owner position"
+        },
+        "cr_outcomeid": {
+          "hideWhenEmpty": true
+        },
+        "cr_completedby": {
+          "hideWhenEmpty": true
+        },
+        "cr_datecompleted": {
+          "hideWhenEmpty": true
+        }
+      },
+      "runtimeFiltering": {
+        "mode": "configurable",
+        "scope": "all",
+        "defaultFilter": [
+          {
+            "conditions": [
+              {
+                "field": "cr_originalduedate",
+                "operator": "beforeRelative",
+                "value": "14:days:after"
+              },
+              {
+                "field": "cr_completionstatus",
+                "operator": "ne",
+                "value": "5"
+              }
+            ]
+          }
+        ],
+        "candidateFilters": {
+          "cr_areaid": [
+            {
+              "conditions": [
+                {
+                  "field": "cr_delete",
+                  "operator": "ne",
+                  "value": "true"
+                }
+              ]
+            }
+          ],
+          "cr_outcomeid": [
+            {
+              "conditions": [
+                {
+                  "field": "cr_delete",
+                  "operator": "ne",
+                  "value": "true"
+                }
+              ]
+            }
+          ],
+          "cr_ownerpositionid": [
+            {
+              "conditions": [
+                {
+                  "field": "statecode",
+                  "operator": "eq",
+                  "value": "0"
+                }
+              ]
+            }
+          ],
+          "cr_processid": [
+            {
+              "conditions": [
+                {
+                  "field": "cr_delete",
+                  "operator": "ne",
+                  "value": "true"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "relatedColumns": {}
+    }
+  ],
+  "configVersion": 2,
+  "createdAt": "2026-06-24T10:57:30.290Z",
+  "updatedAt": "2026-07-14T02:19:32.597Z",
+  "kind": "standard",
+  "showBreadcrumbs": true,
+  "showBackLink": true
+}

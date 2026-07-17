@@ -1,0 +1,282 @@
+{
+  "id": "page_1783647605908",
+  "appId": "8dd58c87-1849-f111-bec5-002248e415a7",
+  "name": "App Roles",
+  "slug": "app-roles",
+  "inNav": true,
+  "views": [
+    {
+      "kind": "table",
+      "pageId": "page_1783647605908",
+      "dataSource": {
+        "mode": "direct",
+        "table": "pe_approle",
+        "filterGroups": []
+      },
+      "id": "view_1783647639170",
+      "order": 0,
+      "createdAt": "2026-07-10T01:40:39.170Z",
+      "updatedAt": "2026-07-10T01:46:45.111Z",
+      "title": "App Roles",
+      "columnOrder": [
+        "pe_name",
+        "pe_description",
+        "pe_roleteamid",
+        "pe_appslug",
+        "pe_dataverseroleid",
+        "pe_isbase",
+        "createdby",
+        "createdon"
+      ],
+      "fields": [
+        "pe_name",
+        "pe_description",
+        "pe_roleteamid",
+        "pe_appslug",
+        "pe_dataverseroleid",
+        "pe_isbase",
+        "createdby",
+        "createdon"
+      ],
+      "linkedPageIds": [],
+      "runtimeFiltering": {
+        "mode": "configurable",
+        "defaultFilter": [
+          {
+            "conditions": [
+              {
+                "field": "pe_appslug",
+                "operator": "eq",
+                "value": "internal-test"
+              }
+            ]
+          }
+        ]
+      },
+      "runtimeSearch": {
+        "scope": "all"
+      }
+    },
+    {
+      "kind": "table",
+      "pageId": "page_1783647605908",
+      "dataSource": {
+        "mode": "direct",
+        "table": "pe_appuserrole",
+        "filterGroups": []
+      },
+      "id": "view_1783647650731",
+      "order": 2,
+      "createdAt": "2026-07-10T01:40:50.731Z",
+      "updatedAt": "2026-07-10T01:47:16.573Z",
+      "title": "App User Roles",
+      "columnOrder": [
+        "pe_approle",
+        "pe_user",
+        "pe_lastsyncedat",
+        "pe_name",
+        "pe_source",
+        "pe_sourcedetail",
+        "createdby",
+        "createdon"
+      ],
+      "fields": [
+        "pe_approle",
+        "pe_user",
+        "pe_lastsyncedat",
+        "pe_name",
+        "pe_source",
+        "pe_sourcedetail",
+        "createdby",
+        "createdon"
+      ],
+      "linkedPageIds": [],
+      "lookupConfig": {
+        "pe_user": {
+          "targetPageId": "page_1779450313091"
+        }
+      }
+    },
+    {
+      "kind": "createForm",
+      "pageId": "page_1783647605908",
+      "dataSource": {
+        "mode": "direct",
+        "table": "pe_approle",
+        "filterGroups": []
+      },
+      "id": "view_1783647665086",
+      "order": 1,
+      "createdAt": "2026-07-10T01:41:05.086Z",
+      "updatedAt": "2026-07-10T01:45:43.623Z",
+      "title": "+ App Role",
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "pe_name"
+              },
+              {
+                "kind": "field",
+                "field": "pe_description"
+              },
+              {
+                "kind": "field",
+                "field": "pe_isbase"
+              },
+              {
+                "kind": "field",
+                "field": "pe_dataverseroleid"
+              },
+              {
+                "kind": "field",
+                "field": "pe_roleteamid"
+              }
+            ],
+            "title": "create an App Role in this App 'Internal Test'"
+          }
+        ]
+      },
+      "formFields": [
+        {
+          "field": "pe_name",
+          "label": "Role Name",
+          "order": 0
+        },
+        {
+          "field": "pe_description",
+          "label": "Description",
+          "order": 1
+        },
+        {
+          "field": "pe_isbase",
+          "label": "Is Base",
+          "order": 2
+        },
+        {
+          "field": "pe_dataverseroleid",
+          "label": "Dataverse Role ID",
+          "order": 3
+        },
+        {
+          "field": "pe_roleteamid",
+          "label": "Role Team ID",
+          "order": 4
+        }
+      ],
+      "submitButtons": [
+        {
+          "id": "btn-mre9u1bu-0",
+          "label": "Save",
+          "afterSubmit": {
+            "kind": "stayOnPage",
+            "stayMode": "showReloadButton",
+            "message": "App Role saved"
+          }
+        }
+      ],
+      "postSubmitActions": {
+        "rootActions": [
+          {
+            "type": "updateRecord",
+            "fields": {
+              "pe_appslug": {
+                "kind": "literal",
+                "value": "internal-test"
+              }
+            }
+          }
+        ],
+        "nodes": []
+      }
+    },
+    {
+      "kind": "createForm",
+      "pageId": "page_1783647605908",
+      "dataSource": {
+        "mode": "direct",
+        "table": "pe_appuserrole",
+        "filterGroups": []
+      },
+      "id": "view_1783647676159",
+      "order": 3,
+      "createdAt": "2026-07-10T01:41:16.159Z",
+      "updatedAt": "2026-07-10T01:44:54.698Z",
+      "title": "+ App User Role",
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "pe_approle"
+              },
+              {
+                "kind": "field",
+                "field": "pe_user"
+              },
+              {
+                "kind": "field",
+                "field": "pe_name"
+              }
+            ]
+          }
+        ]
+      },
+      "formFields": [
+        {
+          "field": "pe_approle",
+          "label": "App Role",
+          "order": 0
+        },
+        {
+          "field": "pe_user",
+          "label": "User",
+          "order": 1
+        },
+        {
+          "field": "pe_name",
+          "label": "Assignment",
+          "order": 2
+        }
+      ],
+      "submitButtons": [
+        {
+          "id": "btn-mre9v5pf-0",
+          "label": "Save",
+          "afterSubmit": {
+            "kind": "stayOnPage",
+            "stayMode": "showReloadButton",
+            "message": "App User Role saved"
+          }
+        }
+      ],
+      "postSubmitActions": {
+        "rootActions": [
+          {
+            "type": "updateRecord",
+            "fields": {
+              "pe_source": {
+                "kind": "literal",
+                "value": 3
+              },
+              "pe_sourcedetail": {
+                "kind": "literal",
+                "value": "Created in Runtime of Internal Test"
+              }
+            }
+          }
+        ],
+        "nodes": []
+      }
+    }
+  ],
+  "configVersion": 2,
+  "createdAt": "2026-07-10T01:40:05.908Z",
+  "updatedAt": "2026-07-10T01:47:16.573Z",
+  "kind": "standard"
+}

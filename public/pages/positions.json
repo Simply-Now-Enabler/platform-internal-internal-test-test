@@ -6,111 +6,94 @@
       "pageId": "page_1778050524959",
       "dataSource": {
         "mode": "direct",
-        "table": "position",
-        "filterGroups": [
-          {
-            "conditions": [
-              {
-                "field": "cr_currentincumbentstaffmemberid",
-                "operator": "eq",
-                "value": "$currentUser"
-              }
-            ]
-          }
-        ]
-      },
-      "id": "view_1778050530693",
-      "order": 1,
-      "createdAt": "2026-05-06T06:55:30.693Z",
-      "updatedAt": "2026-05-28T00:06:48.349Z",
-      "columnOrder": [
-        "name",
-        "cr_occupancy",
-        "crfc3_managerposition",
-        "crfc3_coordinatorposition",
-        "cr_datestart",
-        "description",
-        "parentpositionid",
-        "statecode",
-        "link:page_1779620970790",
-        "createdon",
-        "createdby"
-      ],
-      "fields": [
-        "name",
-        "cr_occupancy",
-        "crfc3_managerposition",
-        "crfc3_coordinatorposition",
-        "cr_datestart",
-        "description",
-        "parentpositionid",
-        "statecode",
-        "createdon",
-        "createdby"
-      ],
-      "linkedPageIds": [
-        "page_1779620970790"
-      ],
-      "sortField": "name",
-      "sortDir": "asc",
-      "label": "Positions"
-    },
-    {
-      "kind": "table",
-      "pageId": "page_1778050524959",
-      "dataSource": {
-        "mode": "userConnected",
-        "hops": [
-          {
-            "fromTable": "systemuser",
-            "toTable": "cr_staffmember",
-            "relationshipSchemaName": "user_cr_staffmember",
-            "direction": "incoming",
-            "fromField": "systemuserid",
-            "toField": "owninguser"
-          },
-          {
-            "fromTable": "cr_staffmember",
-            "toTable": "crfc3_staffappointment",
-            "relationshipSchemaName": "crfc3_StaffAppointment_StaffMemberAppointed_cr_StaffMember",
-            "direction": "incoming",
-            "fromField": "cr_staffmemberid",
-            "toField": "crfc3_staffmemberappointed"
-          }
-        ],
+        "table": "pe_position",
         "filterGroups": []
       },
-      "id": "view_1778197928309",
-      "order": 0,
-      "createdAt": "2026-05-07T23:52:08.309Z",
-      "updatedAt": "2026-05-28T00:36:56.180Z",
-      "label": "Appointments via owning user on staff member",
+      "id": "view_1783000229058",
+      "order": 2,
+      "createdAt": "2026-07-02T13:50:29.058Z",
+      "updatedAt": "2026-07-17T01:10:38.471Z",
+      "label": "Positions",
+      "title": "Positions",
+      "instructions": "pe_positions table",
       "columnOrder": [
-        "cr_currentincumbentstaffmemberid",
+        "link:page_1783000363434",
+        "link:page_1783482217255",
+        "pe_name",
+        "pe_currentincumbentuser",
+        "pe_temporaryincumbentuser",
+        "cr_statuslifecycle",
         "cr_occupancy",
-        "name",
-        "owninguser",
-        "crfc3_position",
-        "crfc3_positiontitle",
-        "crfc3_staffmemberappointed",
-        "createdbyname",
-        "link:page_1779917461068"
+        "pe_reportsto",
+        "cr_directorate",
+        "cr_department",
+        "cr_isexecutive",
+        "cr_ismanager",
+        "cr_iscoordinator",
+        "cr_issupervisor",
+        "pe_currentappointmentprimary",
+        "pe_currentappointmenttemporary",
+        "cr_executiveposition",
+        "cr_managerposition",
+        "cr_coordinatorposition",
+        "statecode"
       ],
       "fields": [
-        "cr_currentincumbentstaffmemberid",
+        "pe_name",
+        "pe_currentincumbentuser",
+        "pe_temporaryincumbentuser",
+        "cr_statuslifecycle",
         "cr_occupancy",
-        "name",
-        "owninguser",
-        "crfc3_position",
-        "crfc3_positiontitle",
-        "crfc3_staffmemberappointed",
-        "createdbyname"
+        "pe_reportsto",
+        "cr_directorate",
+        "cr_department",
+        "cr_isexecutive",
+        "cr_ismanager",
+        "cr_iscoordinator",
+        "cr_issupervisor",
+        "pe_currentappointmentprimary",
+        "pe_currentappointmenttemporary",
+        "cr_executiveposition",
+        "cr_managerposition",
+        "cr_coordinatorposition",
+        "statecode"
       ],
       "linkedPageIds": [
-        "page_1779917461068"
+        "page_1783000363434",
+        "page_1783482217255"
       ],
-      "sortField": "owninguser",
-      "sortDir": "asc"
+      "columnConfig": {
+        "link:page_1783000363434": {
+          "label": "Position",
+          "labelField": "cr_displaytitle",
+          "presentation": {
+            "base": {
+              "bold": true
+            }
+          }
+        },
+        "pe_currentincumbentuser": {
+          "label": "Incumbent"
+        },
+        "pe_temporaryincumbentuser": {
+          "label": "Temp Incumbent"
+        }
+      },
+      "lookupConfig": {
+        "pe_currentincumbentuser": {
+          "targetPageId": "page_1779450313091"
+        }
+      }
+    },
+    {
+      "kind": "pageLink",
+      "pageId": "page_1778050524959",
+      "id": "view_1783026413570",
+      "order": 2,
+      "createdAt": "2026-07-02T21:06:53.570Z",
+      "updatedAt": "2026-07-03T21:25:43.286Z",
+      "label": "+ Position",
+      "targetPageId": "page_1783026455504"
     }
   ],
   "name": "Positions",
@@ -118,6 +101,6 @@
   "inNav": true,
   "id": "page_1778050524959",
   "createdAt": "2026-05-06T06:55:24.959Z",
-  "updatedAt": "2026-05-28T00:36:56.180Z",
-  "configVersion": 1
+  "updatedAt": "2026-07-17T01:10:38.471Z",
+  "configVersion": 2
 }

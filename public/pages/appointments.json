@@ -2,26 +2,107 @@
   "kind": "standard",
   "views": [
     {
+      "kind": "pageLink",
+      "pageId": "page_1778837286924",
+      "id": "view_1782280888640",
+      "order": 1,
+      "createdAt": "2026-06-24T06:01:28.640Z",
+      "updatedAt": "2026-07-09T04:06:40.963Z",
+      "label": "+ Staff Appointment",
+      "targetPageId": "page_1782280706360"
+    },
+    {
       "kind": "table",
       "pageId": "page_1778837286924",
       "dataSource": {
-        "mode": "userConnected",
-        "hops": [
-          {
-            "fromTable": "systemuser",
-            "toTable": "crfc3_staffappointment",
-            "relationshipSchemaName": "crfc3_StaffAppointment_AppointedUser_SystemUser",
-            "direction": "incoming",
-            "fromField": "systemuserid",
-            "toField": "crfc3_appointeduser"
-          }
-        ],
+        "mode": "direct",
+        "table": "pe_staffappointment",
         "filterGroups": []
       },
-      "id": "view_1778837349348",
-      "order": 0,
-      "createdAt": "2026-05-15T09:29:09.348Z",
-      "updatedAt": "2026-05-15T09:29:09.348Z"
+      "id": "view_1783569999179",
+      "order": 1,
+      "createdAt": "2026-07-09T04:06:39.179Z",
+      "updatedAt": "2026-07-16T23:10:31.410Z",
+      "title": "Staff Appointments",
+      "label": "Staff appointments",
+      "columnOrder": [
+        "pe_position",
+        "pe_staffmember",
+        "pe_occupancy",
+        "pe_status",
+        "pe_holdnote",
+        "pe_isprimary",
+        "pe_startdate",
+        "pe_enddate",
+        "statecode",
+        "statuscode",
+        "link:page_1784030890087"
+      ],
+      "fields": [
+        "pe_position",
+        "pe_staffmember",
+        "pe_occupancy",
+        "pe_status",
+        "pe_holdnote",
+        "pe_isprimary",
+        "pe_startdate",
+        "pe_enddate",
+        "statecode",
+        "statuscode"
+      ],
+      "linkedPageIds": [
+        "page_1784030890087"
+      ],
+      "lookupConfig": {
+        "pe_position": {
+          "targetPageId": "page_1783000363434"
+        }
+      },
+      "runtimeFiltering": {
+        "mode": "configurable",
+        "defaultFilter": [
+          {
+            "conditions": [
+              {
+                "field": "statecode",
+                "operator": "eq",
+                "value": "0"
+              },
+              {
+                "field": "pe_status",
+                "operator": "ne",
+                "value": "2"
+              }
+            ]
+          }
+        ],
+        "candidateFilters": {
+          "pe_position": [
+            {
+              "conditions": [
+                {
+                  "field": "statecode",
+                  "operator": "eq",
+                  "value": "0"
+                }
+              ]
+            }
+          ],
+          "pe_staffmember": [
+            {
+              "conditions": [
+                {
+                  "field": "statecode",
+                  "operator": "eq",
+                  "value": "0"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "sortField": "pe_occupancy",
+      "sortDir": "asc"
     }
   ],
   "name": "Appointments",
@@ -29,6 +110,6 @@
   "inNav": true,
   "id": "page_1778837286924",
   "createdAt": "2026-05-15T09:28:06.924Z",
-  "updatedAt": "2026-05-15T09:29:09.348Z",
-  "configVersion": 1
+  "updatedAt": "2026-07-16T23:10:31.410Z",
+  "configVersion": 2
 }

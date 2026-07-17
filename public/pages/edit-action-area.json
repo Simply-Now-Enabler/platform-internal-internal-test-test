@@ -1,0 +1,75 @@
+{
+  "id": "page_1783998391613",
+  "appId": "8dd58c87-1849-f111-bec5-002248e415a7",
+  "name": "Edit Action Area",
+  "slug": "edit-action-area",
+  "inNav": false,
+  "views": [
+    {
+      "kind": "updateForm",
+      "pageId": "page_1783998391613",
+      "dataSource": {
+        "mode": "anchor",
+        "hops": [],
+        "filterGroups": []
+      },
+      "id": "view_1783998406082",
+      "order": 0,
+      "createdAt": "2026-07-14T03:06:46.082Z",
+      "updatedAt": "2026-07-14T03:07:02.977Z",
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_name"
+              },
+              {
+                "kind": "field",
+                "field": "pe_confidential"
+              },
+              {
+                "kind": "field",
+                "field": "cr_delete"
+              }
+            ]
+          }
+        ]
+      },
+      "formFields": [
+        {
+          "field": "cr_name",
+          "label": "Area",
+          "order": 0
+        },
+        {
+          "field": "pe_confidential",
+          "label": "Confidential",
+          "order": 1
+        },
+        {
+          "field": "cr_delete",
+          "label": "Delete",
+          "order": 2
+        }
+      ],
+      "submitButtons": [
+        {
+          "id": "btn-mrk2l93u-0",
+          "label": "Save",
+          "afterSubmit": {
+            "kind": "returnToParent"
+          }
+        }
+      ]
+    }
+  ],
+  "configVersion": 2,
+  "createdAt": "2026-07-14T03:06:31.613Z",
+  "updatedAt": "2026-07-14T03:07:02.978Z",
+  "kind": "singleRecord",
+  "parentPageId": "page_1782299470460",
+  "primaryTable": "cr_actionarea"
+}

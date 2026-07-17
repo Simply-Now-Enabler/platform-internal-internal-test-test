@@ -1,0 +1,312 @@
+{
+  "id": "page_1784085700962",
+  "appId": "8dd58c87-1849-f111-bec5-002248e415a7",
+  "name": "Admin View Performance Plan",
+  "slug": "admin-view-performance-plan",
+  "inNav": false,
+  "views": [
+    {
+      "kind": "detail",
+      "pageId": "page_1784085700962",
+      "dataSource": {
+        "mode": "anchor",
+        "hops": [],
+        "filterGroups": []
+      },
+      "id": "view_1784091361190",
+      "order": 0,
+      "createdAt": "2026-07-15T04:56:01.190Z",
+      "updatedAt": "2026-07-15T04:56:24.468Z",
+      "formFields": [
+        {
+          "field": "cr_positionid",
+          "label": "Position",
+          "order": 0
+        },
+        {
+          "field": "cr_staffmemberuserid",
+          "label": "Staff Member User",
+          "order": 1
+        },
+        {
+          "field": "cr_supervisorpositionid",
+          "label": "Supervisor Position",
+          "order": 2
+        },
+        {
+          "field": "cr_financialyearid",
+          "label": "Financial Year",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "kind": "updateForm",
+      "pageId": "page_1784085700962",
+      "dataSource": {
+        "mode": "anchor",
+        "hops": [],
+        "filterGroups": []
+      },
+      "id": "view_1784091389132",
+      "order": 1,
+      "createdAt": "2026-07-15T04:56:29.132Z",
+      "updatedAt": "2026-07-15T05:03:28.446Z",
+      "title": "Update Performance Plan",
+      "columnOrder": [],
+      "fields": [],
+      "linkedPageIds": [],
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_positiontitle"
+              },
+              {
+                "kind": "field",
+                "field": "cr_financialyearid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_supervisorpositionid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_startdate"
+              },
+              {
+                "kind": "field",
+                "field": "cr_enddate"
+              }
+            ],
+            "title": "For admin repairs only - not for live use"
+          }
+        ]
+      },
+      "formFields": [
+        {
+          "field": "cr_positiontitle",
+          "label": "Position Title",
+          "order": 0
+        },
+        {
+          "field": "cr_financialyearid",
+          "label": "Financial Year",
+          "order": 1
+        },
+        {
+          "field": "cr_supervisorpositionid",
+          "label": "Supervisor Position",
+          "order": 2
+        },
+        {
+          "field": "cr_startdate",
+          "label": "Start Date in Position",
+          "order": 3
+        },
+        {
+          "field": "cr_enddate",
+          "label": "End Date",
+          "order": 4
+        }
+      ],
+      "submitButtons": [
+        {
+          "id": "btn-mrllyc9t-0",
+          "label": "Save",
+          "afterSubmit": {
+            "kind": "returnToParent"
+          }
+        }
+      ],
+      "postSubmitActions": {
+        "rootActions": [
+          {
+            "type": "updateRecord",
+            "fields": {
+              "cr_staffmemberuserid": {
+                "kind": "relatedField",
+                "relationshipField": "cr_positionid",
+                "targetTable": "pe_position",
+                "field": "pe_currentincumbentuser"
+              }
+            }
+          }
+        ],
+        "nodes": []
+      }
+    },
+    {
+      "kind": "createForm",
+      "pageId": "page_1784085700962",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_throwawaynew",
+        "filterGroups": []
+      },
+      "parentLink": {
+        "lookupNav": "cr_PerformancePlanId"
+      },
+      "id": "view_1784117550793",
+      "order": 2,
+      "createdAt": "2026-07-15T12:12:30.793Z",
+      "updatedAt": "2026-07-17T01:08:04.406Z",
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_departmentidcr"
+              },
+              {
+                "kind": "field",
+                "field": "cr_block3"
+              },
+              {
+                "kind": "field",
+                "field": "cr_firstimage"
+              },
+              {
+                "kind": "field",
+                "field": "cr_firstfile"
+              }
+            ]
+          }
+        ]
+      },
+      "formFields": [
+        {
+          "field": "cr_departmentidcr",
+          "label": "Department",
+          "order": 0
+        },
+        {
+          "field": "cr_block3",
+          "label": "block 3",
+          "order": 1
+        },
+        {
+          "field": "cr_firstimage",
+          "label": "First image",
+          "order": 2
+        },
+        {
+          "field": "cr_firstfile",
+          "label": "First File",
+          "order": 3
+        }
+      ],
+      "submitButtons": [
+        {
+          "id": "btn-mrm1iy7e-0",
+          "label": "Save",
+          "afterSubmit": {
+            "kind": "returnToParent"
+          }
+        }
+      ],
+      "postSubmitActions": {
+        "rootActions": [
+          {
+            "type": "updateRecord",
+            "fields": {
+              "cr_block2": {
+                "kind": "literal",
+                "value": "Test only"
+              }
+            }
+          }
+        ],
+        "nodes": [
+          {
+            "arms": [
+              {
+                "test": [
+                  {
+                    "conditions": [
+                      {
+                        "field": "cr_departmentid",
+                        "operator": "eq",
+                        "value": "02aea323-857a-f111-ab0e-6045bde55bf5",
+                        "valueLabel": "CEO"
+                      }
+                    ]
+                  }
+                ],
+                "effects": [
+                  {
+                    "type": "assignToPosition",
+                    "target": {
+                      "kind": "literal",
+                      "value": "ec3f4fd7-1b76-f111-ab0e-6045bde55bf5",
+                      "valueLabel": "Director Corporate Services - Niels Bohr (Acting)"
+                    }
+                  },
+                  {
+                    "type": "updateRecord",
+                    "fields": {
+                      "pe_confidential": {
+                        "kind": "literal",
+                        "value": true
+                      }
+                    }
+                  }
+                ],
+                "children": []
+              },
+              {
+                "test": [
+                  {
+                    "conditions": [
+                      {
+                        "field": "cr_departmentid",
+                        "operator": "eq",
+                        "value": "599dd5a0-857a-f111-ab0e-6045bde55bf5",
+                        "valueLabel": "Finance"
+                      }
+                    ]
+                  }
+                ],
+                "effects": [
+                  {
+                    "type": "assignToPosition",
+                    "target": {
+                      "kind": "relatedField",
+                      "relationshipField": "cr_departmentid",
+                      "targetTable": "cr_department",
+                      "field": "cr_ownerposition"
+                    }
+                  }
+                ],
+                "children": []
+              }
+            ],
+            "elseEffects": [
+              {
+                "type": "assignToPosition",
+                "target": {
+                  "kind": "relatedField",
+                  "relationshipField": "cr_departmentid",
+                  "targetTable": "cr_department",
+                  "field": "cr_ownerposition"
+                }
+              }
+            ],
+            "elseChildren": []
+          }
+        ]
+      }
+    }
+  ],
+  "configVersion": 2,
+  "createdAt": "2026-07-15T03:21:40.962Z",
+  "updatedAt": "2026-07-17T01:08:04.406Z",
+  "kind": "singleRecord",
+  "parentPageId": "page_1784085534317",
+  "primaryTable": "cr_performanceplan"
+}

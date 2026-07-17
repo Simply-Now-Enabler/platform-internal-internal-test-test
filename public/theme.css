@@ -1,0 +1,26 @@
+/* Performance Enabler — per-app Layer 1 theme (compiled at deploy, 03-D-4-d). */
+/* Redefines the themed --pe-* subset on :root, layering over the package's index.css defaults. */
+:root {
+  --pe-color-primary: #066899;
+  --pe-color-on-primary: #ffffff;
+  --pe-color-link: #2a52bf;
+  --pe-color-surface: #f2f2f2;
+  --pe-color-surface-raised: #ffffff;
+  --pe-color-surface-alt: #f7f7f7;
+  --pe-color-card: #ffffff;
+  --pe-color-table-header: #ffffff;
+  --pe-color-table-row: #ffffff;
+  --pe-color-border: #c9c9c9;
+  --pe-color-text: #080808;
+  --pe-color-text-secondary: #575a5c;
+  --pe-color-text-muted: #727d8c;
+  --pe-font-family-base: "Lato", -apple-system, "Segoe UI", sans-serif;
+  --pe-radius-md: 0;
+  --pe-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.14), 0 0 4px rgba(0, 0, 0, 0.08);
+  --pe-content-max-width: none;
+  --pe-content-margin: 0;
+  --pe-navbar-height: 48px;
+  --pe-nav-link-padding: 5px 11px;
+  --pe-nav-link-font-size: var(--pe-font-size-base);
+  --pe-title-font-size: var(--pe-font-size-lg);
+}

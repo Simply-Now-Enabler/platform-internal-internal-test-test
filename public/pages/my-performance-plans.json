@@ -1,0 +1,284 @@
+{
+  "id": "page_1784115561329",
+  "appId": "8dd58c87-1849-f111-bec5-002248e415a7",
+  "name": "My Performance Plans",
+  "slug": "my-performance-plans",
+  "inNav": false,
+  "views": [
+    {
+      "kind": "table",
+      "pageId": "page_1784115561329",
+      "dataSource": {
+        "mode": "userConnected",
+        "hops": [
+          {
+            "fromTable": "systemuser",
+            "toTable": "cr_performanceplan",
+            "relationshipSchemaName": "cr_systemuser_cr_performanceplan_staffmemberuserid",
+            "direction": "incoming",
+            "fromField": "systemuserid",
+            "toField": "cr_staffmemberuserid",
+            "referencingEntityNavigationPropertyName": "cr_StaffMemberUserId",
+            "referencedEntityNavigationPropertyName": "cr_systemuser_cr_performanceplan_staffmemberuserid"
+          }
+        ],
+        "filterGroups": []
+      },
+      "id": "view_1784115602925",
+      "order": 0,
+      "createdAt": "2026-07-15T11:40:02.925Z",
+      "updatedAt": "2026-07-15T11:42:07.606Z",
+      "label": "User's performance plans",
+      "title": "My Performance Plans",
+      "columnOrder": [
+        "cr_positionid",
+        "cr_plantype",
+        "cr_financialyearid",
+        "cr_currentstage",
+        "cr_datecurrentstagedue",
+        "cr_statusprogress",
+        "link:page_1784115688445"
+      ],
+      "fields": [
+        "cr_positionid",
+        "cr_plantype",
+        "cr_financialyearid",
+        "cr_currentstage",
+        "cr_datecurrentstagedue",
+        "cr_statusprogress"
+      ],
+      "linkedPageIds": [
+        "page_1784115688445"
+      ],
+      "columnConfig": {
+        "cr_plantype": {
+          "label": "Type"
+        },
+        "cr_financialyearid": {
+          "label": "Year"
+        },
+        "cr_datecurrentstagedue": {
+          "label": "Current Stage Due"
+        },
+        "cr_statusprogress": {
+          "label": "Progress"
+        },
+        "link:page_1784115688445": {
+          "label": "Goals",
+          "labelMode": "text",
+          "labelText": "Draft",
+          "labelIcon": "fluent:Edit:filled"
+        }
+      }
+    },
+    {
+      "kind": "table",
+      "pageId": "page_1784115561329",
+      "dataSource": {
+        "mode": "userConnected",
+        "hops": [
+          {
+            "fromTable": "systemuser",
+            "toTable": "cr_performanceplan",
+            "relationshipSchemaName": "cr_systemuser_cr_performanceplan_staffmemberuserid",
+            "direction": "incoming",
+            "fromField": "systemuserid",
+            "toField": "cr_staffmemberuserid",
+            "referencingEntityNavigationPropertyName": "cr_StaffMemberUserId",
+            "referencedEntityNavigationPropertyName": "cr_systemuser_cr_performanceplan_staffmemberuserid"
+          },
+          {
+            "fromTable": "cr_performanceplan",
+            "toTable": "cr_action",
+            "relationshipSchemaName": "cr_cr_performanceplan_cr_action_relatedperformanceplanid",
+            "direction": "incoming",
+            "fromField": "cr_performanceplanid",
+            "toField": "cr_relatedperformanceplanid",
+            "referencingEntityNavigationPropertyName": "cr_RelatedPerformancePlanId",
+            "referencedEntityNavigationPropertyName": "cr_cr_performanceplan_cr_action_relatedperformanceplanid"
+          }
+        ],
+        "filterGroups": [
+          {
+            "conditions": [
+              {
+                "field": "cr_delete",
+                "operator": "ne",
+                "value": "true"
+              }
+            ]
+          }
+        ]
+      },
+      "id": "view_1784119663621",
+      "order": 1,
+      "createdAt": "2026-07-15T12:47:43.621Z",
+      "updatedAt": "2026-07-15T12:55:23.508Z",
+      "label": "Performance Plan Actions",
+      "title": "My Performance Plan Actions",
+      "columnOrder": [
+        "cr_processid",
+        "cr_completionstatus",
+        "cr_targetdate",
+        "cr_commentsinternal",
+        "cr_outcomeid",
+        "cr_relatedperformanceplanid",
+        "cr_datecompleted",
+        "cr_actionidnumber",
+        "link:page_1784119986716"
+      ],
+      "fields": [
+        "cr_processid",
+        "cr_completionstatus",
+        "cr_targetdate",
+        "cr_commentsinternal",
+        "cr_outcomeid",
+        "cr_relatedperformanceplanid",
+        "cr_datecompleted",
+        "cr_actionidnumber"
+      ],
+      "linkedPageIds": [
+        "page_1784119986716"
+      ],
+      "columnConfig": {
+        "cr_processid": {
+          "label": "Action Required"
+        },
+        "link:page_1784119986716": {
+          "label": "Goals",
+          "labelMode": "text",
+          "labelText": "Draft",
+          "presentation": {
+            "rules": [
+              {
+                "condition": [
+                  {
+                    "conditions": [
+                      {
+                        "field": "cr_completionstatus",
+                        "operator": "ne",
+                        "value": "1"
+                      },
+                      {
+                        "field": "cr_completionstatus",
+                        "operator": "ne",
+                        "value": "2"
+                      },
+                      {
+                        "field": "cr_completionstatus",
+                        "operator": "ne",
+                        "value": "3"
+                      },
+                      {
+                        "field": "cr_completionstatus",
+                        "operator": "ne",
+                        "value": "4"
+                      }
+                    ]
+                  }
+                ],
+                "effects": {
+                  "hideLink": true,
+                  "icon": "fluent:CheckmarkCircle:filled"
+                }
+              }
+            ]
+          }
+        }
+      },
+      "runtimeFiltering": {
+        "mode": "tabs",
+        "tabs": [
+          {
+            "id": "t1",
+            "label": "Action Required",
+            "condition": [
+              {
+                "conditions": [
+                  {
+                    "field": "cr_completionstatus",
+                    "operator": "eq",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "conditions": [
+                  {
+                    "field": "cr_completionstatus",
+                    "operator": "eq",
+                    "value": "2"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "t2",
+            "label": "Closed",
+            "condition": [
+              {
+                "conditions": [
+                  {
+                    "field": "cr_completionstatus",
+                    "operator": "eq",
+                    "value": "5"
+                  }
+                ]
+              },
+              {
+                "conditions": [
+                  {
+                    "field": "cr_completionstatus",
+                    "operator": "eq",
+                    "value": "6"
+                  }
+                ]
+              },
+              {
+                "conditions": [
+                  {
+                    "field": "cr_completionstatus",
+                    "operator": "eq",
+                    "value": "7"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "t3",
+            "label": "On Hold",
+            "condition": [
+              {
+                "conditions": [
+                  {
+                    "field": "cr_completionstatus",
+                    "operator": "eq",
+                    "value": "4"
+                  }
+                ]
+              },
+              {
+                "conditions": [
+                  {
+                    "field": "cr_completionstatus",
+                    "operator": "eq",
+                    "value": "3"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "runtimeSearch": {
+        "enabled": false
+      }
+    }
+  ],
+  "configVersion": 2,
+  "createdAt": "2026-07-15T11:39:21.329Z",
+  "updatedAt": "2026-07-15T12:55:23.508Z",
+  "kind": "standard"
+}

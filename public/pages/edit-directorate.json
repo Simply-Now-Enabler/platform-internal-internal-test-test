@@ -1,0 +1,14 @@
+{
+  "id": "page_1783474675815",
+  "appId": "8dd58c87-1849-f111-bec5-002248e415a7",
+  "name": "Edit Directorate",
+  "slug": "edit-directorate",
+  "inNav": false,
+  "views": [],
+  "configVersion": 2,
+  "createdAt": "2026-07-08T01:37:55.815Z",
+  "updatedAt": "2026-07-08T01:37:55.815Z",
+  "kind": "singleRecord",
+  "parentPageId": "page_1783474363552",
+  "primaryTable": "cr_directorate"
+}

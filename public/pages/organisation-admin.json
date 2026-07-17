@@ -1,0 +1,350 @@
+{
+  "id": "page_1783474363552",
+  "appId": "8dd58c87-1849-f111-bec5-002248e415a7",
+  "name": "Admin Org",
+  "slug": "organisation-admin",
+  "inNav": true,
+  "views": [
+    {
+      "kind": "table",
+      "pageId": "page_1783474363552",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_directorate",
+        "filterGroups": [
+          {
+            "conditions": [
+              {
+                "field": "cr_delete",
+                "operator": "ne",
+                "value": "true"
+              }
+            ]
+          }
+        ]
+      },
+      "id": "view_1783474499653",
+      "order": 0,
+      "createdAt": "2026-07-08T01:34:59.653Z",
+      "updatedAt": "2026-07-16T13:35:55.718Z",
+      "label": "Directorates",
+      "title": "Directorates",
+      "columnOrder": [
+        "cr_name",
+        "cr_ownerposition",
+        "cr_active",
+        "link:page_1783474675815"
+      ],
+      "fields": [
+        "cr_name",
+        "cr_ownerposition",
+        "cr_active"
+      ],
+      "linkedPageIds": [
+        "page_1783474675815"
+      ],
+      "sortField": "cr_name",
+      "sortDir": "asc",
+      "runtimeFiltering": {
+        "mode": "tabs",
+        "tabs": [
+          {
+            "id": "t1",
+            "label": "Active",
+            "condition": [
+              {
+                "conditions": [
+                  {
+                    "field": "cr_active",
+                    "operator": "ne",
+                    "value": "false"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "t2",
+            "label": "All",
+            "condition": []
+          }
+        ]
+      },
+      "runtimeSearch": {
+        "enabled": false
+      },
+      "columnConfig": {
+        "link:page_1783474675815": {
+          "label": "Edit",
+          "labelMode": "text",
+          "labelIcon": "fluent:Edit:filled"
+        }
+      },
+      "lookupConfig": {
+        "cr_ownerposition": {
+          "targetPageId": "page_1783000363434"
+        }
+      }
+    },
+    {
+      "kind": "createForm",
+      "pageId": "page_1783474363552",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_directorate",
+        "filterGroups": []
+      },
+      "id": "view_1783474784938",
+      "order": 1,
+      "createdAt": "2026-07-08T01:39:44.938Z",
+      "updatedAt": "2026-07-08T01:43:41.845Z",
+      "label": "Create Directorate",
+      "instructions": "Add Directorate:",
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_name"
+              },
+              {
+                "kind": "field",
+                "field": "cr_ownerposition"
+              }
+            ]
+          }
+        ]
+      },
+      "formFields": [
+        {
+          "field": "cr_name",
+          "label": "Name",
+          "order": 0
+        },
+        {
+          "field": "cr_ownerposition",
+          "label": "Owner",
+          "order": 1,
+          "candidateFilter": [
+            {
+              "conditions": [
+                {
+                  "field": "cr_isexecutive",
+                  "operator": "eq",
+                  "value": "true"
+                },
+                {
+                  "field": "statecode",
+                  "operator": "eq",
+                  "value": "0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "submitButtons": [
+        {
+          "id": "btn-mrbeuyy1-0",
+          "label": "Save",
+          "afterSubmit": {
+            "kind": "stayOnPage",
+            "stayMode": "showReloadButton",
+            "message": "New directorate created"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "pageId": "page_1783474363552",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_department",
+        "filterGroups": [
+          {
+            "conditions": [
+              {
+                "field": "cr_delete",
+                "operator": "ne",
+                "value": "true"
+              }
+            ]
+          }
+        ]
+      },
+      "id": "view_1783475036356",
+      "order": 2,
+      "createdAt": "2026-07-08T01:43:56.356Z",
+      "updatedAt": "2026-07-16T13:35:41.584Z",
+      "label": "Departments",
+      "title": "Departments",
+      "columnOrder": [
+        "cr_name",
+        "cr_ownerposition",
+        "cr_directorate",
+        "cr_active"
+      ],
+      "fields": [
+        "cr_name",
+        "cr_ownerposition",
+        "cr_directorate",
+        "cr_active"
+      ],
+      "linkedPageIds": [],
+      "lookupConfig": {
+        "cr_ownerposition": {
+          "targetPageId": "page_1783000363434"
+        }
+      },
+      "sortField": "cr_name",
+      "sortDir": "asc",
+      "runtimeFiltering": {
+        "mode": "tabs",
+        "tabs": [
+          {
+            "id": "t1",
+            "label": "Active",
+            "condition": [
+              {
+                "conditions": [
+                  {
+                    "field": "cr_active",
+                    "operator": "ne",
+                    "value": "false"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "t2",
+            "label": "All",
+            "condition": []
+          }
+        ]
+      },
+      "runtimeSearch": {
+        "enabled": false
+      }
+    },
+    {
+      "kind": "createForm",
+      "pageId": "page_1783474363552",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_department",
+        "filterGroups": []
+      },
+      "id": "view_1783475239773",
+      "order": 3,
+      "createdAt": "2026-07-08T01:47:19.773Z",
+      "updatedAt": "2026-07-08T04:27:13.727Z",
+      "label": "Create Department",
+      "instructions": "Add Department:",
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_name"
+              },
+              {
+                "kind": "field",
+                "field": "cr_directorate"
+              },
+              {
+                "kind": "field",
+                "field": "cr_ownerposition"
+              }
+            ]
+          }
+        ]
+      },
+      "formFields": [
+        {
+          "field": "cr_name",
+          "label": "Name",
+          "order": 0
+        },
+        {
+          "field": "cr_directorate",
+          "label": "Directorate",
+          "order": 1,
+          "candidateFilter": [
+            {
+              "conditions": [
+                {
+                  "field": "cr_active",
+                  "operator": "eq",
+                  "value": "true"
+                },
+                {
+                  "field": "cr_delete",
+                  "operator": "ne",
+                  "value": "true"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "field": "cr_ownerposition",
+          "label": "Owner",
+          "order": 2,
+          "candidateFilter": [
+            {
+              "conditions": [
+                {
+                  "field": "cr_ismanager",
+                  "operator": "eq",
+                  "value": "true"
+                },
+                {
+                  "field": "statecode",
+                  "operator": "eq",
+                  "value": "0"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "submitButtons": [
+        {
+          "id": "btn-mrbf4bqr-0",
+          "label": "Save",
+          "afterSubmit": {
+            "kind": "stayOnPage",
+            "stayMode": "reloadForm",
+            "message": "New department created"
+          }
+        }
+      ],
+      "postSubmitActions": {
+        "rootActions": [
+          {
+            "type": "updateRecord",
+            "fields": {
+              "cr_active": {
+                "kind": "literal",
+                "value": ""
+              }
+            }
+          }
+        ],
+        "nodes": []
+      }
+    }
+  ],
+  "configVersion": 2,
+  "createdAt": "2026-07-08T01:32:43.552Z",
+  "updatedAt": "2026-07-16T13:35:55.718Z",
+  "kind": "standard",
+  "showBreadcrumbs": true,
+  "showBackLink": true
+}

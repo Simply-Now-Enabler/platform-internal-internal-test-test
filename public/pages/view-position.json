@@ -1,0 +1,374 @@
+{
+  "id": "page_1783000363434",
+  "appId": "8dd58c87-1849-f111-bec5-002248e415a7",
+  "name": "View Position",
+  "slug": "view-position",
+  "inNav": false,
+  "views": [
+    {
+      "kind": "detail",
+      "pageId": "page_1783000363434",
+      "dataSource": {
+        "mode": "anchor",
+        "hops": [],
+        "filterGroups": []
+      },
+      "id": "view_1783600357851",
+      "order": 0,
+      "createdAt": "2026-07-09T12:32:37.851Z",
+      "updatedAt": "2026-07-09T12:34:37.780Z",
+      "formFields": [
+        {
+          "field": "pe_name",
+          "label": "Name",
+          "order": 0
+        },
+        {
+          "field": "pe_reportsto",
+          "label": "Reports To",
+          "order": 1
+        },
+        {
+          "field": "cr_executiveposition",
+          "label": "Executive Position",
+          "order": 2
+        },
+        {
+          "field": "cr_managerposition",
+          "label": "Manager Position",
+          "order": 3
+        },
+        {
+          "field": "cr_coordinatorposition",
+          "label": "Coordinator Position",
+          "order": 4
+        },
+        {
+          "field": "pe_currentappointmentprimary",
+          "label": "Current Appointment (Primary)",
+          "order": 5
+        },
+        {
+          "field": "pe_currentappointmenttemporary",
+          "label": "Current Appointment (Temporary)",
+          "order": 6
+        },
+        {
+          "field": "pe_currentincumbentuser",
+          "label": "Current Incumbent User",
+          "order": 7
+        },
+        {
+          "field": "pe_temporaryincumbentuser",
+          "label": "Temporary Incumbent User",
+          "order": 8
+        },
+        {
+          "field": "cr_occupancy",
+          "label": "Occupancy",
+          "order": 9
+        },
+        {
+          "field": "cr_statuslifecycle",
+          "label": "Status Lifecycle",
+          "order": 10
+        },
+        {
+          "field": "cr_isexecutive",
+          "label": "Is Executive",
+          "order": 11
+        },
+        {
+          "field": "cr_ismanager",
+          "label": "Is Manager",
+          "order": 12
+        },
+        {
+          "field": "cr_iscoordinator",
+          "label": "Is Coordinator",
+          "order": 13
+        },
+        {
+          "field": "cr_issupervisor",
+          "label": "Is Supervisor",
+          "order": 14
+        },
+        {
+          "field": "cr_directorate",
+          "label": "Directorate",
+          "order": 15
+        },
+        {
+          "field": "cr_department",
+          "label": "Department",
+          "order": 16
+        },
+        {
+          "field": "pe_chainteamid",
+          "label": "Chain Team ID",
+          "order": 17
+        },
+        {
+          "field": "pe_coverteamid",
+          "label": "Cover Team ID",
+          "order": 18
+        },
+        {
+          "field": "pe_positioncode",
+          "label": "Position Code",
+          "order": 19
+        },
+        {
+          "field": "cr_startingwhen",
+          "label": "Starting When",
+          "order": 20
+        },
+        {
+          "field": "pe_startdate",
+          "label": "Start Date",
+          "order": 21
+        }
+      ],
+      "lookupConfig": {
+        "pe_reportsto": {
+          "targetPageId": "page_1783000363434"
+        },
+        "cr_executiveposition": {
+          "targetPageId": "page_1783000363434"
+        },
+        "cr_managerposition": {
+          "targetPageId": "page_1783000363434"
+        }
+      }
+    },
+    {
+      "kind": "table",
+      "pageId": "page_1783000363434",
+      "dataSource": {
+        "mode": "anchor",
+        "hops": [
+          {
+            "fromTable": "pe_position",
+            "toTable": "pe_staffappointment",
+            "relationshipSchemaName": "pe_pe_position_pe_staffappointment_position",
+            "direction": "incoming",
+            "fromField": "pe_positionid",
+            "toField": "pe_position",
+            "referencingEntityNavigationPropertyName": "pe_Position",
+            "referencedEntityNavigationPropertyName": "pe_pe_position_pe_staffappointment_position"
+          }
+        ],
+        "filterGroups": []
+      },
+      "id": "view_1783600499308",
+      "order": 1,
+      "createdAt": "2026-07-09T12:34:59.308Z",
+      "updatedAt": "2026-07-09T12:35:48.034Z",
+      "label": "Staff appointments",
+      "title": "Staff appointments in this position",
+      "columnOrder": [
+        "pe_staffmember",
+        "pe_status",
+        "pe_occupancy",
+        "pe_isprimary",
+        "pe_startdate",
+        "pe_enddate",
+        "pe_holdnote"
+      ],
+      "fields": [
+        "pe_staffmember",
+        "pe_status",
+        "pe_occupancy",
+        "pe_isprimary",
+        "pe_startdate",
+        "pe_enddate",
+        "pe_holdnote"
+      ],
+      "linkedPageIds": []
+    },
+    {
+      "kind": "table",
+      "pageId": "page_1783000363434",
+      "dataSource": {
+        "mode": "anchor",
+        "hops": [
+          {
+            "fromTable": "pe_position",
+            "toTable": "cr_performanceplan",
+            "relationshipSchemaName": "cr_pe_position_cr_performanceplan_positionid",
+            "direction": "incoming",
+            "fromField": "pe_positionid",
+            "toField": "cr_positionid",
+            "referencingEntityNavigationPropertyName": "cr_PositionId",
+            "referencedEntityNavigationPropertyName": "cr_pe_position_cr_performanceplan_positionid"
+          }
+        ],
+        "filterGroups": []
+      },
+      "id": "view_1784094875676",
+      "order": 2,
+      "createdAt": "2026-07-15T05:54:35.676Z",
+      "updatedAt": "2026-07-15T06:07:52.880Z",
+      "title": "This Position's Performance Plans",
+      "columnOrder": [
+        "cr_currentstage",
+        "cr_delete",
+        "cr_enddate",
+        "cr_financialyearid",
+        "cr_name",
+        "cr_nextfinancialyearid",
+        "cr_positionid",
+        "cr_positiontitle",
+        "cr_staffmemberuserid",
+        "cr_startdate",
+        "cr_statusactive",
+        "cr_statusprogress",
+        "cr_supervisorpositionid",
+        "cr_appointmentthatcreatedplanid"
+      ],
+      "fields": [
+        "cr_currentstage",
+        "cr_delete",
+        "cr_enddate",
+        "cr_financialyearid",
+        "cr_name",
+        "cr_nextfinancialyearid",
+        "cr_positionid",
+        "cr_positiontitle",
+        "cr_staffmemberuserid",
+        "cr_startdate",
+        "cr_statusactive",
+        "cr_statusprogress",
+        "cr_supervisorpositionid",
+        "cr_appointmentthatcreatedplanid"
+      ],
+      "linkedPageIds": [],
+      "label": "PPs - this position",
+      "lookupConfig": {
+        "cr_appointmentthatcreatedplanid": {
+          "displayColumn": "cr_displaytitle",
+          "navProperty": "cr_AppointmentThatCreatedPlanId"
+        },
+        "cr_positionid": {
+          "targetPageId": "page_1783000363434"
+        }
+      }
+    },
+    {
+      "kind": "table",
+      "pageId": "page_1783000363434",
+      "dataSource": {
+        "mode": "anchor",
+        "hops": [
+          {
+            "fromTable": "pe_position",
+            "toTable": "cr_performanceplan",
+            "relationshipSchemaName": "cr_pe_position_cr_performanceplan_supervisorpositionid",
+            "direction": "incoming",
+            "fromField": "pe_positionid",
+            "toField": "cr_supervisorpositionid",
+            "referencingEntityNavigationPropertyName": "cr_SupervisorPositionId",
+            "referencedEntityNavigationPropertyName": "cr_pe_position_cr_performanceplan_supervisorpositionid"
+          }
+        ],
+        "filterGroups": []
+      },
+      "id": "view_1784094912928",
+      "order": 4,
+      "createdAt": "2026-07-15T05:55:12.928Z",
+      "updatedAt": "2026-07-15T06:08:13.528Z",
+      "label": "PPs - supervisor position",
+      "title": "Performance Plans this Position Supervises",
+      "columnOrder": [
+        "cr_currentstage",
+        "cr_delete",
+        "cr_enddate",
+        "cr_financialyearid",
+        "cr_positionid",
+        "cr_positiontitle",
+        "cr_staffmemberuserid",
+        "cr_startdate",
+        "cr_statusactive",
+        "cr_statusprogress",
+        "cr_supervisorpositionid",
+        "link:page_1784085700962",
+        "cr_appointmentthatcreatedplanid"
+      ],
+      "fields": [
+        "cr_currentstage",
+        "cr_delete",
+        "cr_enddate",
+        "cr_financialyearid",
+        "cr_positionid",
+        "cr_positiontitle",
+        "cr_staffmemberuserid",
+        "cr_startdate",
+        "cr_statusactive",
+        "cr_statusprogress",
+        "cr_supervisorpositionid",
+        "cr_appointmentthatcreatedplanid"
+      ],
+      "linkedPageIds": [
+        "page_1784085700962"
+      ],
+      "lookupConfig": {
+        "cr_positionid": {
+          "targetPageId": "page_1783000363434"
+        },
+        "cr_appointmentthatcreatedplanid": {
+          "displayColumn": "cr_displaytitle",
+          "navProperty": "cr_AppointmentThatCreatedPlanId"
+        }
+      }
+    },
+    {
+      "kind": "table",
+      "pageId": "page_1783000363434",
+      "dataSource": {
+        "mode": "anchor",
+        "hops": [
+          {
+            "fromTable": "pe_position",
+            "toTable": "pe_position",
+            "relationshipSchemaName": "pe_pe_position_pe_position_reportsto",
+            "direction": "incoming",
+            "fromField": "pe_positionid",
+            "toField": "pe_reportsto",
+            "referencingEntityNavigationPropertyName": "pe_ReportsTo",
+            "referencedEntityNavigationPropertyName": "pe_pe_position_pe_position_reportsto"
+          }
+        ],
+        "filterGroups": []
+      },
+      "id": "view_1784094975233",
+      "order": 3,
+      "createdAt": "2026-07-15T05:56:15.233Z",
+      "updatedAt": "2026-07-17T01:10:57.950Z",
+      "label": "Positions supervised",
+      "title": "Positions reporting to this position",
+      "columnOrder": [
+        "pe_name",
+        "cr_occupancy",
+        "pe_currentincumbentuser",
+        "pe_currentappointmentprimary",
+        "pe_currentappointmenttemporary",
+        "cr_statuslifecycle"
+      ],
+      "fields": [
+        "pe_name",
+        "cr_occupancy",
+        "pe_currentincumbentuser",
+        "pe_currentappointmentprimary",
+        "pe_currentappointmenttemporary",
+        "cr_statuslifecycle"
+      ],
+      "linkedPageIds": []
+    }
+  ],
+  "configVersion": 2,
+  "createdAt": "2026-07-02T13:52:43.434Z",
+  "updatedAt": "2026-07-17T01:10:57.950Z",
+  "kind": "singleRecord",
+  "parentPageId": "page_1778050524959",
+  "primaryTable": "pe_position"
+}

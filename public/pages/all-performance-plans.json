@@ -1,0 +1,560 @@
+{
+  "id": "page_1784085534317",
+  "appId": "8dd58c87-1849-f111-bec5-002248e415a7",
+  "name": "Perf Plans",
+  "slug": "all-performance-plans",
+  "inNav": true,
+  "views": [
+    {
+      "kind": "table",
+      "pageId": "page_1784085534317",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_performanceplan",
+        "filterGroups": []
+      },
+      "id": "view_1784085543274",
+      "order": 1,
+      "createdAt": "2026-07-15T03:19:03.274Z",
+      "updatedAt": "2026-07-15T11:39:40.300Z",
+      "title": "All Performance Plans",
+      "columnOrder": [
+        "ownerid",
+        "cr_staffmemberuserid",
+        "cr_positiontitle",
+        "cr_statusactive",
+        "cr_statusprogress",
+        "cr_currentstage",
+        "cr_positionid",
+        "cr_supervisorpositionid",
+        "related:cr_positionid.cr_directorate",
+        "related:cr_positionid.cr_department",
+        "related:cr_positionid.cr_coordinatorposition",
+        "cr_appointmentthatcreatedplanid",
+        "cr_startdate",
+        "cr_financialyearid",
+        "link:page_1784085700962"
+      ],
+      "fields": [
+        "ownerid",
+        "cr_staffmemberuserid",
+        "cr_positiontitle",
+        "cr_statusactive",
+        "cr_statusprogress",
+        "cr_currentstage",
+        "cr_positionid",
+        "cr_supervisorpositionid",
+        "cr_appointmentthatcreatedplanid",
+        "cr_startdate",
+        "cr_financialyearid"
+      ],
+      "linkedPageIds": [
+        "page_1784085700962"
+      ],
+      "columnConfig": {
+        "cr_staffmemberuserid": {
+          "label": "Staff Member (user)"
+        },
+        "related:cr_positionid.cr_directorate": {
+          "presentation": {
+            "rules": [
+              {
+                "condition": [],
+                "effects": {}
+              }
+            ]
+          }
+        },
+        "related:cr_positionid.cr_coordinatorposition": {
+          "label": "Coordinator"
+        },
+        "cr_appointmentthatcreatedplanid": {
+          "label": "Appointment"
+        },
+        "link:page_1784085700962": {
+          "label": "Admin",
+          "labelMode": "text",
+          "labelIcon": "fluent:Eye:filled"
+        }
+      },
+      "runtimeFiltering": {
+        "mode": "configurable",
+        "scope": "all"
+      },
+      "relatedColumns": {
+        "related:cr_positionid.cr_department": {
+          "navProperty": "cr_PositionId",
+          "isLookup": true,
+          "label": "Department"
+        },
+        "related:cr_positionid.cr_directorate": {
+          "navProperty": "cr_PositionId",
+          "isLookup": true,
+          "label": "Directorate"
+        },
+        "related:cr_positionid.cr_coordinatorposition": {
+          "navProperty": "cr_PositionId",
+          "isLookup": true,
+          "label": "Coordinator Position"
+        }
+      },
+      "sortField": "cr_staffmemberuserid",
+      "sortDir": "asc",
+      "pageSize": 50,
+      "lookupConfig": {
+        "cr_appointmentthatcreatedplanid": {
+          "displayColumn": "cr_displaytitle",
+          "navProperty": "cr_AppointmentThatCreatedPlanId"
+        },
+        "cr_positionid": {
+          "targetPageId": "page_1783000363434"
+        },
+        "cr_supervisorpositionid": {
+          "targetPageId": "page_1783000363434"
+        }
+      }
+    },
+    {
+      "kind": "createForm",
+      "pageId": "page_1784085534317",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_performanceplan",
+        "filterGroups": []
+      },
+      "id": "view_1784085909435",
+      "order": 2,
+      "createdAt": "2026-07-15T03:25:09.435Z",
+      "updatedAt": "2026-07-15T12:37:50.519Z",
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_appointmentthatcreatedplanid"
+              }
+            ]
+          }
+        ]
+      },
+      "formFields": [
+        {
+          "field": "cr_appointmentthatcreatedplanid",
+          "label": "staff member in position:",
+          "order": 0,
+          "candidateFilter": [
+            {
+              "conditions": [
+                {
+                  "field": "cr_performanceplancreated",
+                  "operator": "ne",
+                  "value": "true"
+                },
+                {
+                  "field": "pe_status",
+                  "operator": "eq",
+                  "value": "1"
+                },
+                {
+                  "field": "pe_occupancy",
+                  "operator": "ne",
+                  "value": "3"
+                },
+                {
+                  "field": "pe_occupancy",
+                  "operator": "ne",
+                  "value": "4"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "submitButtons": [
+        {
+          "id": "btn-mrliowjj-0",
+          "label": "Save",
+          "afterSubmit": {
+            "kind": "stayOnPage",
+            "stayMode": "reloadForm",
+            "message": "Performance plan created - create another if you want."
+          }
+        }
+      ],
+      "postSubmitActions": {
+        "rootActions": [
+          {
+            "type": "updateRecord",
+            "fields": {
+              "cr_currentstage": {
+                "kind": "literal",
+                "value": 100
+              },
+              "cr_startdate": {
+                "kind": "relatedField",
+                "relationshipField": "cr_appointmentthatcreatedplanid",
+                "targetTable": "pe_staffappointment",
+                "field": "pe_startdate"
+              },
+              "cr_enddate": {
+                "kind": "relatedField",
+                "relationshipField": "cr_appointmentthatcreatedplanid",
+                "targetTable": "pe_staffappointment",
+                "field": "pe_enddate"
+              },
+              "cr_name": {
+                "kind": "relatedField",
+                "relationshipField": "cr_appointmentthatcreatedplanid",
+                "targetTable": "pe_staffappointment",
+                "field": "pe_name"
+              },
+              "cr_financialyearid": {
+                "kind": "literal",
+                "value": "836fbe2a-ff7f-f111-ab0e-6045bde55bf5",
+                "valueLabel": "2026-27"
+              },
+              "cr_positionid": {
+                "kind": "relatedField",
+                "relationshipField": "cr_appointmentthatcreatedplanid",
+                "targetTable": "pe_staffappointment",
+                "field": "pe_position"
+              },
+              "cr_statusactive": {
+                "kind": "literal",
+                "value": 200
+              },
+              "cr_statusprogress": {
+                "kind": "literal",
+                "value": 100
+              }
+            }
+          },
+          {
+            "type": "updateRecord",
+            "fields": {
+              "cr_positiontitle": {
+                "kind": "relatedField",
+                "relationshipField": "cr_positionid",
+                "targetTable": "pe_position",
+                "field": "pe_name"
+              },
+              "cr_name": {
+                "kind": "relatedField",
+                "relationshipField": "cr_positionid",
+                "targetTable": "pe_position",
+                "field": "cr_displaytitle"
+              },
+              "cr_staffmemberuserid": {
+                "kind": "relatedField",
+                "relationshipField": "cr_positionid",
+                "targetTable": "pe_position",
+                "field": "pe_currentincumbentuser"
+              },
+              "cr_supervisorpositionid": {
+                "kind": "relatedField",
+                "relationshipField": "cr_positionid",
+                "targetTable": "pe_position",
+                "field": "pe_reportsto"
+              }
+            }
+          },
+          {
+            "type": "createRelated",
+            "targetTable": "cr_action",
+            "relationshipField": "cr_relatedperformanceplanid",
+            "fields": {
+              "cr_areaid": {
+                "kind": "literal",
+                "value": "3003b28b-4280-f111-ab0e-6045bde55bf5",
+                "valueLabel": "Performance Plans"
+              },
+              "cr_commentsinternal": {
+                "kind": "literal",
+                "value": "New performance plan created and action assigned to employee to draft goals"
+              },
+              "cr_processid": {
+                "kind": "literal",
+                "value": "d951f07d-4380-f111-ab0e-6045bde55bf5",
+                "valueLabel": "Create Performance Plan"
+              },
+              "cr_subareaid": {
+                "kind": "literal",
+                "value": "29925f9b-4280-f111-ab0e-6045bde55bf5",
+                "valueLabel": "Goal Setting"
+              },
+              "cr_completionstatus": {
+                "kind": "literal",
+                "value": 5
+              },
+              "cr_relatedstaffmemberid": {
+                "kind": "relatedField",
+                "relationshipField": "cr_positionid",
+                "targetTable": "pe_position",
+                "field": "cr_currentstaffmember"
+              },
+              "cr_outcomeid": {
+                "kind": "literal",
+                "value": "8eacc684-4380-f111-ab0e-6045bde55bf5",
+                "valueLabel": "Annual performance plan created"
+              },
+              "cr_targetdate": {
+                "kind": "token",
+                "token": "$today"
+              },
+              "cr_relatedposition": {
+                "kind": "formField",
+                "field": "cr_positionid"
+              },
+              "cr_name": {
+                "kind": "literal",
+                "value": "Performance Plan Action"
+              },
+              "cr_completedby": {
+                "kind": "token",
+                "token": "$currentUser"
+              },
+              "cr_datecompleted": {
+                "kind": "token",
+                "token": "$now"
+              },
+              "cr_ownerposition": {
+                "kind": "formField",
+                "field": "cr_positionid"
+              },
+              "cr_originalduedate": {
+                "kind": "token",
+                "token": "$today"
+              }
+            },
+            "resultVar": "new-cr_action-2"
+          }
+        ],
+        "nodes": [
+          {
+            "arms": [
+              {
+                "test": [
+                  {
+                    "conditions": [
+                      {
+                        "field": "cr_startdate",
+                        "operator": "null",
+                        "value": ""
+                      }
+                    ]
+                  },
+                  {
+                    "conditions": [
+                      {
+                        "field": "cr_startdate",
+                        "operator": "lt",
+                        "value": "2027-04-01"
+                      }
+                    ]
+                  }
+                ],
+                "effects": [
+                  {
+                    "type": "updateRecord",
+                    "fields": {
+                      "cr_financialyearid": {
+                        "kind": "literal",
+                        "value": "836fbe2a-ff7f-f111-ab0e-6045bde55bf5",
+                        "valueLabel": "2026-27"
+                      },
+                      "cr_datecurrentstagedue": {
+                        "kind": "literal",
+                        "value": "2026-08-31"
+                      }
+                    }
+                  },
+                  {
+                    "type": "createRelated",
+                    "targetTable": "cr_action",
+                    "relationshipField": "cr_relatedperformanceplanid",
+                    "fields": {
+                      "cr_areaid": {
+                        "kind": "literal",
+                        "value": "3003b28b-4280-f111-ab0e-6045bde55bf5",
+                        "valueLabel": "Performance Plans"
+                      },
+                      "cr_processid": {
+                        "kind": "literal",
+                        "value": "47da65e8-4280-f111-ab0e-6045bde55bf5",
+                        "valueLabel": "Employee Drafts Goals"
+                      },
+                      "cr_subareaid": {
+                        "kind": "literal",
+                        "value": "29925f9b-4280-f111-ab0e-6045bde55bf5",
+                        "valueLabel": "Goal Setting"
+                      },
+                      "cr_completionstatus": {
+                        "kind": "literal",
+                        "value": 1
+                      },
+                      "cr_relatedstaffmemberid": {
+                        "kind": "relatedField",
+                        "relationshipField": "cr_positionid",
+                        "targetTable": "pe_position",
+                        "field": "cr_currentstaffmember"
+                      },
+                      "cr_targetdate": {
+                        "kind": "literal",
+                        "value": "2026-08-31"
+                      },
+                      "cr_relatedposition": {
+                        "kind": "formField",
+                        "field": "cr_positionid"
+                      },
+                      "cr_name": {
+                        "kind": "literal",
+                        "value": "Performance Plan Action"
+                      },
+                      "cr_ownerposition": {
+                        "kind": "formField",
+                        "field": "cr_positionid"
+                      },
+                      "cr_originalduedate": {
+                        "kind": "literal",
+                        "value": "2026-08-31"
+                      }
+                    },
+                    "resultVar": "new-cr_action-1"
+                  },
+                  {
+                    "type": "updateRelated",
+                    "targetTable": "pe_staffappointment",
+                    "relationshipField": "cr_appointmentthatcreatedplanid",
+                    "fields": {
+                      "cr_performanceplancreated": {
+                        "kind": "literal",
+                        "value": true
+                      },
+                      "cr_financialyearoflatestperformanceplanid": {
+                        "kind": "literal",
+                        "value": "836fbe2a-ff7f-f111-ab0e-6045bde55bf5",
+                        "valueLabel": "2026-27"
+                      }
+                    }
+                  }
+                ],
+                "children": []
+              }
+            ],
+            "elseEffects": [
+              {
+                "type": "updateRecord",
+                "fields": {
+                  "cr_financialyearid": {
+                    "kind": "literal",
+                    "value": "de754d1d-ff7f-f111-ab0e-6045bde55bf5",
+                    "valueLabel": "2027-28"
+                  },
+                  "cr_datecurrentstagedue": {
+                    "kind": "literal",
+                    "value": "2027-08-31"
+                  }
+                }
+              },
+              {
+                "type": "createRelated",
+                "targetTable": "cr_action",
+                "relationshipField": "cr_relatedperformanceplanid",
+                "fields": {
+                  "cr_areaid": {
+                    "kind": "literal",
+                    "value": "3003b28b-4280-f111-ab0e-6045bde55bf5",
+                    "valueLabel": "Performance Plans"
+                  },
+                  "cr_processid": {
+                    "kind": "literal",
+                    "value": "47da65e8-4280-f111-ab0e-6045bde55bf5",
+                    "valueLabel": "Employee Drafts Goals"
+                  },
+                  "cr_subareaid": {
+                    "kind": "literal",
+                    "value": "29925f9b-4280-f111-ab0e-6045bde55bf5",
+                    "valueLabel": "Goal Setting"
+                  },
+                  "cr_completionstatus": {
+                    "kind": "literal",
+                    "value": 1
+                  },
+                  "cr_relatedstaffmemberid": {
+                    "kind": "relatedField",
+                    "relationshipField": "cr_positionid",
+                    "targetTable": "pe_position",
+                    "field": "cr_currentstaffmember"
+                  },
+                  "cr_targetdate": {
+                    "kind": "literal",
+                    "value": "2027-08-31"
+                  },
+                  "cr_relatedposition": {
+                    "kind": "formField",
+                    "field": "cr_positionid"
+                  },
+                  "cr_name": {
+                    "kind": "literal",
+                    "value": "Performance Plan Action"
+                  },
+                  "cr_ownerposition": {
+                    "kind": "formField",
+                    "field": "cr_positionid"
+                  },
+                  "cr_originalduedate": {
+                    "kind": "literal",
+                    "value": "2027-08-31"
+                  }
+                },
+                "resultVar": "new-cr_action-3"
+              },
+              {
+                "type": "updateRelated",
+                "targetTable": "pe_staffappointment",
+                "relationshipField": "cr_appointmentthatcreatedplanid",
+                "fields": {
+                  "cr_performanceplancreated": {
+                    "kind": "literal",
+                    "value": true
+                  },
+                  "cr_financialyearoflatestperformanceplanid": {
+                    "kind": "literal",
+                    "value": "de754d1d-ff7f-f111-ab0e-6045bde55bf5",
+                    "valueLabel": "2027-28"
+                  }
+                }
+              }
+            ],
+            "elseChildren": []
+          }
+        ]
+      },
+      "displayRules": [
+        {
+          "rootActions": [],
+          "nodes": []
+        }
+      ],
+      "title": "Create Performance Plan for:"
+    },
+    {
+      "kind": "pageLink",
+      "pageId": "page_1784085534317",
+      "id": "view_1784115566633",
+      "order": 0,
+      "createdAt": "2026-07-15T11:39:26.633Z",
+      "updatedAt": "2026-07-15T11:39:40.300Z",
+      "label": "My Performance Plans",
+      "targetPageId": "page_1784115561329"
+    }
+  ],
+  "configVersion": 2,
+  "createdAt": "2026-07-15T03:18:54.317Z",
+  "updatedAt": "2026-07-16T02:10:00.086Z",
+  "kind": "standard",
+  "showBreadcrumbs": true,
+  "showBackLink": true
+}
