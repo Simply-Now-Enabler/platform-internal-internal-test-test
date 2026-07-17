@@ -16,7 +16,7 @@
       "id": "view_1783026474373",
       "order": 0,
       "createdAt": "2026-07-02T21:07:54.373Z",
-      "updatedAt": "2026-07-16T14:39:00.800Z",
+      "updatedAt": "2026-07-17T02:29:40.492Z",
       "title": "New position",
       "instructions": "Prepare your proposed new position and submit it for review and approval.",
       "layout": {
@@ -993,6 +993,42 @@
                 }
               ],
               "elseChildren": []
+            },
+            {
+              "arms": [
+                {
+                  "test": [
+                    {
+                      "conditions": [
+                        {
+                          "field": "pe_positionid",
+                          "operator": "eq",
+                          "value": "CEO"
+                        }
+                      ]
+                    },
+                    {
+                      "conditions": [
+                        {
+                          "field": "pe_positionid",
+                          "operator": "eq",
+                          "value": "Chief Executive Officer"
+                        }
+                      ]
+                    }
+                  ],
+                  "effects": [
+                    {
+                      "action": "hide",
+                      "reverseWhenNotMet": true,
+                      "fields": [
+                        "pe_reportsto"
+                      ]
+                    }
+                  ],
+                  "children": []
+                }
+              ]
             }
           ]
         }
@@ -1001,7 +1037,7 @@
   ],
   "configVersion": 2,
   "createdAt": "2026-07-02T21:07:35.504Z",
-  "updatedAt": "2026-07-16T14:39:00.801Z",
+  "updatedAt": "2026-07-17T02:29:40.493Z",
   "kind": "standard",
   "showBreadcrumbs": true,
   "showBackLink": true
