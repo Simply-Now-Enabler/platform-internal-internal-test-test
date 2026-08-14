@@ -93,8 +93,15 @@
   ],
   "configVersion": 2,
   "createdAt": "2026-07-17T03:12:57.934Z",
-  "updatedAt": "2026-07-17T03:14:27.380Z",
+  "updatedAt": "2026-08-01T12:59:11.613Z",
   "kind": "singleRecord",
   "parentPageId": "page_1783474363552",
-  "primaryTable": "cr_department"
+  "primaryTable": "cr_department",
+  "showBreadcrumbs": true,
+  "showBackLink": true,
+  "roleAllowlist": [
+    "Process Administrators",
+    "Org Sync Fix Test"
+  ],
+  "pageRules": []
 }

@@ -6,120 +6,14 @@
   "inNav": true,
   "views": [
     {
-      "kind": "table",
+      "kind": "pageLink",
       "pageId": "page_1781153656304",
-      "dataSource": {
-        "mode": "direct",
-        "table": "cr_appointmentcategory",
-        "filterGroups": []
-      },
-      "id": "view_1781153666511",
-      "order": 4,
-      "createdAt": "2026-06-11T04:54:26.511Z",
-      "updatedAt": "2026-07-16T02:08:58.803Z",
-      "columnOrder": [
-        "cr_name",
-        "ownerid",
-        "modifiedon",
-        "createdby",
-        "createdon"
-      ],
-      "fields": [
-        "cr_name",
-        "ownerid",
-        "modifiedon",
-        "createdby",
-        "createdon"
-      ],
-      "linkedPageIds": [],
-      "sortField": "cr_name",
-      "sortDir": "asc",
-      "label": "Appointment category - to test the orys/ories suffix"
-    },
-    {
-      "kind": "createForm",
-      "pageId": "page_1781153656304",
-      "dataSource": {
-        "mode": "direct",
-        "table": "cr_appointmentcategory",
-        "filterGroups": []
-      },
-      "id": "view_1781570669808",
-      "order": 6,
-      "createdAt": "2026-06-16T00:44:29.808Z",
-      "updatedAt": "2026-07-01T03:07:22.599Z",
-      "formFields": [
-        {
-          "field": "cr_name",
-          "label": "Category",
-          "order": 0
-        },
-        {
-          "field": "importsequencenumber",
-          "label": "Import Sequence Number",
-          "order": 1
-        },
-        {
-          "field": "versionnumber",
-          "label": "Version Number",
-          "order": 2
-        }
-      ],
-      "layout": {
-        "sections": [
-          {
-            "id": "default",
-            "elements": [
-              {
-                "kind": "field",
-                "field": "cr_name"
-              },
-              {
-                "kind": "titleBlock",
-                "id": "title-mqhgp4tv-3",
-                "text": "This is a new title"
-              },
-              {
-                "kind": "divider",
-                "id": "divider-mqhgp0i3-2"
-              }
-            ],
-            "title": "Now can I do spaces"
-          },
-          {
-            "id": "section-mqhgozng-1",
-            "elements": [
-              {
-                "kind": "titleBlock",
-                "id": "title-mqhgr1vn-4",
-                "text": "Now the two column section"
-              },
-              {
-                "kind": "field",
-                "field": "importsequencenumber"
-              },
-              {
-                "kind": "field",
-                "field": "versionnumber"
-              }
-            ],
-            "title": "just-a-labelsa",
-            "columnCount": 2
-          }
-        ]
-      },
-      "label": "Create appointment category",
-      "submitButtons": [
-        {
-          "id": "btn-mqj14ceq-0",
-          "label": "Save",
-          "afterSubmit": {
-            "kind": "stayOnPage",
-            "stayMode": "reloadForm",
-            "message": "Saved - you can add another one if you want:"
-          }
-        }
-      ]
+      "id": "view_1785981448695",
+      "order": 0,
+      "createdAt": "2026-08-06T01:57:28.695Z",
+      "updatedAt": "2026-08-12T06:33:41.374Z",
+      "label": "Map Testing",
+      "targetPageId": "page_1785981442523"
     },
     {
       "kind": "table",
@@ -132,37 +26,54 @@
       "id": "view_1782823776513",
       "order": 1,
       "createdAt": "2026-06-30T12:49:36.513Z",
-      "updatedAt": "2026-07-17T01:07:19.627Z",
+      "updatedAt": "2026-08-14T10:16:18.164Z",
       "columnOrder": [
         "link:page_1782858649341",
+        "cr_actionprocessid",
+        "cr_block2",
+        "cr_residentialline1",
+        "cr_residentialsuburb",
+        "cr_residentialgeocodestatus",
+        "cr_postalline1",
+        "cr_postalsuburb",
+        "cr_postalgeocodestatus",
         "cr_departmentidcr",
+        "cr_actionrelatedid",
+        "related:cr_actionrelatedid.cr_ownerposition",
         "cr_positionownerid",
         "ownerid",
         "pe_confidential",
+        "cr_firstimage",
+        "cr_secondfile",
         "cr_displayfield",
         "cr_name",
         "createdon",
-        "cr_secondfile",
-        "cr_firstimage",
         "cr_secondimage",
         "cr_thirdimage",
-        "cr_block2",
         "createdby",
         "cr_urltest"
       ],
       "fields": [
+        "cr_actionprocessid",
+        "cr_block2",
+        "cr_residentialline1",
+        "cr_residentialsuburb",
+        "cr_residentialgeocodestatus",
+        "cr_postalline1",
+        "cr_postalsuburb",
+        "cr_postalgeocodestatus",
         "cr_departmentidcr",
+        "cr_actionrelatedid",
         "cr_positionownerid",
         "ownerid",
         "pe_confidential",
+        "cr_firstimage",
+        "cr_secondfile",
         "cr_displayfield",
         "cr_name",
         "createdon",
-        "cr_secondfile",
-        "cr_firstimage",
         "cr_secondimage",
         "cr_thirdimage",
-        "cr_block2",
         "createdby",
         "cr_urltest"
       ],
@@ -184,6 +95,25 @@
             }
           }
         },
+        "cr_residentialgeocodestatus": {
+          "label": "Residential geocode"
+        },
+        "cr_postalline1": {
+          "label": "Postal Address Line 1"
+        },
+        "cr_postalsuburb": {
+          "label": "Postal Suburb"
+        },
+        "cr_postalgeocodestatus": {
+          "label": "Postal geocode"
+        },
+        "related:cr_actionrelatedid.cr_ownerposition": {
+          "label": "Owner (on action table)"
+        },
+        "cr_firstimage": {
+          "openOriginalOnClick": true,
+          "imageSize": "medium"
+        },
         "cr_secondfile": {
           "labelMode": "text",
           "labelText": "label",
@@ -194,10 +124,6 @@
             },
             "rules": []
           }
-        },
-        "cr_firstimage": {
-          "openOriginalOnClick": true,
-          "imageSize": "medium"
         },
         "cr_secondimage": {
           "label": "Second Image large",
@@ -213,7 +139,124 @@
         }
       },
       "sortField": "createdon",
-      "sortDir": "desc"
+      "sortDir": "desc",
+      "relatedColumns": {
+        "related:cr_actionrelatedid.cr_ownerposition": {
+          "navProperty": "cr_ActionRelatedId",
+          "isLookup": true,
+          "label": "Owner"
+        }
+      },
+      "runtimeFiltering": {
+        "mode": "configurable"
+      }
+    },
+    {
+      "kind": "map",
+      "pageId": "page_1781153656304",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_throwawaynew",
+        "filterGroups": [
+          {
+            "conditions": [
+              {
+                "field": "cr_residentialcountry",
+                "operator": "eq",
+                "value": "Australia"
+              }
+            ]
+          }
+        ]
+      },
+      "id": "view_1786429205902",
+      "order": 2,
+      "createdAt": "2026-08-11T06:20:05.902Z",
+      "updatedAt": "2026-08-13T14:09:58.986Z",
+      "mapConfig": {
+        "setId": "addr:residential",
+        "cluster": false,
+        "markerLimit": 100,
+        "markerRules": [
+          {
+            "condition": [
+              {
+                "conditions": [
+                  {
+                    "field": "cr_residentialsuburb",
+                    "operator": "eq",
+                    "value": "Southbank"
+                  }
+                ]
+              }
+            ],
+            "effects": {
+              "background": "#0f7b3f"
+            }
+          }
+        ]
+      },
+      "addressSets": [
+        {
+          "id": "addr:residential",
+          "columns": {
+            "line1": "cr_residentialline1",
+            "line2": "cr_residentialline2",
+            "suburb": "cr_residentialsuburb",
+            "state": "cr_residentialstate",
+            "postcode": "cr_residentialpostcode",
+            "country": "cr_residentialcountry",
+            "latitude": "cr_residentiallatitude",
+            "longitude": "cr_residentiallongitude",
+            "geocodeStatus": "cr_residentialgeocodestatus"
+          }
+        }
+      ],
+      "columnOrder": [
+        "cr_block2",
+        "cr_secondimage",
+        "cr_postalline1",
+        "cr_postalsuburb"
+      ],
+      "fields": [
+        "cr_block2",
+        "cr_secondimage",
+        "cr_postalline1",
+        "cr_postalsuburb"
+      ],
+      "rowClickPageId": "page_1782858649341",
+      "runtimeFiltering": {
+        "mode": "configurable"
+      },
+      "columnConfig": {
+        "cr_postalsuburb": {
+          "label": "Suburb"
+        },
+        "cr_postalline1": {
+          "label": "Postal Street/PO Box"
+        },
+        "cr_secondimage": {
+          "label": "Image",
+          "labelPosition": "none"
+        },
+        "cr_block2": {
+          "label": "description"
+        }
+      },
+      "title": "Jobs map",
+      "instructions": "residential addresses",
+      "exportEnabled": false,
+      "label": "map"
+    },
+    {
+      "kind": "pageLink",
+      "pageId": "page_1781153656304",
+      "id": "view_1784167723449",
+      "order": 3,
+      "createdAt": "2026-07-16T02:08:43.449Z",
+      "updatedAt": "2026-08-13T14:09:58.986Z",
+      "label": "Contacts, Accounts",
+      "targetPageId": "page_1780266518600"
     },
     {
       "kind": "createForm",
@@ -224,9 +267,9 @@
         "filterGroups": []
       },
       "id": "view_1782858737458",
-      "order": 3,
+      "order": 4,
       "createdAt": "2026-06-30T22:32:17.458Z",
-      "updatedAt": "2026-07-16T02:08:59.411Z",
+      "updatedAt": "2026-08-12T06:32:41.466Z",
       "layout": {
         "sections": [
           {
@@ -247,11 +290,11 @@
               },
               {
                 "kind": "field",
-                "field": "cr_firstimage"
+                "field": "cr_secondfile"
               },
               {
                 "kind": "field",
-                "field": "cr_secondfile"
+                "field": "cr_firstimage"
               }
             ]
           },
@@ -265,20 +308,35 @@
               },
               {
                 "kind": "field",
-                "field": "cr_newcolumnbool",
-                "column": 2
-              },
-              {
-                "kind": "field",
                 "field": "cr_thirdimage"
-              },
-              {
-                "kind": "field",
-                "field": "cr_urltest"
               }
             ],
             "columnCount": 2,
             "title": "two columns"
+          },
+          {
+            "id": "section-msgqd8cj-2",
+            "elements": [
+              {
+                "kind": "addressSet",
+                "id": "address-msgqd4yb-1",
+                "setId": "addr-msgqd4yb-1"
+              },
+              {
+                "kind": "field",
+                "field": "cr_newcolumnbool"
+              },
+              {
+                "kind": "field",
+                "field": "cr_appointmentcategoryid"
+              },
+              {
+                "kind": "addressSet",
+                "id": "address-msgqiolr-3",
+                "setId": "addr-msgqiolr-2"
+              }
+            ],
+            "title": "Address"
           }
         ]
       },
@@ -294,13 +352,13 @@
           "order": 1
         },
         {
-          "field": "cr_firstimage",
-          "label": "First image",
+          "field": "cr_secondfile",
+          "label": "Second file",
           "order": 2
         },
         {
-          "field": "cr_secondfile",
-          "label": "Second file",
+          "field": "cr_firstimage",
+          "label": "First image",
           "order": 3
         },
         {
@@ -309,19 +367,103 @@
           "order": 4
         },
         {
-          "field": "cr_newcolumnbool",
-          "label": "new column bool",
+          "field": "cr_thirdimage",
+          "label": "Third image",
           "order": 5
         },
         {
-          "field": "cr_thirdimage",
-          "label": "Third image",
+          "field": "cr_residentialline1",
           "order": 6
         },
         {
-          "field": "cr_urltest",
-          "label": "url test",
+          "field": "cr_residentialline2",
           "order": 7
+        },
+        {
+          "field": "cr_residentialsuburb",
+          "order": 8
+        },
+        {
+          "field": "cr_residentialstate",
+          "order": 9
+        },
+        {
+          "field": "cr_residentialpostcode",
+          "order": 10
+        },
+        {
+          "field": "cr_residentialcountry",
+          "order": 11
+        },
+        {
+          "field": "cr_residentiallatitude",
+          "order": 12
+        },
+        {
+          "field": "cr_residentiallongitude",
+          "order": 13
+        },
+        {
+          "field": "cr_residentialgeocodestatus",
+          "order": 14
+        },
+        {
+          "field": "cr_newcolumnbool",
+          "label": "Postal same as residential?",
+          "order": 15,
+          "required": "whenVisible"
+        },
+        {
+          "field": "cr_appointmentcategoryid",
+          "label": "set address via appointment category",
+          "order": 16,
+          "candidateFilter": [
+            {
+              "conditions": [
+                {
+                  "field": "cr_addressline1",
+                  "operator": "notNull",
+                  "value": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "field": "cr_postalline1",
+          "order": 17
+        },
+        {
+          "field": "cr_postalline2",
+          "order": 18
+        },
+        {
+          "field": "cr_postalsuburb",
+          "order": 19
+        },
+        {
+          "field": "cr_postalstate",
+          "order": 20
+        },
+        {
+          "field": "cr_postalpostcode",
+          "order": 21
+        },
+        {
+          "field": "cr_postalcountry",
+          "order": 22
+        },
+        {
+          "field": "cr_postallatitude",
+          "order": 23
+        },
+        {
+          "field": "cr_postallongitude",
+          "order": 24
+        },
+        {
+          "field": "cr_postalgeocodestatus",
+          "order": 25
         }
       ],
       "submitButtons": [
@@ -335,24 +477,357 @@
           }
         }
       ],
-      "title": "Create a Throwaway New",
-      "instructions": "silly name I know"
+      "title": "Add Throwaway New",
+      "addressSets": [
+        {
+          "id": "addr-msgqd4yb-1",
+          "columns": {
+            "line1": "cr_residentialline1",
+            "line2": "cr_residentialline2",
+            "suburb": "cr_residentialsuburb",
+            "state": "cr_residentialstate",
+            "postcode": "cr_residentialpostcode",
+            "country": "cr_residentialcountry",
+            "latitude": "cr_residentiallatitude",
+            "longitude": "cr_residentiallongitude",
+            "geocodeStatus": "cr_residentialgeocodestatus"
+          },
+          "label": "Residential",
+          "required": "always"
+        },
+        {
+          "id": "addr-msgqiolr-2",
+          "columns": {
+            "line1": "cr_postalline1",
+            "line2": "cr_postalline2",
+            "suburb": "cr_postalsuburb",
+            "state": "cr_postalstate",
+            "postcode": "cr_postalpostcode",
+            "country": "cr_postalcountry",
+            "latitude": "cr_postallatitude",
+            "longitude": "cr_postallongitude",
+            "geocodeStatus": "cr_postalgeocodestatus"
+          },
+          "label": "Postal",
+          "required": "whenVisible"
+        }
+      ],
+      "displayRules": [
+        {
+          "rootActions": [],
+          "nodes": [
+            {
+              "arms": [
+                {
+                  "test": [
+                    {
+                      "conditions": [
+                        {
+                          "field": "cr_newcolumnbool",
+                          "operator": "eq",
+                          "value": "false"
+                        }
+                      ]
+                    }
+                  ],
+                  "effects": [
+                    {
+                      "action": "show",
+                      "reverseWhenNotMet": true,
+                      "fields": [
+                        "cr_appointmentcategoryid"
+                      ]
+                    }
+                  ],
+                  "children": [
+                    {
+                      "arms": [
+                        {
+                          "test": [
+                            {
+                              "conditions": [
+                                {
+                                  "field": "cr_appointmentcategoryid",
+                                  "operator": "null",
+                                  "value": ""
+                                }
+                              ]
+                            }
+                          ],
+                          "effects": [
+                            {
+                              "action": "show",
+                              "reverseWhenNotMet": true,
+                              "fields": [
+                                "address-msgqiolr-3"
+                              ]
+                            }
+                          ],
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "postSubmitActions": {
+        "rootActions": [],
+        "nodes": [
+          {
+            "arms": [
+              {
+                "test": [
+                  {
+                    "conditions": [
+                      {
+                        "field": "cr_newcolumnbool",
+                        "operator": "eq",
+                        "value": "true"
+                      }
+                    ]
+                  }
+                ],
+                "effects": [
+                  {
+                    "type": "updateRecord",
+                    "fields": {
+                      "cr_moneymoneymoney": {
+                        "kind": "literal",
+                        "value": 32
+                      }
+                    },
+                    "addressCopies": [
+                      {
+                        "target": {
+                          "kind": "formAddress",
+                          "setId": "addr-msgqiolr-2"
+                        },
+                        "source": {
+                          "kind": "formAddress",
+                          "setId": "addr-msgqd4yb-1"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "arms": [
+              {
+                "test": [
+                  {
+                    "conditions": [
+                      {
+                        "field": "cr_newcolumnbool",
+                        "operator": "ne",
+                        "value": "true"
+                      },
+                      {
+                        "field": "cr_appointmentcategoryid",
+                        "operator": "notNull",
+                        "value": ""
+                      }
+                    ]
+                  }
+                ],
+                "effects": [
+                  {
+                    "type": "updateRecord",
+                    "fields": {},
+                    "addressCopies": [
+                      {
+                        "target": {
+                          "kind": "formAddress",
+                          "setId": "addr-msgqiolr-2"
+                        },
+                        "source": {
+                          "kind": "relatedAddress",
+                          "relationshipField": "cr_appointmentcategoryid",
+                          "targetTable": "cr_appointmentcategory",
+                          "columns": {
+                            "line1": "cr_addressline1",
+                            "line2": "cr_addressline2",
+                            "suburb": "cr_addresssuburb",
+                            "state": "cr_addressstate",
+                            "postcode": "cr_addresspostcode",
+                            "country": "cr_addresscountry",
+                            "latitude": "cr_addresslatitude",
+                            "longitude": "cr_addresslongitude",
+                            "geocodeStatus": "cr_addressgeocodestatus"
+                          },
+                          "label": "Address Address"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
     },
     {
-      "kind": "pageLink",
+      "kind": "createForm",
       "pageId": "page_1781153656304",
-      "id": "view_1784167723449",
-      "order": 0,
-      "createdAt": "2026-07-16T02:08:43.449Z",
-      "updatedAt": "2026-07-16T02:09:00.036Z",
-      "label": "Contacts, Accounts",
-      "targetPageId": "page_1780266518600"
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_appointmentcategory",
+        "filterGroups": []
+      },
+      "id": "view_1781570669808",
+      "order": 5,
+      "createdAt": "2026-06-16T00:44:29.808Z",
+      "updatedAt": "2026-08-12T10:08:19.384Z",
+      "formFields": [
+        {
+          "field": "cr_name",
+          "label": "Category",
+          "order": 0
+        },
+        {
+          "field": "cr_addressline1",
+          "order": 1
+        },
+        {
+          "field": "cr_addressline2",
+          "order": 2
+        },
+        {
+          "field": "cr_addresssuburb",
+          "order": 3
+        },
+        {
+          "field": "cr_addressstate",
+          "order": 4
+        },
+        {
+          "field": "cr_addresspostcode",
+          "order": 5
+        },
+        {
+          "field": "cr_addresscountry",
+          "order": 6
+        },
+        {
+          "field": "cr_addresslatitude",
+          "order": 7
+        },
+        {
+          "field": "cr_addresslongitude",
+          "order": 8
+        },
+        {
+          "field": "cr_addressgeocodestatus",
+          "order": 9
+        }
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_name"
+              }
+            ],
+            "title": "Now can I do spaces"
+          },
+          {
+            "id": "section-mqhgozng-1",
+            "elements": [
+              {
+                "kind": "addressSet",
+                "id": "address-msh6l7pi-1",
+                "setId": "addr-msh6l7pi-0"
+              }
+            ],
+            "title": "just-a-label",
+            "columnCount": 2
+          }
+        ]
+      },
+      "label": "Create appointment category",
+      "submitButtons": [
+        {
+          "id": "btn-mqj14ceq-0",
+          "label": "Save",
+          "afterSubmit": {
+            "kind": "stayOnPage",
+            "stayMode": "reloadForm",
+            "message": "Saved - you can add another one if you want:"
+          }
+        }
+      ],
+      "addressSets": [
+        {
+          "id": "addr-msh6l7pi-0",
+          "columns": {
+            "line1": "cr_addressline1",
+            "line2": "cr_addressline2",
+            "suburb": "cr_addresssuburb",
+            "state": "cr_addressstate",
+            "postcode": "cr_addresspostcode",
+            "country": "cr_addresscountry",
+            "latitude": "cr_addresslatitude",
+            "longitude": "cr_addresslongitude",
+            "geocodeStatus": "cr_addressgeocodestatus"
+          },
+          "label": "Address"
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "pageId": "page_1781153656304",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_appointmentcategory",
+        "filterGroups": []
+      },
+      "id": "view_1786529188256",
+      "order": 6,
+      "createdAt": "2026-08-12T10:06:28.256Z",
+      "updatedAt": "2026-08-12T10:08:19.384Z",
+      "label": "appointment categories",
+      "title": "Appointment categories",
+      "columnOrder": [
+        "cr_name",
+        "cr_addressline1",
+        "cr_addresssuburb",
+        "cr_addressgeocodestatus"
+      ],
+      "fields": [
+        "cr_name",
+        "cr_addressline1",
+        "cr_addresssuburb",
+        "cr_addressgeocodestatus"
+      ],
+      "linkedPageIds": [],
+      "columnConfig": {
+        "cr_addressline1": {
+          "label": "Address Line 1"
+        },
+        "cr_addresssuburb": {
+          "label": "Suburb"
+        }
+      }
     }
   ],
   "configVersion": 2,
   "createdAt": "2026-06-11T04:54:16.304Z",
-  "updatedAt": "2026-07-17T01:07:19.628Z",
+  "updatedAt": "2026-08-14T10:16:18.164Z",
   "kind": "standard",
   "showBreadcrumbs": true,
-  "showBackLink": true
+  "showBackLink": true,
+  "pageRules": []
 }

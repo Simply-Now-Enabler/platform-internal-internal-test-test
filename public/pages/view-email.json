@@ -1,0 +1,183 @@
+{
+  "id": "page_1784701744541",
+  "appId": "8dd58c87-1849-f111-bec5-002248e415a7",
+  "name": "View Email",
+  "slug": "view-email",
+  "inNav": false,
+  "views": [
+    {
+      "kind": "detail",
+      "pageId": "page_1784701744541",
+      "dataSource": {
+        "mode": "anchor",
+        "hops": [],
+        "filterGroups": []
+      },
+      "id": "view_1784701749163",
+      "order": 0,
+      "createdAt": "2026-07-22T06:29:09.163Z",
+      "updatedAt": "2026-07-22T06:33:19.145Z",
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "pe_to"
+              },
+              {
+                "kind": "field",
+                "field": "pe_cc"
+              },
+              {
+                "kind": "field",
+                "field": "pe_bcc"
+              },
+              {
+                "kind": "field",
+                "field": "pe_sentat",
+                "column": 2
+              },
+              {
+                "kind": "field",
+                "field": "pe_source",
+                "column": 2
+              },
+              {
+                "kind": "field",
+                "field": "pe_sendername",
+                "column": 2
+              },
+              {
+                "kind": "field",
+                "field": "pe_replyto",
+                "column": 2
+              }
+            ],
+            "title": "Email",
+            "columnCount": 2
+          },
+          {
+            "id": "section-mrvpdumc-2",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "pe_name"
+              },
+              {
+                "kind": "field",
+                "field": "pe_regardinglabel"
+              },
+              {
+                "kind": "field",
+                "field": "pe_body"
+              }
+            ]
+          },
+          {
+            "id": "section-mrvpen36-3",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "pe_regarding_pe_position"
+              },
+              {
+                "kind": "field",
+                "field": "pe_regarding_cr_action"
+              }
+            ],
+            "title": "Related Record"
+          }
+        ]
+      },
+      "formFields": [
+        {
+          "field": "pe_to",
+          "label": "To",
+          "order": 0
+        },
+        {
+          "field": "pe_cc",
+          "label": "CC",
+          "order": 1
+        },
+        {
+          "field": "pe_bcc",
+          "label": "BCC",
+          "order": 2
+        },
+        {
+          "field": "pe_sentat",
+          "label": "Sent At",
+          "order": 3
+        },
+        {
+          "field": "pe_source",
+          "label": "Source",
+          "order": 4
+        },
+        {
+          "field": "pe_sendername",
+          "label": "Sender Name",
+          "order": 5
+        },
+        {
+          "field": "pe_replyto",
+          "label": "Reply-To",
+          "order": 6
+        },
+        {
+          "field": "pe_name",
+          "label": "Subject",
+          "order": 7
+        },
+        {
+          "field": "pe_regardinglabel",
+          "label": "Regarding:",
+          "order": 8
+        },
+        {
+          "field": "pe_body",
+          "label": "Body",
+          "order": 9
+        },
+        {
+          "field": "pe_regarding_pe_position",
+          "label": "Position",
+          "order": 10
+        },
+        {
+          "field": "pe_regarding_cr_action",
+          "label": "Action",
+          "order": 11
+        }
+      ],
+      "detailFieldConfig": {
+        "pe_name": {
+          "valueFormat": {
+            "bold": true
+          },
+          "labelPosition": "none"
+        },
+        "pe_body": {
+          "labelPosition": "none"
+        }
+      },
+      "lookupConfig": {
+        "pe_regarding_pe_position": {
+          "targetPageId": "page_1783000363434"
+        },
+        "pe_regarding_cr_action": {
+          "targetPageId": "page_1784463499287"
+        }
+      },
+      "hideEmptyFields": true
+    }
+  ],
+  "configVersion": 2,
+  "createdAt": "2026-07-22T06:29:04.541Z",
+  "updatedAt": "2026-07-22T06:33:19.146Z",
+  "kind": "singleRecord",
+  "primaryTable": "pe_emailrecord"
+}

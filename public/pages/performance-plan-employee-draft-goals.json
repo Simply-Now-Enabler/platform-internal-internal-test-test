@@ -16,33 +16,87 @@
       "id": "view_1784115755906",
       "order": 0,
       "createdAt": "2026-07-15T11:42:35.906Z",
-      "updatedAt": "2026-07-15T11:43:17.966Z",
+      "updatedAt": "2026-07-19T10:19:48.387Z",
       "formFields": [
+        {
+          "field": "cr_positiontitle",
+          "label": "Position Title",
+          "order": 0
+        },
         {
           "field": "cr_positionid",
           "label": "Position",
-          "order": 0
+          "order": 1
         },
         {
           "field": "cr_plantype",
           "label": "Plan Type",
-          "order": 1
+          "order": 2
         },
         {
           "field": "cr_financialyearid",
           "label": "Financial Year",
-          "order": 2
+          "order": 3
         },
         {
           "field": "cr_currentstage",
           "label": "Current Stage",
-          "order": 3
+          "order": 4
         },
         {
           "field": "cr_datecurrentstagedue",
           "label": "Date Current Stage Due",
-          "order": 4
+          "order": 5
         }
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "section-mrrn8kx2-2",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_positiontitle"
+              },
+              {
+                "kind": "pageLink",
+                "id": "pagelink-mrrmpwe1-1",
+                "pageId": "page_1784085700962",
+                "label": "View Peformance Plan",
+                "column": 2
+              }
+            ],
+            "columnCount": 2
+          },
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_positionid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_plantype"
+              },
+              {
+                "kind": "field",
+                "field": "cr_financialyearid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_currentstage"
+              },
+              {
+                "kind": "field",
+                "field": "cr_datecurrentstagedue"
+              }
+            ]
+          }
+        ]
+      },
+      "linkedPageIds": [
+        "page_1784085700962"
       ]
     },
     {
@@ -97,7 +151,7 @@
   ],
   "configVersion": 2,
   "createdAt": "2026-07-15T11:41:28.445Z",
-  "updatedAt": "2026-07-15T12:46:47.317Z",
+  "updatedAt": "2026-07-19T10:19:48.387Z",
   "kind": "singleRecord",
   "parentPageId": "page_1784115561329",
   "primaryTable": "cr_performanceplan"

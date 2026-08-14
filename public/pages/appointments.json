@@ -110,6 +110,35 @@
   "inNav": true,
   "id": "page_1778837286924",
   "createdAt": "2026-05-15T09:28:06.924Z",
-  "updatedAt": "2026-07-16T23:10:31.410Z",
-  "configVersion": 2
+  "updatedAt": "2026-08-01T22:39:06.701Z",
+  "configVersion": 2,
+  "showBreadcrumbs": true,
+  "showBackLink": true,
+  "pageRules": [
+    {
+      "id": "rule_1785623918757_0",
+      "when": [
+        {
+          "conditions": [
+            {
+              "field": "$currentUserRoles",
+              "operator": "notHasRole",
+              "value": "Process Administrators"
+            },
+            {
+              "field": "$currentUserRoles",
+              "operator": "notHasRole",
+              "value": "Org Sync Fix Test"
+            }
+          ]
+        }
+      ],
+      "then": {
+        "kind": "hide",
+        "target": {
+          "view": "view_1782280888640"
+        }
+      }
+    }
+  ]
 }

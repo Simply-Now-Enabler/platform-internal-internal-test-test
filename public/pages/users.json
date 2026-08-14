@@ -12,7 +12,7 @@
       "id": "view_1778763263524",
       "order": 0,
       "createdAt": "2026-05-14T12:54:23.524Z",
-      "updatedAt": "2026-07-15T06:04:34.968Z",
+      "updatedAt": "2026-07-21T00:17:54.563Z",
       "label": "Users - All",
       "columnOrder": [
         "link:page_1779450313091",
@@ -91,7 +91,6 @@
           "hideWhenEmpty": true
         }
       },
-      "instructions": "filter by just shown columns",
       "runtimeFiltering": {
         "mode": "tabs",
         "tabs": [
@@ -155,6 +154,6 @@
   "inNav": true,
   "id": "page_1778763256820",
   "createdAt": "2026-05-14T12:54:16.820Z",
-  "updatedAt": "2026-07-15T06:04:34.968Z",
+  "updatedAt": "2026-07-21T00:17:54.564Z",
   "configVersion": 2
 }

@@ -1,0 +1,158 @@
+{
+  "id": "page_1785310488507",
+  "appId": "8dd58c87-1849-f111-bec5-002248e415a7",
+  "name": "All Actions - selected",
+  "slug": "all-actions-selected",
+  "inNav": false,
+  "views": [
+    {
+      "kind": "table",
+      "pageId": "page_1785310488507",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_action",
+        "filterGroups": []
+      },
+      "label": "Actions",
+      "title": "All Actions",
+      "columnOrder": [
+        "link:page_1784463499287",
+        "link:page_1782305720944",
+        "createdon",
+        "cr_targetdate",
+        "cr_subareaid",
+        "cr_processid",
+        "cr_completionstatus",
+        "cr_ownerposition",
+        "ownerid",
+        "pe_confidential",
+        "related:cr_ownerposition.pe_currentincumbentuser",
+        "related:cr_ownerposition.pe_temporaryincumbentuser",
+        "cr_originalduedate",
+        "cr_outcomeid",
+        "cr_commentsinternal",
+        "cr_areaid",
+        "cr_previousactionid",
+        "cr_commentsexternal",
+        "cr_completedby",
+        "cr_datecompleted",
+        "link:page_1784585723552"
+      ],
+      "fields": [
+        "createdon",
+        "cr_targetdate",
+        "cr_subareaid",
+        "cr_processid",
+        "cr_completionstatus",
+        "cr_ownerposition",
+        "ownerid",
+        "pe_confidential",
+        "cr_originalduedate",
+        "cr_outcomeid",
+        "cr_commentsinternal",
+        "cr_areaid",
+        "cr_previousactionid",
+        "cr_commentsexternal",
+        "cr_completedby",
+        "cr_datecompleted"
+      ],
+      "linkedPageIds": [
+        "page_1784463499287",
+        "page_1782305720944",
+        "page_1784585723552"
+      ],
+      "sortField": "createdon",
+      "sortDir": "desc",
+      "rowClickPageId": "page_1784463499287",
+      "columnConfig": {
+        "link:page_1784463499287": {
+          "label": "Action",
+          "labelField": "cr_actionidnumber"
+        },
+        "link:page_1782305720944": {
+          "label": "Edit",
+          "labelMode": "text",
+          "labelIcon": "fluent:Edit:filled"
+        },
+        "cr_ownerposition": {
+          "label": "Owner position"
+        },
+        "cr_outcomeid": {
+          "hideWhenEmpty": true
+        },
+        "cr_completedby": {
+          "hideWhenEmpty": true
+        },
+        "cr_datecompleted": {
+          "hideWhenEmpty": true
+        }
+      },
+      "runtimeFiltering": {
+        "mode": "configurable",
+        "scope": "all",
+        "candidateFilters": {
+          "cr_areaid": [
+            {
+              "conditions": [
+                {
+                  "field": "cr_delete",
+                  "operator": "ne",
+                  "value": "true"
+                }
+              ]
+            }
+          ],
+          "cr_outcomeid": [
+            {
+              "conditions": [
+                {
+                  "field": "cr_delete",
+                  "operator": "ne",
+                  "value": "true"
+                }
+              ]
+            }
+          ],
+          "cr_ownerpositionid": [
+            {
+              "conditions": [
+                {
+                  "field": "statecode",
+                  "operator": "eq",
+                  "value": "0"
+                }
+              ]
+            }
+          ],
+          "cr_processid": [
+            {
+              "conditions": [
+                {
+                  "field": "cr_delete",
+                  "operator": "ne",
+                  "value": "true"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "lookupConfig": {
+        "cr_previousactionid": {
+          "displayColumn": "cr_actionidnumber",
+          "navProperty": "cr_PreviousActionId"
+        }
+      },
+      "id": "view_1785310489385",
+      "order": 0,
+      "createdAt": "2026-07-29T07:34:49.385Z",
+      "updatedAt": "2026-07-29T07:34:49.385Z"
+    }
+  ],
+  "configVersion": 2,
+  "createdAt": "2026-07-29T07:34:48.507Z",
+  "updatedAt": "2026-07-29T07:34:49.385Z",
+  "kind": "standard",
+  "drillTable": "cr_action",
+  "drillScope": "all"
+}

@@ -16,22 +16,22 @@
       "id": "view_1784085543274",
       "order": 1,
       "createdAt": "2026-07-15T03:19:03.274Z",
-      "updatedAt": "2026-07-15T11:39:40.300Z",
+      "updatedAt": "2026-07-20T12:49:57.832Z",
       "title": "All Performance Plans",
       "columnOrder": [
         "ownerid",
         "cr_staffmemberuserid",
         "cr_positiontitle",
         "cr_statusactive",
-        "cr_statusprogress",
         "cr_currentstage",
+        "cr_statusprogress",
         "cr_positionid",
         "cr_supervisorpositionid",
         "related:cr_positionid.cr_directorate",
         "related:cr_positionid.cr_department",
         "related:cr_positionid.cr_coordinatorposition",
-        "cr_appointmentthatcreatedplanid",
         "cr_startdate",
+        "cr_appointmentthatcreatedplanid",
         "cr_financialyearid",
         "link:page_1784085700962"
       ],
@@ -40,12 +40,12 @@
         "cr_staffmemberuserid",
         "cr_positiontitle",
         "cr_statusactive",
-        "cr_statusprogress",
         "cr_currentstage",
+        "cr_statusprogress",
         "cr_positionid",
         "cr_supervisorpositionid",
-        "cr_appointmentthatcreatedplanid",
         "cr_startdate",
+        "cr_appointmentthatcreatedplanid",
         "cr_financialyearid"
       ],
       "linkedPageIds": [
@@ -125,7 +125,7 @@
       "id": "view_1784085909435",
       "order": 2,
       "createdAt": "2026-07-15T03:25:09.435Z",
-      "updatedAt": "2026-07-15T12:37:50.519Z",
+      "updatedAt": "2026-07-28T04:46:37.735Z",
       "layout": {
         "sections": [
           {
@@ -288,12 +288,6 @@
                 "kind": "literal",
                 "value": 5
               },
-              "cr_relatedstaffmemberid": {
-                "kind": "relatedField",
-                "relationshipField": "cr_positionid",
-                "targetTable": "pe_position",
-                "field": "cr_currentstaffmember"
-              },
               "cr_outcomeid": {
                 "kind": "literal",
                 "value": "8eacc684-4380-f111-ab0e-6045bde55bf5",
@@ -394,12 +388,6 @@
                         "kind": "literal",
                         "value": 1
                       },
-                      "cr_relatedstaffmemberid": {
-                        "kind": "relatedField",
-                        "relationshipField": "cr_positionid",
-                        "targetTable": "pe_position",
-                        "field": "cr_currentstaffmember"
-                      },
                       "cr_targetdate": {
                         "kind": "literal",
                         "value": "2026-08-31"
@@ -482,12 +470,6 @@
                     "kind": "literal",
                     "value": 1
                   },
-                  "cr_relatedstaffmemberid": {
-                    "kind": "relatedField",
-                    "relationshipField": "cr_positionid",
-                    "targetTable": "pe_position",
-                    "field": "cr_currentstaffmember"
-                  },
                   "cr_targetdate": {
                     "kind": "literal",
                     "value": "2027-08-31"
@@ -553,7 +535,7 @@
   ],
   "configVersion": 2,
   "createdAt": "2026-07-15T03:18:54.317Z",
-  "updatedAt": "2026-07-16T02:10:00.086Z",
+  "updatedAt": "2026-07-28T04:46:37.735Z",
   "kind": "standard",
   "showBreadcrumbs": true,
   "showBackLink": true

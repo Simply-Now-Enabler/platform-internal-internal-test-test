@@ -1,0 +1,47 @@
+{
+  "id": "page_1785981233414",
+  "appId": "8dd58c87-1849-f111-bec5-002248e415a7",
+  "name": "All Positions - selected",
+  "slug": "all-positions-selected",
+  "inNav": false,
+  "views": [
+    {
+      "kind": "table",
+      "pageId": "page_1785981233414",
+      "dataSource": {
+        "mode": "direct",
+        "table": "pe_position",
+        "filterGroups": []
+      },
+      "label": "Positions supervised",
+      "title": "Positions reporting to this position",
+      "columnOrder": [
+        "pe_name",
+        "cr_occupancy",
+        "pe_currentincumbentuser",
+        "pe_currentappointmentprimary",
+        "pe_currentappointmenttemporary",
+        "cr_statuslifecycle"
+      ],
+      "fields": [
+        "pe_name",
+        "cr_occupancy",
+        "pe_currentincumbentuser",
+        "pe_currentappointmentprimary",
+        "pe_currentappointmenttemporary",
+        "cr_statuslifecycle"
+      ],
+      "linkedPageIds": [],
+      "id": "view_1785981235154",
+      "order": 0,
+      "createdAt": "2026-08-06T01:53:55.154Z",
+      "updatedAt": "2026-08-06T01:53:55.154Z"
+    }
+  ],
+  "configVersion": 2,
+  "createdAt": "2026-08-06T01:53:53.414Z",
+  "updatedAt": "2026-08-06T01:53:55.155Z",
+  "kind": "standard",
+  "drillTable": "pe_position",
+  "drillScope": "all"
+}

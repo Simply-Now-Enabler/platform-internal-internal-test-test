@@ -1,0 +1,175 @@
+{
+  "id": "page_1784811267309",
+  "appId": "8dd58c87-1849-f111-bec5-002248e415a7",
+  "name": "Actions",
+  "slug": "report-actions",
+  "inNav": true,
+  "views": [
+    {
+      "kind": "pivot",
+      "pageId": "page_1784811267309",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_action",
+        "filterGroups": [
+          {
+            "conditions": [
+              {
+                "field": "cr_areaid",
+                "operator": "eq",
+                "value": "c39b0af1-c46f-f111-ab0c-002248972164",
+                "valueLabel": "Staff Establishment"
+              }
+            ]
+          }
+        ]
+      },
+      "id": "view_1784811334610",
+      "order": 0,
+      "createdAt": "2026-07-23T12:55:34.610Z",
+      "updatedAt": "2026-07-29T12:29:30.902Z",
+      "pivotConfig": {
+        "measure": {
+          "fn": "count"
+        },
+        "rowDimension": "cr_processid",
+        "columnDimension": "cr_completionstatus",
+        "drillTargetPageId": "page_1785310488507"
+      },
+      "title": "Staff Management Actions"
+    },
+    {
+      "kind": "pivot",
+      "pageId": "page_1784811267309",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_throwawaynew",
+        "filterGroups": []
+      },
+      "id": "view_1784813352209",
+      "order": 2,
+      "createdAt": "2026-07-23T13:29:12.209Z",
+      "updatedAt": "2026-07-29T21:31:22.906Z",
+      "pivotConfig": {
+        "measure": {
+          "fn": "count"
+        },
+        "rowDimension": "cr_positionownerid",
+        "columnDimension": "pe_confidential",
+        "drillTargetPageId": "page_1785328216027"
+      },
+      "title": "Throwaway records by owner"
+    },
+    {
+      "kind": "pivot",
+      "pageId": "page_1784811267309",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_throwawaynew",
+        "filterGroups": []
+      },
+      "id": "view_1784813518248",
+      "order": 1,
+      "createdAt": "2026-07-23T13:31:58.248Z",
+      "updatedAt": "2026-07-29T12:30:20.315Z",
+      "label": "Throwaway sum",
+      "pivotConfig": {
+        "measure": {
+          "fn": "sum",
+          "column": "cr_moneymoneymoney"
+        },
+        "rowDimension": "cr_positionownerid",
+        "columnDimension": "cr_actionrelatedid",
+        "totals": false,
+        "drillTargetPageId": "page_1785328216027"
+      },
+      "title": "Throwaway sum over the money column",
+      "instructions": "v2 come on"
+    },
+    {
+      "kind": "pivot",
+      "pageId": "page_1784811267309",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_action",
+        "filterGroups": [
+          {
+            "conditions": [
+              {
+                "field": "cr_areaid",
+                "operator": "notNull",
+                "value": ""
+              },
+              {
+                "field": "cr_previousactionid",
+                "operator": "notNull",
+                "value": ""
+              }
+            ]
+          }
+        ]
+      },
+      "id": "view_1784849782732",
+      "order": 3,
+      "createdAt": "2026-07-23T23:36:22.732Z",
+      "updatedAt": "2026-07-24T00:09:51.762Z",
+      "pivotConfig": {
+        "measure": {
+          "fn": "count"
+        },
+        "rowDimension": "cr_areaid",
+        "columnDimension": "cr_previousactionid",
+        "totals": false
+      },
+      "title": "Actions with previous actions and areas"
+    },
+    {
+      "kind": "pivot",
+      "pageId": "page_1784811267309",
+      "dataSource": {
+        "mode": "userConnected",
+        "hops": [
+          {
+            "fromTable": "systemuser",
+            "toTable": "pe_position",
+            "relationshipSchemaName": "pe_systemuser_pe_position_currentincumbentuser",
+            "direction": "incoming",
+            "fromField": "systemuserid",
+            "toField": "pe_currentincumbentuser",
+            "referencingEntityNavigationPropertyName": "pe_CurrentIncumbentUser",
+            "referencedEntityNavigationPropertyName": "pe_systemuser_pe_position_currentincumbentuser"
+          },
+          {
+            "fromTable": "pe_position",
+            "toTable": "cr_action",
+            "relationshipSchemaName": "cr_pe_position_cr_action_ownerposition",
+            "direction": "incoming",
+            "fromField": "pe_positionid",
+            "toField": "cr_ownerposition",
+            "referencingEntityNavigationPropertyName": "cr_Ownerposition",
+            "referencedEntityNavigationPropertyName": "cr_pe_position_cr_action_ownerposition"
+          }
+        ],
+        "filterGroups": []
+      },
+      "id": "view_1785477116568",
+      "order": 4,
+      "createdAt": "2026-07-31T05:51:56.568Z",
+      "updatedAt": "2026-07-31T05:52:47.046Z",
+      "title": "My Actions",
+      "instructions": "via position - current incumbent",
+      "pivotConfig": {
+        "measure": {
+          "fn": "count"
+        },
+        "rowDimension": "cr_processid",
+        "columnDimension": "cr_completionstatus",
+        "drillTargetPageId": "page_1785310042533"
+      }
+    }
+  ],
+  "configVersion": 2,
+  "createdAt": "2026-07-23T12:54:27.309Z",
+  "updatedAt": "2026-07-31T05:52:47.046Z",
+  "kind": "standard"
+}

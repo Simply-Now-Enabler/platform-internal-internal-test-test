@@ -1,0 +1,246 @@
+{
+  "id": "page_1784585723552",
+  "appId": "8dd58c87-1849-f111-bec5-002248e415a7",
+  "name": "Another Action Page",
+  "slug": "action-detail",
+  "inNav": false,
+  "views": [
+    {
+      "kind": "detail",
+      "pageId": "page_1784585723552",
+      "dataSource": {
+        "mode": "anchor",
+        "hops": [],
+        "filterGroups": []
+      },
+      "id": "view_1784585765035",
+      "order": 0,
+      "createdAt": "2026-07-20T22:16:05.035Z",
+      "updatedAt": "2026-07-22T01:15:33.918Z",
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_actionidnumber"
+              },
+              {
+                "kind": "field",
+                "field": "cr_areaid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_commentsexternal"
+              },
+              {
+                "kind": "field",
+                "field": "cr_commentsinternal"
+              },
+              {
+                "kind": "field",
+                "field": "cr_completedby"
+              },
+              {
+                "kind": "field",
+                "field": "cr_completionstatus"
+              },
+              {
+                "kind": "field",
+                "field": "cr_datecompleted"
+              },
+              {
+                "kind": "field",
+                "field": "cr_delete"
+              },
+              {
+                "kind": "field",
+                "field": "cr_displaytitle"
+              },
+              {
+                "kind": "field",
+                "field": "cr_name"
+              },
+              {
+                "kind": "field",
+                "field": "cr_originalduedate"
+              },
+              {
+                "kind": "field",
+                "field": "cr_outcomeid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_ownerposition"
+              },
+              {
+                "kind": "field",
+                "field": "cr_ownerpositionid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_previousactionid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_processid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_relatedperformanceplanid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_relatedposition"
+              },
+              {
+                "kind": "field",
+                "field": "cr_relatedpositionid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_relatedstaffappointmentid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_subareaid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_targetdate"
+              },
+              {
+                "kind": "field",
+                "field": "pe_confidential"
+              }
+            ],
+            "title": "all details"
+          }
+        ]
+      },
+      "formFields": [
+        {
+          "field": "cr_actionidnumber",
+          "label": "Action ID Number",
+          "order": 0
+        },
+        {
+          "field": "cr_areaid",
+          "label": "Area",
+          "order": 1
+        },
+        {
+          "field": "cr_commentsexternal",
+          "label": "Comments External",
+          "order": 2
+        },
+        {
+          "field": "cr_commentsinternal",
+          "label": "Comments Internal",
+          "order": 3
+        },
+        {
+          "field": "cr_completedby",
+          "label": "Completed By",
+          "order": 4
+        },
+        {
+          "field": "cr_completionstatus",
+          "label": "Completion Status",
+          "order": 5
+        },
+        {
+          "field": "cr_datecompleted",
+          "label": "Date Completed",
+          "order": 6
+        },
+        {
+          "field": "cr_delete",
+          "label": "Delete",
+          "order": 7
+        },
+        {
+          "field": "cr_displaytitle",
+          "label": "Display title",
+          "order": 8
+        },
+        {
+          "field": "cr_name",
+          "label": "Name",
+          "order": 9
+        },
+        {
+          "field": "cr_originalduedate",
+          "label": "Original Due Date",
+          "order": 10
+        },
+        {
+          "field": "cr_outcomeid",
+          "label": "Outcome",
+          "order": 11
+        },
+        {
+          "field": "cr_ownerposition",
+          "label": "Owner",
+          "order": 12
+        },
+        {
+          "field": "cr_ownerpositionid",
+          "label": "OLD Owner Position",
+          "order": 13
+        },
+        {
+          "field": "cr_previousactionid",
+          "label": "Previous Action",
+          "order": 14
+        },
+        {
+          "field": "cr_processid",
+          "label": "Process",
+          "order": 15
+        },
+        {
+          "field": "cr_relatedperformanceplanid",
+          "label": "Related Performance Plan",
+          "order": 16
+        },
+        {
+          "field": "cr_relatedposition",
+          "label": "Related Position",
+          "order": 17
+        },
+        {
+          "field": "cr_relatedpositionid",
+          "label": "OLD Related Position",
+          "order": 18
+        },
+        {
+          "field": "cr_relatedstaffappointmentid",
+          "label": "Related Staff Appointment",
+          "order": 19
+        },
+        {
+          "field": "cr_subareaid",
+          "label": "Sub-area",
+          "order": 20
+        },
+        {
+          "field": "cr_targetdate",
+          "label": "Target Date",
+          "order": 21
+        },
+        {
+          "field": "pe_confidential",
+          "label": "Confidential",
+          "order": 22
+        }
+      ]
+    }
+  ],
+  "configVersion": 2,
+  "createdAt": "2026-07-20T22:15:23.552Z",
+  "updatedAt": "2026-07-22T01:15:33.918Z",
+  "kind": "singleRecord",
+  "primaryTable": "cr_action"
+}

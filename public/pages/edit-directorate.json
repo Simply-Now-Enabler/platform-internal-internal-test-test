@@ -7,8 +7,14 @@
   "views": [],
   "configVersion": 2,
   "createdAt": "2026-07-08T01:37:55.815Z",
-  "updatedAt": "2026-07-08T01:37:55.815Z",
+  "updatedAt": "2026-08-01T12:59:31.546Z",
   "kind": "singleRecord",
   "parentPageId": "page_1783474363552",
-  "primaryTable": "cr_directorate"
+  "primaryTable": "cr_directorate",
+  "showBreadcrumbs": true,
+  "showBackLink": true,
+  "roleAllowlist": [
+    "Process Administrators"
+  ],
+  "pageRules": []
 }

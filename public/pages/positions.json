@@ -12,7 +12,7 @@
       "id": "view_1783000229058",
       "order": 2,
       "createdAt": "2026-07-02T13:50:29.058Z",
-      "updatedAt": "2026-07-17T01:10:38.471Z",
+      "updatedAt": "2026-07-19T13:52:00.869Z",
       "label": "Positions",
       "title": "Positions",
       "instructions": "pe_positions table",
@@ -83,6 +83,9 @@
         "pe_currentincumbentuser": {
           "targetPageId": "page_1779450313091"
         }
+      },
+      "runtimeFiltering": {
+        "mode": "configurable"
       }
     },
     {
@@ -101,6 +104,30 @@
   "inNav": true,
   "id": "page_1778050524959",
   "createdAt": "2026-05-06T06:55:24.959Z",
-  "updatedAt": "2026-07-17T01:10:38.471Z",
-  "configVersion": 2
+  "updatedAt": "2026-08-01T12:24:38.277Z",
+  "configVersion": 2,
+  "showBreadcrumbs": true,
+  "showBackLink": true,
+  "pageRules": [
+    {
+      "id": "rule_1785587053555_0",
+      "when": [
+        {
+          "conditions": [
+            {
+              "field": "$currentUserRoles",
+              "operator": "notHasRole",
+              "value": "Process Administrators"
+            }
+          ]
+        }
+      ],
+      "then": {
+        "kind": "hide",
+        "target": {
+          "view": "view_1783026413570"
+        }
+      }
+    }
+  ]
 }

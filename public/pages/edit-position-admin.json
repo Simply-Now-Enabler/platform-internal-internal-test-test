@@ -586,8 +586,35 @@
   ],
   "configVersion": 2,
   "createdAt": "2026-07-08T03:43:37.255Z",
-  "updatedAt": "2026-07-17T03:09:19.553Z",
+  "updatedAt": "2026-08-02T23:33:46.888Z",
   "kind": "singleRecord",
   "parentPageId": "page_1778050524959",
-  "primaryTable": "pe_position"
+  "primaryTable": "pe_position",
+  "showBreadcrumbs": true,
+  "showBackLink": true,
+  "pageRules": [
+    {
+      "id": "rule_1785711778152_0",
+      "when": [
+        {
+          "conditions": [
+            {
+              "field": "$currentUserRoles",
+              "operator": "notHasRole",
+              "value": "Process Administrators"
+            },
+            {
+              "field": "$currentUserRoles",
+              "operator": "notHasRole",
+              "value": "Org Sync Fix Test"
+            }
+          ]
+        }
+      ],
+      "then": {
+        "kind": "redirect",
+        "targetPageId": "page_1783000363434"
+      }
+    }
+  ]
 }

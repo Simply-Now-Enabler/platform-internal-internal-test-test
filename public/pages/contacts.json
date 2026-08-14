@@ -103,8 +103,9 @@
   ],
   "configVersion": 2,
   "createdAt": "2026-05-31T22:28:38.600Z",
-  "updatedAt": "2026-07-16T02:08:29.178Z",
+  "updatedAt": "2026-08-04T11:31:38.575Z",
   "kind": "standard",
   "showBreadcrumbs": true,
-  "showBackLink": true
+  "showBackLink": true,
+  "pageRules": []
 }

@@ -353,8 +353,12 @@
   ],
   "configVersion": 2,
   "createdAt": "2026-07-08T01:32:43.552Z",
-  "updatedAt": "2026-07-17T03:13:15.448Z",
+  "updatedAt": "2026-08-01T12:25:29.070Z",
   "kind": "standard",
   "showBreadcrumbs": true,
-  "showBackLink": true
+  "showBackLink": true,
+  "roleAllowlist": [
+    "Process Administrators"
+  ],
+  "pageRules": []
 }

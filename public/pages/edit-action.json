@@ -16,7 +16,7 @@
       "id": "view_1782305760600",
       "order": 1,
       "createdAt": "2026-06-24T12:56:00.600Z",
-      "updatedAt": "2026-07-14T12:47:21.794Z",
+      "updatedAt": "2026-07-17T04:54:42.697Z",
       "title": "Edit Action",
       "columnOrder": [],
       "fields": [],
@@ -53,6 +53,10 @@
               {
                 "kind": "field",
                 "field": "cr_ownerposition"
+              },
+              {
+                "kind": "field",
+                "field": "pe_confidential"
               }
             ],
             "title": "Using the records connected to the selected parents"
@@ -190,6 +194,12 @@
           "field": "cr_ownerposition",
           "label": "Owner",
           "order": 6
+        },
+        {
+          "field": "pe_confidential",
+          "label": "Confidential",
+          "order": 7,
+          "controlFormat": "checkbox"
         }
       ],
       "submitButtons": [
@@ -247,7 +257,7 @@
       "id": "view_1784026793119",
       "order": 2,
       "createdAt": "2026-07-14T10:59:53.119Z",
-      "updatedAt": "2026-07-14T12:47:21.085Z",
+      "updatedAt": "2026-08-02T23:34:27.243Z",
       "layout": {
         "sections": [
           {
@@ -285,6 +295,15 @@
           "afterSubmit": {
             "kind": "returnToParent"
           }
+        },
+        {
+          "id": "btn-mscfsube-1",
+          "label": "Save and stay on page",
+          "afterSubmit": {
+            "kind": "stayOnPage",
+            "stayMode": "reloadForm",
+            "message": "will this reload?"
+          }
         }
       ]
     },
@@ -299,47 +318,391 @@
       "id": "view_1784033203928",
       "order": 0,
       "createdAt": "2026-07-14T12:46:43.928Z",
-      "updatedAt": "2026-07-16T13:27:42.789Z",
+      "updatedAt": "2026-07-20T09:40:04.104Z",
       "formFields": [
+        {
+          "field": "cr_processid",
+          "label": "Action required",
+          "order": 0,
+          "helpText": "this is help text"
+        },
         {
           "field": "cr_actionidnumber",
           "label": "Action ID Number",
-          "order": 0
+          "order": 1
+        },
+        {
+          "field": "cr_ownerposition",
+          "label": "Owner",
+          "order": 2
+        },
+        {
+          "field": "cr_outcomeid",
+          "label": "Outcome",
+          "order": 3
+        },
+        {
+          "field": "cr_completedby",
+          "label": "Completed By",
+          "order": 4
+        },
+        {
+          "field": "cr_datecompleted",
+          "label": "Date Completed",
+          "order": 5
+        },
+        {
+          "field": "pe_confidential",
+          "label": "Confidential",
+          "order": 6
         },
         {
           "field": "cr_areaid",
           "label": "Area",
-          "order": 1
+          "order": 7
         },
         {
           "field": "cr_subareaid",
           "label": "Sub-area",
-          "order": 2
-        },
-        {
-          "field": "cr_processid",
-          "label": "Process",
-          "order": 3
+          "order": 8
         },
         {
           "field": "cr_relatedstaffappointmentid",
           "label": "Related Staff Appointment",
-          "order": 4
+          "order": 9
         },
         {
           "field": "cr_relatedposition",
           "label": "Related Position",
+          "order": 10
+        }
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "section-mrrnergf-3",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_processid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_actionidnumber"
+              },
+              {
+                "kind": "pageLink",
+                "id": "pagelink-mrt1a1pr-1",
+                "pageId": "page_1784463499287"
+              }
+            ],
+            "title": "Action"
+          },
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_ownerposition"
+              },
+              {
+                "kind": "field",
+                "field": "cr_outcomeid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_completedby"
+              },
+              {
+                "kind": "field",
+                "field": "cr_datecompleted"
+              },
+              {
+                "kind": "field",
+                "field": "pe_confidential",
+                "column": 2
+              },
+              {
+                "kind": "field",
+                "field": "cr_areaid",
+                "column": 2
+              },
+              {
+                "kind": "field",
+                "field": "cr_subareaid",
+                "column": 2
+              },
+              {
+                "kind": "field",
+                "field": "cr_relatedstaffappointmentid",
+                "column": 2
+              },
+              {
+                "kind": "field",
+                "field": "cr_relatedposition",
+                "column": 2
+              },
+              {
+                "kind": "pageLink",
+                "id": "pagelink-mrrmyh14-2",
+                "pageId": "page_1784119986716",
+                "label": "Draft Goals"
+              }
+            ],
+            "columnCount": 2
+          }
+        ]
+      },
+      "detailHeader": {
+        "titleField": "cr_processid",
+        "fields": [
+          "cr_actionidnumber",
+          "cr_previousactionid"
+        ]
+      },
+      "linkedPageIds": [
+        "page_1784463499287",
+        "page_1784119986716"
+      ],
+      "lookupConfig": {
+        "cr_previousactionid": {
+          "displayColumn": "cr_actionidnumber",
+          "navProperty": "cr_PreviousActionId",
+          "targetPageId": "page_1782305720944"
+        },
+        "cr_processid": {
+          "targetPageId": "page_1783567690510"
+        },
+        "cr_relatedposition": {
+          "targetPageId": "page_1783000363434"
+        },
+        "cr_ownerposition": {
+          "targetPageId": "page_1783000363434"
+        }
+      },
+      "detailFieldConfig": {
+        "cr_processid": {
+          "labelPosition": "none",
+          "labelFormat": {
+            "size": "large"
+          },
+          "valueFormat": {
+            "bold": true,
+            "size": "large"
+          }
+        },
+        "cr_actionidnumber": {
+          "labelPosition": "none"
+        },
+        "cr_completedby": {
+          "valueFormat": {
+            "italic": true
+          },
+          "labelFormat": {
+            "italic": true
+          }
+        },
+        "cr_datecompleted": {
+          "valueFormat": {
+            "italic": true
+          },
+          "labelFormat": {
+            "italic": true
+          }
+        },
+        "cr_outcomeid": {
+          "labelFormat": {
+            "italic": true
+          },
+          "valueFormat": {
+            "italic": true,
+            "bold": true
+          }
+        },
+        "pe_confidential": {
+          "valueFormat": {
+            "size": "large",
+            "bold": true
+          }
+        },
+        "cr_ownerposition": {
+          "labelFormat": {
+            "size": "large",
+            "color": "#48821d"
+          },
+          "valueFormat": {
+            "size": "large",
+            "color": "#48821d"
+          }
+        }
+      }
+    },
+    {
+      "kind": "createForm",
+      "pageId": "page_1782305720944",
+      "dataSource": {
+        "mode": "anchor",
+        "hops": [
+          {
+            "fromTable": "cr_action",
+            "toTable": "pe_position",
+            "relationshipSchemaName": "cr_pe_position_cr_action_relatedposition",
+            "direction": "outgoing",
+            "fromField": "cr_relatedposition",
+            "toField": "pe_positionid",
+            "referencingEntityNavigationPropertyName": "cr_Relatedposition",
+            "referencedEntityNavigationPropertyName": "cr_pe_position_cr_action_relatedposition"
+          }
+        ],
+        "filterGroups": []
+      },
+      "id": "view_1784540269147",
+      "order": 4,
+      "createdAt": "2026-07-20T09:37:49.147Z",
+      "updatedAt": "2026-07-20T09:39:37.711Z",
+      "label": "Create parent position connected to this action",
+      "title": "Create related position",
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "pe_name"
+              },
+              {
+                "kind": "field",
+                "field": "pe_reportsto"
+              },
+              {
+                "kind": "field",
+                "field": "cr_directorate"
+              },
+              {
+                "kind": "field",
+                "field": "cr_department"
+              },
+              {
+                "kind": "field",
+                "field": "cr_isexecutive"
+              },
+              {
+                "kind": "field",
+                "field": "cr_ismanager"
+              },
+              {
+                "kind": "field",
+                "field": "cr_iscoordinator"
+              },
+              {
+                "kind": "field",
+                "field": "cr_issupervisor"
+              },
+              {
+                "kind": "field",
+                "field": "cr_startingwhen"
+              },
+              {
+                "kind": "field",
+                "field": "pe_startdate"
+              }
+            ],
+            "title": "TEST ONLY - NOT FULLY CONFIGURED"
+          }
+        ]
+      },
+      "formFields": [
+        {
+          "field": "pe_name",
+          "label": "Name",
+          "order": 0
+        },
+        {
+          "field": "pe_reportsto",
+          "label": "Reports To",
+          "order": 1
+        },
+        {
+          "field": "cr_directorate",
+          "label": "Directorate",
+          "order": 2
+        },
+        {
+          "field": "cr_department",
+          "label": "Department",
+          "order": 3
+        },
+        {
+          "field": "cr_isexecutive",
+          "label": "Is Executive",
+          "order": 4
+        },
+        {
+          "field": "cr_ismanager",
+          "label": "Is Manager",
           "order": 5
+        },
+        {
+          "field": "cr_iscoordinator",
+          "label": "Is Coordinator",
+          "order": 6
+        },
+        {
+          "field": "cr_issupervisor",
+          "label": "Is Supervisor",
+          "order": 7
+        },
+        {
+          "field": "cr_startingwhen",
+          "label": "Starting When",
+          "order": 8
+        },
+        {
+          "field": "pe_startdate",
+          "label": "Start Date",
+          "order": 9
+        }
+      ],
+      "submitButtons": [
+        {
+          "id": "btn-mrt17pvm-0",
+          "label": "Save",
+          "afterSubmit": {
+            "kind": "stayOnPage",
+            "stayMode": "hideForm",
+            "message": "related position created and added"
+          }
         }
       ]
     }
   ],
   "configVersion": 2,
   "createdAt": "2026-06-24T12:55:20.944Z",
-  "updatedAt": "2026-07-16T13:27:42.789Z",
+  "updatedAt": "2026-08-02T23:34:27.243Z",
   "kind": "singleRecord",
   "parentPageId": "page_1782298650290",
   "primaryTable": "cr_action",
   "showBreadcrumbs": true,
-  "showBackLink": true
+  "showBackLink": true,
+  "pageRules": [
+    {
+      "id": "rule_1785706731409_0",
+      "when": [
+        {
+          "conditions": [
+            {
+              "field": "pe_confidential",
+              "operator": "eq",
+              "value": "true"
+            }
+          ]
+        }
+      ],
+      "then": {
+        "kind": "redirect",
+        "targetPageId": "page_1784463499287"
+      }
+    }
+  ]
 }

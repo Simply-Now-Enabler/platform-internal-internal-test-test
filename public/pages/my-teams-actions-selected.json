@@ -1,0 +1,197 @@
+{
+  "id": "page_1785470406462",
+  "appId": "8dd58c87-1849-f111-bec5-002248e415a7",
+  "name": "My Teams Actions - selected",
+  "slug": "my-teams-actions-selected",
+  "inNav": false,
+  "views": [
+    {
+      "kind": "table",
+      "pageId": "page_1785470406462",
+      "dataSource": {
+        "mode": "userConnected",
+        "hops": [
+          {
+            "fromTable": "systemuser",
+            "toTable": "pe_position",
+            "relationshipSchemaName": "pe_systemuser_pe_position_currentincumbentuser",
+            "direction": "incoming",
+            "fromField": "systemuserid",
+            "toField": "pe_currentincumbentuser",
+            "referencingEntityNavigationPropertyName": "pe_CurrentIncumbentUser",
+            "referencedEntityNavigationPropertyName": "pe_systemuser_pe_position_currentincumbentuser"
+          },
+          {
+            "fromTable": "pe_position",
+            "toTable": "pe_position",
+            "relationshipSchemaName": "pe_pe_position_pe_position_reportsto",
+            "direction": "incoming",
+            "fromField": "pe_positionid",
+            "toField": "pe_reportsto",
+            "referencingEntityNavigationPropertyName": "pe_ReportsTo",
+            "referencedEntityNavigationPropertyName": "pe_pe_position_pe_position_reportsto"
+          },
+          {
+            "fromTable": "pe_position",
+            "toTable": "cr_action",
+            "relationshipSchemaName": "cr_pe_position_cr_action_ownerposition",
+            "direction": "incoming",
+            "fromField": "pe_positionid",
+            "toField": "cr_ownerposition",
+            "referencingEntityNavigationPropertyName": "cr_Ownerposition",
+            "referencedEntityNavigationPropertyName": "cr_pe_position_cr_action_ownerposition"
+          }
+        ],
+        "filterGroups": []
+      },
+      "label": "Actions",
+      "title": "All Actions",
+      "columnOrder": [
+        "link:page_1784463499287",
+        "cr_targetdate",
+        "cr_subareaid",
+        "cr_processid",
+        "cr_completionstatus",
+        "cr_ownerposition",
+        "ownerid",
+        "pe_confidential",
+        "cr_originalduedate",
+        "cr_outcomeid",
+        "cr_commentsinternal",
+        "cr_areaid",
+        "cr_completedby",
+        "cr_datecompleted",
+        "link:page_1784585723552"
+      ],
+      "fields": [
+        "cr_targetdate",
+        "cr_subareaid",
+        "cr_processid",
+        "cr_completionstatus",
+        "cr_ownerposition",
+        "ownerid",
+        "pe_confidential",
+        "cr_originalduedate",
+        "cr_outcomeid",
+        "cr_commentsinternal",
+        "cr_areaid",
+        "cr_completedby",
+        "cr_datecompleted"
+      ],
+      "linkedPageIds": [
+        "page_1784463499287",
+        "page_1784585723552"
+      ],
+      "sortField": "createdon",
+      "sortDir": "desc",
+      "rowClickPageId": "page_1784463499287",
+      "columnConfig": {
+        "link:page_1784463499287": {
+          "label": "Action",
+          "labelField": "cr_actionidnumber"
+        },
+        "cr_ownerposition": {
+          "label": "Owner position"
+        },
+        "cr_originalduedate": {
+          "hideWhenEmpty": true,
+          "presentation": {
+            "rules": [
+              {
+                "condition": [
+                  {
+                    "conditions": [
+                      {
+                        "field": "cr_closedon",
+                        "operator": "notNull",
+                        "value": ""
+                      }
+                    ]
+                  }
+                ],
+                "effects": {
+                  "hideValue": true
+                }
+              }
+            ]
+          }
+        },
+        "cr_outcomeid": {
+          "hideWhenEmpty": true
+        },
+        "cr_completedby": {
+          "hideWhenEmpty": true
+        },
+        "cr_datecompleted": {
+          "hideWhenEmpty": true
+        }
+      },
+      "runtimeFiltering": {
+        "mode": "configurable",
+        "scope": "all",
+        "candidateFilters": {
+          "cr_areaid": [
+            {
+              "conditions": [
+                {
+                  "field": "cr_delete",
+                  "operator": "ne",
+                  "value": "true"
+                }
+              ]
+            }
+          ],
+          "cr_outcomeid": [
+            {
+              "conditions": [
+                {
+                  "field": "cr_delete",
+                  "operator": "ne",
+                  "value": "true"
+                }
+              ]
+            }
+          ],
+          "cr_ownerpositionid": [
+            {
+              "conditions": [
+                {
+                  "field": "statecode",
+                  "operator": "eq",
+                  "value": "0"
+                }
+              ]
+            }
+          ],
+          "cr_processid": [
+            {
+              "conditions": [
+                {
+                  "field": "cr_delete",
+                  "operator": "ne",
+                  "value": "true"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "lookupConfig": {
+        "cr_previousactionid": {
+          "displayColumn": "cr_actionidnumber",
+          "navProperty": "cr_PreviousActionId"
+        }
+      },
+      "id": "view_1785470407754",
+      "order": 0,
+      "createdAt": "2026-07-31T04:00:07.754Z",
+      "updatedAt": "2026-07-31T06:58:41.871Z"
+    }
+  ],
+  "configVersion": 2,
+  "createdAt": "2026-07-31T04:00:06.462Z",
+  "updatedAt": "2026-07-31T06:58:41.872Z",
+  "kind": "standard",
+  "drillTable": "cr_action",
+  "drillScope": "user:incoming:systemuser.systemuserid>pe_position.pe_currentincumbentuser|incoming:pe_position.pe_positionid>pe_position.pe_reportsto|incoming:pe_position.pe_positionid>cr_action.cr_ownerposition"
+}

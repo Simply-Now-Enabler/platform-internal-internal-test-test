@@ -162,8 +162,14 @@
   ],
   "configVersion": 2,
   "createdAt": "2026-07-08T04:08:18.578Z",
-  "updatedAt": "2026-07-09T12:28:42.277Z",
+  "updatedAt": "2026-08-01T12:58:47.775Z",
   "kind": "singleRecord",
   "parentPageId": "page_1782299470460",
-  "primaryTable": "cr_actionsubarea"
+  "primaryTable": "cr_actionsubarea",
+  "showBreadcrumbs": true,
+  "showBackLink": true,
+  "roleAllowlist": [
+    "Process Administrators"
+  ],
+  "pageRules": []
 }

@@ -1,0 +1,181 @@
+{
+  "id": "page_1784855447460",
+  "appId": "8dd58c87-1849-f111-bec5-002248e415a7",
+  "name": "Test reports",
+  "slug": "test-reports",
+  "inNav": true,
+  "views": [
+    {
+      "kind": "chart",
+      "pageId": "page_1784855447460",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_action",
+        "filterGroups": []
+      },
+      "id": "view_1784855493979",
+      "order": 0,
+      "createdAt": "2026-07-24T01:11:33.979Z",
+      "updatedAt": "2026-07-29T12:29:21.489Z",
+      "chartConfig": {
+        "type": "bar",
+        "measure": {
+          "fn": "count"
+        },
+        "categoryDimension": "cr_subareaid",
+        "seriesDimension": "cr_completionstatus",
+        "height": 640,
+        "maxWidth": 800,
+        "drillTargetPageId": "page_1785310488507"
+      },
+      "title": "actions"
+    },
+    {
+      "kind": "chart",
+      "pageId": "page_1784855447460",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_action",
+        "filterGroups": []
+      },
+      "id": "view_1784858647038",
+      "order": 2,
+      "createdAt": "2026-07-24T02:04:07.038Z",
+      "updatedAt": "2026-08-03T00:38:42.843Z",
+      "title": "single chart of actions",
+      "chartConfig": {
+        "type": "horizontalBar",
+        "measure": {
+          "fn": "count"
+        },
+        "categoryDimension": "cr_processid",
+        "topN": 15,
+        "height": 400,
+        "maxWidth": 800
+      }
+    },
+    {
+      "kind": "chart",
+      "pageId": "page_1784855447460",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_action",
+        "filterGroups": [
+          {
+            "conditions": [
+              {
+                "field": "cr_processid",
+                "operator": "notNull",
+                "value": ""
+              }
+            ]
+          }
+        ]
+      },
+      "id": "view_1785161916725",
+      "order": 1,
+      "createdAt": "2026-07-27T14:18:36.725Z",
+      "updatedAt": "2026-08-03T00:38:42.843Z",
+      "chartConfig": {
+        "type": "bar",
+        "measure": {
+          "fn": "count"
+        },
+        "categoryDimension": "cr_processid",
+        "topN": 15,
+        "drillTargetPageId": "page_1785310488507"
+      }
+    },
+    {
+      "kind": "chart",
+      "pageId": "page_1784855447460",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_action",
+        "filterGroups": [
+          {
+            "conditions": [
+              {
+                "field": "cr_ownerposition",
+                "operator": "notNull",
+                "value": ""
+              },
+              {
+                "field": "cr_completionstatus",
+                "operator": "ne",
+                "value": "5"
+              },
+              {
+                "field": "cr_processid",
+                "operator": "notNull",
+                "value": ""
+              }
+            ]
+          }
+        ]
+      },
+      "id": "view_1785165845813",
+      "order": 3,
+      "createdAt": "2026-07-27T15:24:05.813Z",
+      "updatedAt": "2026-07-31T04:08:37.223Z",
+      "chartConfig": {
+        "type": "pie",
+        "measure": {
+          "fn": "count"
+        },
+        "categoryDimension": "cr_ownerposition",
+        "height": 400,
+        "drillTargetPageId": "page_1785310488507"
+      },
+      "title": "Pie chart - open actions by owner"
+    },
+    {
+      "kind": "chart",
+      "pageId": "page_1784855447460",
+      "dataSource": {
+        "mode": "userConnected",
+        "hops": [
+          {
+            "fromTable": "systemuser",
+            "toTable": "pe_position",
+            "relationshipSchemaName": "pe_systemuser_pe_position_currentincumbentuser",
+            "direction": "incoming",
+            "fromField": "systemuserid",
+            "toField": "pe_currentincumbentuser",
+            "referencingEntityNavigationPropertyName": "pe_CurrentIncumbentUser",
+            "referencedEntityNavigationPropertyName": "pe_systemuser_pe_position_currentincumbentuser"
+          },
+          {
+            "fromTable": "pe_position",
+            "toTable": "cr_action",
+            "relationshipSchemaName": "cr_pe_position_cr_action_ownerposition",
+            "direction": "incoming",
+            "fromField": "pe_positionid",
+            "toField": "cr_ownerposition",
+            "referencingEntityNavigationPropertyName": "cr_Ownerposition",
+            "referencedEntityNavigationPropertyName": "cr_pe_position_cr_action_ownerposition"
+          }
+        ],
+        "filterGroups": []
+      },
+      "id": "view_1785480188664",
+      "order": 4,
+      "createdAt": "2026-07-31T06:43:08.664Z",
+      "updatedAt": "2026-07-31T06:45:13.424Z",
+      "title": "My actions",
+      "chartConfig": {
+        "type": "bar",
+        "measure": {
+          "fn": "count"
+        },
+        "categoryDimension": "cr_processid",
+        "seriesDimension": "cr_ownerposition",
+        "drillTargetPageId": "page_1785310042533"
+      }
+    }
+  ],
+  "configVersion": 2,
+  "createdAt": "2026-07-24T01:10:47.460Z",
+  "updatedAt": "2026-08-03T00:38:42.844Z",
+  "kind": "standard"
+}

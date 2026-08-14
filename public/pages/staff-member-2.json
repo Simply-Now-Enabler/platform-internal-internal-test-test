@@ -1,0 +1,110 @@
+{
+  "id": "page_1784587884318",
+  "appId": "8dd58c87-1849-f111-bec5-002248e415a7",
+  "name": "Staff member 2",
+  "slug": "staff-member-2",
+  "inNav": false,
+  "views": [
+    {
+      "kind": "detail",
+      "pageId": "page_1784587884318",
+      "dataSource": {
+        "mode": "anchor",
+        "hops": [],
+        "filterGroups": []
+      },
+      "id": "view_1784603593079",
+      "order": 0,
+      "createdAt": "2026-07-21T03:13:13.080Z",
+      "updatedAt": "2026-07-21T03:13:25.300Z",
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_photo2"
+              },
+              {
+                "kind": "field",
+                "field": "pe_email"
+              },
+              {
+                "kind": "field",
+                "field": "pe_enddate"
+              },
+              {
+                "kind": "field",
+                "field": "pe_firstname"
+              },
+              {
+                "kind": "field",
+                "field": "pe_lastname"
+              },
+              {
+                "kind": "field",
+                "field": "pe_name"
+              },
+              {
+                "kind": "field",
+                "field": "pe_startdate"
+              },
+              {
+                "kind": "field",
+                "field": "pe_user"
+              }
+            ]
+          }
+        ]
+      },
+      "formFields": [
+        {
+          "field": "cr_photo2",
+          "label": "Photo2",
+          "order": 0
+        },
+        {
+          "field": "pe_email",
+          "label": "Email",
+          "order": 1
+        },
+        {
+          "field": "pe_enddate",
+          "label": "End Date",
+          "order": 2
+        },
+        {
+          "field": "pe_firstname",
+          "label": "First Name",
+          "order": 3
+        },
+        {
+          "field": "pe_lastname",
+          "label": "Last Name",
+          "order": 4
+        },
+        {
+          "field": "pe_name",
+          "label": "Full Name",
+          "order": 5
+        },
+        {
+          "field": "pe_startdate",
+          "label": "Start Date",
+          "order": 6
+        },
+        {
+          "field": "pe_user",
+          "label": "User",
+          "order": 7
+        }
+      ]
+    }
+  ],
+  "configVersion": 2,
+  "createdAt": "2026-07-20T22:51:24.318Z",
+  "updatedAt": "2026-07-21T03:13:25.301Z",
+  "kind": "singleRecord",
+  "primaryTable": "pe_staffmember"
+}

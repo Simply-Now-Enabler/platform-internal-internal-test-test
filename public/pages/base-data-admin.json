@@ -16,7 +16,7 @@
       "id": "view_1784085396658",
       "order": 0,
       "createdAt": "2026-07-15T03:16:36.658Z",
-      "updatedAt": "2026-07-15T03:17:27.320Z",
+      "updatedAt": "2026-07-21T02:32:42.326Z",
       "label": "Financial Years",
       "title": "Financial Years",
       "columnOrder": [
@@ -36,6 +36,9 @@
         "page_1784085429622"
       ],
       "columnConfig": {
+        "cr_nextfinancialyearid": {
+          "label": "Next FY"
+        },
         "link:page_1784085429622": {
           "label": "Edit",
           "labelMode": "text",
@@ -119,8 +122,12 @@
   ],
   "configVersion": 2,
   "createdAt": "2026-07-15T03:16:25.672Z",
-  "updatedAt": "2026-07-16T02:09:51.374Z",
+  "updatedAt": "2026-08-01T12:25:35.191Z",
   "kind": "standard",
   "showBreadcrumbs": true,
-  "showBackLink": true
+  "showBackLink": true,
+  "roleAllowlist": [
+    "Process Administrators"
+  ],
+  "pageRules": []
 }

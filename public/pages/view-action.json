@@ -1,0 +1,1128 @@
+{
+  "id": "page_1784463499287",
+  "appId": "8dd58c87-1849-f111-bec5-002248e415a7",
+  "name": "View Action",
+  "slug": "view-action",
+  "inNav": false,
+  "views": [
+    {
+      "kind": "detail",
+      "pageId": "page_1784463499287",
+      "dataSource": {
+        "mode": "anchor",
+        "hops": [],
+        "filterGroups": []
+      },
+      "id": "view_1784463520752",
+      "order": 0,
+      "createdAt": "2026-07-19T12:18:40.752Z",
+      "updatedAt": "2026-07-20T09:50:28.009Z",
+      "layout": {
+        "sections": [
+          {
+            "id": "section-mrsmziig-6",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_displaytitle"
+              },
+              {
+                "kind": "pageLink",
+                "id": "pagelink-mrt1ajsc-2",
+                "pageId": "page_1782305720944"
+              }
+            ]
+          },
+          {
+            "id": "section-mrrrl84l-5",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_processid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_actionidnumber"
+              },
+              {
+                "kind": "field",
+                "field": "related:cr_ownerposition.pe_currentincumbentuser.firstname"
+              },
+              {
+                "kind": "field",
+                "field": "cr_ownerposition"
+              },
+              {
+                "kind": "field",
+                "field": "cr_relatedperformanceplanid",
+                "column": 2
+              },
+              {
+                "kind": "field",
+                "field": "cr_relatedstaffappointmentid",
+                "column": 2
+              },
+              {
+                "kind": "field",
+                "field": "cr_relatedposition",
+                "column": 2
+              }
+            ],
+            "columnCount": 2
+          },
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_completionstatus"
+              },
+              {
+                "kind": "field",
+                "field": "cr_commentsinternal"
+              },
+              {
+                "kind": "field",
+                "field": "cr_commentsexternal"
+              },
+              {
+                "kind": "titleBlock",
+                "id": "title-mrrrpdbf-12",
+                "text": "Outcome"
+              },
+              {
+                "kind": "field",
+                "field": "cr_outcomeid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_datecompleted"
+              },
+              {
+                "kind": "field",
+                "field": "cr_completedby"
+              },
+              {
+                "kind": "field",
+                "field": "cr_areaid",
+                "column": 2
+              },
+              {
+                "kind": "field",
+                "field": "cr_subareaid",
+                "column": 2
+              },
+              {
+                "kind": "titleBlock",
+                "id": "title-mrrrqfmm-13",
+                "text": "Dates",
+                "column": 2
+              },
+              {
+                "kind": "field",
+                "field": "cr_targetdate",
+                "column": 2
+              },
+              {
+                "kind": "field",
+                "field": "cr_originalduedate",
+                "column": 2
+              }
+            ],
+            "columnCount": 2
+          },
+          {
+            "id": "section-mrrrkdfy-4",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_previousactionid"
+              },
+              {
+                "kind": "field",
+                "field": "pe_confidential",
+                "column": 2
+              }
+            ],
+            "columnCount": 2
+          },
+          {
+            "id": "section-mrsjji4o-1",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "related:cr_relatedposition.pe_name"
+              },
+              {
+                "kind": "field",
+                "field": "related:cr_relatedposition.cr_startingwhen"
+              },
+              {
+                "kind": "field",
+                "field": "related:cr_relatedposition.pe_startdate"
+              },
+              {
+                "kind": "titleBlock",
+                "id": "title-mrskil5f-4",
+                "text": "Team and reporting line"
+              },
+              {
+                "kind": "field",
+                "field": "related:cr_relatedposition.pe_reportsto"
+              },
+              {
+                "kind": "field",
+                "field": "related:cr_relatedposition.cr_directorate"
+              },
+              {
+                "kind": "field",
+                "field": "related:cr_relatedposition.cr_department"
+              },
+              {
+                "kind": "field",
+                "field": "related:cr_relatedposition.cr_statuslifecycle",
+                "column": 2
+              },
+              {
+                "kind": "field",
+                "field": "related:cr_relatedposition.createdby",
+                "column": 2
+              },
+              {
+                "kind": "field",
+                "field": "related:cr_relatedposition.createdon",
+                "column": 2
+              },
+              {
+                "kind": "titleBlock",
+                "id": "title-mrsklkok-5",
+                "text": "Level",
+                "column": 2
+              },
+              {
+                "kind": "field",
+                "field": "related:cr_relatedposition.cr_isexecutive",
+                "column": 2
+              },
+              {
+                "kind": "field",
+                "field": "related:cr_relatedposition.cr_ismanager",
+                "column": 2
+              },
+              {
+                "kind": "field",
+                "field": "related:cr_relatedposition.cr_iscoordinator",
+                "column": 2
+              },
+              {
+                "kind": "field",
+                "field": "related:cr_relatedposition.cr_issupervisor",
+                "column": 2
+              }
+            ],
+            "columnCount": 2,
+            "title": "Position"
+          },
+          {
+            "id": "section-mrso0lft-1",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "related:cr_processid.cr_subareaid.cr_areaid.pe_confidential"
+              },
+              {
+                "kind": "field",
+                "field": "related:cr_processid.cr_subareaid.cr_areaid.cr_name"
+              }
+            ],
+            "columnCount": 2,
+            "title": "Test junk - 3 hops"
+          }
+        ]
+      },
+      "formFields": [
+        {
+          "field": "cr_displaytitle",
+          "label": "Display title",
+          "order": 0
+        },
+        {
+          "field": "cr_processid",
+          "label": "Process",
+          "order": 1
+        },
+        {
+          "field": "cr_actionidnumber",
+          "label": "Action ID Number",
+          "order": 2
+        },
+        {
+          "field": "related:cr_ownerposition.pe_currentincumbentuser.firstname",
+          "label": "Owner",
+          "order": 3
+        },
+        {
+          "field": "cr_ownerposition",
+          "label": "Owner's position",
+          "order": 4
+        },
+        {
+          "field": "cr_relatedperformanceplanid",
+          "label": "Related Performance Plan",
+          "order": 5
+        },
+        {
+          "field": "cr_relatedstaffappointmentid",
+          "label": "Related Staff Appointment",
+          "order": 6
+        },
+        {
+          "field": "cr_relatedposition",
+          "label": "Related Position",
+          "order": 7
+        },
+        {
+          "field": "cr_completionstatus",
+          "label": "Completion Status",
+          "order": 8
+        },
+        {
+          "field": "cr_commentsinternal",
+          "label": "Comments Internal",
+          "order": 9
+        },
+        {
+          "field": "cr_commentsexternal",
+          "label": "Comments External",
+          "order": 10
+        },
+        {
+          "field": "cr_outcomeid",
+          "label": "Outcome",
+          "order": 11
+        },
+        {
+          "field": "cr_datecompleted",
+          "label": "Date Completed",
+          "order": 12
+        },
+        {
+          "field": "cr_completedby",
+          "label": "Completed By",
+          "order": 13
+        },
+        {
+          "field": "cr_areaid",
+          "label": "Area",
+          "order": 14
+        },
+        {
+          "field": "cr_subareaid",
+          "label": "Sub-area",
+          "order": 15
+        },
+        {
+          "field": "cr_targetdate",
+          "label": "Target Date",
+          "order": 16
+        },
+        {
+          "field": "cr_originalduedate",
+          "label": "Original Due Date",
+          "order": 17
+        },
+        {
+          "field": "cr_previousactionid",
+          "label": "Previous Action",
+          "order": 18
+        },
+        {
+          "field": "pe_confidential",
+          "label": "Confidential",
+          "order": 19
+        },
+        {
+          "field": "related:cr_relatedposition.pe_name",
+          "label": "Name",
+          "order": 20
+        },
+        {
+          "field": "related:cr_relatedposition.cr_startingwhen",
+          "label": "Starting When",
+          "order": 21
+        },
+        {
+          "field": "related:cr_relatedposition.pe_startdate",
+          "label": "Start Date",
+          "order": 22
+        },
+        {
+          "field": "related:cr_relatedposition.pe_reportsto",
+          "label": "Reports To",
+          "order": 23
+        },
+        {
+          "field": "related:cr_relatedposition.cr_directorate",
+          "label": "Directorate",
+          "order": 24
+        },
+        {
+          "field": "related:cr_relatedposition.cr_department",
+          "label": "Department",
+          "order": 25
+        },
+        {
+          "field": "related:cr_relatedposition.cr_statuslifecycle",
+          "label": "Status Lifecycle",
+          "order": 26
+        },
+        {
+          "field": "related:cr_relatedposition.createdby",
+          "label": "Created By",
+          "order": 27
+        },
+        {
+          "field": "related:cr_relatedposition.createdon",
+          "label": "Created On",
+          "order": 28
+        },
+        {
+          "field": "related:cr_relatedposition.cr_isexecutive",
+          "label": "Is Executive",
+          "order": 29
+        },
+        {
+          "field": "related:cr_relatedposition.cr_ismanager",
+          "label": "Is Manager",
+          "order": 30
+        },
+        {
+          "field": "related:cr_relatedposition.cr_iscoordinator",
+          "label": "Is Coordinator",
+          "order": 31
+        },
+        {
+          "field": "related:cr_relatedposition.cr_issupervisor",
+          "label": "Is Supervisor",
+          "order": 32
+        },
+        {
+          "field": "related:cr_processid.cr_subareaid.cr_areaid.pe_confidential",
+          "label": "Is the Area confidential?",
+          "order": 33
+        },
+        {
+          "field": "related:cr_processid.cr_subareaid.cr_areaid.cr_name",
+          "label": "Area - 3 hop",
+          "order": 34
+        }
+      ],
+      "detailFieldConfig": {
+        "cr_processid": {
+          "labelPosition": "none",
+          "valueFormat": {
+            "bold": true,
+            "size": "large"
+          }
+        },
+        "cr_actionidnumber": {
+          "labelPosition": "none"
+        },
+        "cr_ownerposition": {
+          "valueFormat": {
+            "italic": true
+          }
+        },
+        "cr_outcomeid": {
+          "labelPosition": "none"
+        },
+        "pe_confidential": {
+          "valueFormat": {
+            "bold": true
+          }
+        },
+        "cr_displaytitle": {
+          "labelPosition": "none",
+          "valueFormat": {
+            "bold": true,
+            "size": "large"
+          }
+        },
+        "related:cr_ownerposition.pe_currentincumbentuser.firstname": {
+          "valueFormat": {
+            "bold": true
+          }
+        }
+      },
+      "lookupConfig": {
+        "cr_relatedperformanceplanid": {
+          "targetPageId": "page_1784085700962"
+        },
+        "cr_relatedposition": {
+          "displayColumn": "cr_displaytitle",
+          "navProperty": "cr_Relatedposition",
+          "targetPageId": "page_1783000363434"
+        },
+        "cr_relatedstaffappointmentid": {
+          "displayColumn": "cr_displaytitle",
+          "navProperty": "cr_RelatedStaffAppointmentId"
+        },
+        "cr_previousactionid": {
+          "targetPageId": "page_1784463499287",
+          "displayColumn": "cr_displaytitle",
+          "navProperty": "cr_PreviousActionId"
+        },
+        "cr_ownerposition": {
+          "targetPageId": "page_1783000363434"
+        }
+      },
+      "relatedColumns": {
+        "related:cr_relatedposition.cr_department": {
+          "navProperty": "cr_Relatedposition",
+          "isLookup": true,
+          "label": "Department",
+          "hops": [
+            {
+              "fromTable": "cr_action",
+              "toTable": "pe_position",
+              "relationshipSchemaName": "cr_pe_position_cr_action_relatedposition",
+              "direction": "outgoing",
+              "fromField": "cr_relatedposition",
+              "toField": "pe_positionid",
+              "referencingEntityNavigationPropertyName": "cr_Relatedposition",
+              "referencedEntityNavigationPropertyName": "cr_pe_position_cr_action_relatedposition"
+            }
+          ]
+        },
+        "related:cr_relatedposition.cr_directorate": {
+          "navProperty": "cr_Relatedposition",
+          "isLookup": true,
+          "label": "Directorate",
+          "hops": [
+            {
+              "fromTable": "cr_action",
+              "toTable": "pe_position",
+              "relationshipSchemaName": "cr_pe_position_cr_action_relatedposition",
+              "direction": "outgoing",
+              "fromField": "cr_relatedposition",
+              "toField": "pe_positionid",
+              "referencingEntityNavigationPropertyName": "cr_Relatedposition",
+              "referencedEntityNavigationPropertyName": "cr_pe_position_cr_action_relatedposition"
+            }
+          ]
+        },
+        "related:cr_relatedposition.cr_iscoordinator": {
+          "navProperty": "cr_Relatedposition",
+          "label": "Is Coordinator",
+          "hops": [
+            {
+              "fromTable": "cr_action",
+              "toTable": "pe_position",
+              "relationshipSchemaName": "cr_pe_position_cr_action_relatedposition",
+              "direction": "outgoing",
+              "fromField": "cr_relatedposition",
+              "toField": "pe_positionid",
+              "referencingEntityNavigationPropertyName": "cr_Relatedposition",
+              "referencedEntityNavigationPropertyName": "cr_pe_position_cr_action_relatedposition"
+            }
+          ]
+        },
+        "related:cr_relatedposition.cr_ismanager": {
+          "navProperty": "cr_Relatedposition",
+          "label": "Is Manager",
+          "hops": [
+            {
+              "fromTable": "cr_action",
+              "toTable": "pe_position",
+              "relationshipSchemaName": "cr_pe_position_cr_action_relatedposition",
+              "direction": "outgoing",
+              "fromField": "cr_relatedposition",
+              "toField": "pe_positionid",
+              "referencingEntityNavigationPropertyName": "cr_Relatedposition",
+              "referencedEntityNavigationPropertyName": "cr_pe_position_cr_action_relatedposition"
+            }
+          ]
+        },
+        "related:cr_relatedposition.cr_issupervisor": {
+          "navProperty": "cr_Relatedposition",
+          "label": "Is Supervisor",
+          "hops": [
+            {
+              "fromTable": "cr_action",
+              "toTable": "pe_position",
+              "relationshipSchemaName": "cr_pe_position_cr_action_relatedposition",
+              "direction": "outgoing",
+              "fromField": "cr_relatedposition",
+              "toField": "pe_positionid",
+              "referencingEntityNavigationPropertyName": "cr_Relatedposition",
+              "referencedEntityNavigationPropertyName": "cr_pe_position_cr_action_relatedposition"
+            }
+          ]
+        },
+        "related:cr_relatedposition.cr_startingwhen": {
+          "navProperty": "cr_Relatedposition",
+          "label": "Starting When",
+          "hops": [
+            {
+              "fromTable": "cr_action",
+              "toTable": "pe_position",
+              "relationshipSchemaName": "cr_pe_position_cr_action_relatedposition",
+              "direction": "outgoing",
+              "fromField": "cr_relatedposition",
+              "toField": "pe_positionid",
+              "referencingEntityNavigationPropertyName": "cr_Relatedposition",
+              "referencedEntityNavigationPropertyName": "cr_pe_position_cr_action_relatedposition"
+            }
+          ]
+        },
+        "related:cr_relatedposition.cr_statuslifecycle": {
+          "navProperty": "cr_Relatedposition",
+          "label": "Status Lifecycle",
+          "hops": [
+            {
+              "fromTable": "cr_action",
+              "toTable": "pe_position",
+              "relationshipSchemaName": "cr_pe_position_cr_action_relatedposition",
+              "direction": "outgoing",
+              "fromField": "cr_relatedposition",
+              "toField": "pe_positionid",
+              "referencingEntityNavigationPropertyName": "cr_Relatedposition",
+              "referencedEntityNavigationPropertyName": "cr_pe_position_cr_action_relatedposition"
+            }
+          ]
+        },
+        "related:cr_relatedposition.createdby": {
+          "navProperty": "cr_Relatedposition",
+          "isLookup": true,
+          "label": "Created By",
+          "hops": [
+            {
+              "fromTable": "cr_action",
+              "toTable": "pe_position",
+              "relationshipSchemaName": "cr_pe_position_cr_action_relatedposition",
+              "direction": "outgoing",
+              "fromField": "cr_relatedposition",
+              "toField": "pe_positionid",
+              "referencingEntityNavigationPropertyName": "cr_Relatedposition",
+              "referencedEntityNavigationPropertyName": "cr_pe_position_cr_action_relatedposition"
+            }
+          ]
+        },
+        "related:cr_relatedposition.createdon": {
+          "navProperty": "cr_Relatedposition",
+          "label": "Created On",
+          "hops": [
+            {
+              "fromTable": "cr_action",
+              "toTable": "pe_position",
+              "relationshipSchemaName": "cr_pe_position_cr_action_relatedposition",
+              "direction": "outgoing",
+              "fromField": "cr_relatedposition",
+              "toField": "pe_positionid",
+              "referencingEntityNavigationPropertyName": "cr_Relatedposition",
+              "referencedEntityNavigationPropertyName": "cr_pe_position_cr_action_relatedposition"
+            }
+          ]
+        },
+        "related:cr_relatedposition.pe_name": {
+          "navProperty": "cr_Relatedposition",
+          "label": "Name",
+          "hops": [
+            {
+              "fromTable": "cr_action",
+              "toTable": "pe_position",
+              "relationshipSchemaName": "cr_pe_position_cr_action_relatedposition",
+              "direction": "outgoing",
+              "fromField": "cr_relatedposition",
+              "toField": "pe_positionid",
+              "referencingEntityNavigationPropertyName": "cr_Relatedposition",
+              "referencedEntityNavigationPropertyName": "cr_pe_position_cr_action_relatedposition"
+            }
+          ]
+        },
+        "related:cr_relatedposition.pe_reportsto": {
+          "navProperty": "cr_Relatedposition",
+          "isLookup": true,
+          "label": "Reports To",
+          "hops": [
+            {
+              "fromTable": "cr_action",
+              "toTable": "pe_position",
+              "relationshipSchemaName": "cr_pe_position_cr_action_relatedposition",
+              "direction": "outgoing",
+              "fromField": "cr_relatedposition",
+              "toField": "pe_positionid",
+              "referencingEntityNavigationPropertyName": "cr_Relatedposition",
+              "referencedEntityNavigationPropertyName": "cr_pe_position_cr_action_relatedposition"
+            }
+          ]
+        },
+        "related:cr_relatedposition.pe_startdate": {
+          "navProperty": "cr_Relatedposition",
+          "label": "Start Date",
+          "hops": [
+            {
+              "fromTable": "cr_action",
+              "toTable": "pe_position",
+              "relationshipSchemaName": "cr_pe_position_cr_action_relatedposition",
+              "direction": "outgoing",
+              "fromField": "cr_relatedposition",
+              "toField": "pe_positionid",
+              "referencingEntityNavigationPropertyName": "cr_Relatedposition",
+              "referencedEntityNavigationPropertyName": "cr_pe_position_cr_action_relatedposition"
+            }
+          ]
+        },
+        "related:cr_relatedposition.cr_isexecutive": {
+          "navProperty": "cr_Relatedposition",
+          "label": "Is Executive",
+          "hops": [
+            {
+              "fromTable": "cr_action",
+              "toTable": "pe_position",
+              "relationshipSchemaName": "cr_pe_position_cr_action_relatedposition",
+              "direction": "outgoing",
+              "fromField": "cr_relatedposition",
+              "toField": "pe_positionid",
+              "referencingEntityNavigationPropertyName": "cr_Relatedposition",
+              "referencedEntityNavigationPropertyName": "cr_pe_position_cr_action_relatedposition"
+            }
+          ]
+        },
+        "related:cr_ownerposition.pe_currentincumbentuser.firstname": {
+          "navProperty": "cr_Ownerposition",
+          "label": "First Name",
+          "hops": [
+            {
+              "fromTable": "cr_action",
+              "toTable": "pe_position",
+              "relationshipSchemaName": "cr_pe_position_cr_action_ownerposition",
+              "direction": "outgoing",
+              "fromField": "cr_ownerposition",
+              "toField": "pe_positionid",
+              "referencingEntityNavigationPropertyName": "cr_Ownerposition",
+              "referencedEntityNavigationPropertyName": "cr_pe_position_cr_action_ownerposition"
+            },
+            {
+              "fromTable": "pe_position",
+              "toTable": "systemuser",
+              "relationshipSchemaName": "pe_systemuser_pe_position_currentincumbentuser",
+              "direction": "outgoing",
+              "fromField": "pe_currentincumbentuser",
+              "toField": "systemuserid",
+              "referencingEntityNavigationPropertyName": "pe_CurrentIncumbentUser",
+              "referencedEntityNavigationPropertyName": "pe_systemuser_pe_position_currentincumbentuser"
+            }
+          ]
+        },
+        "related:cr_processid.cr_subareaid.cr_areaid.pe_confidential": {
+          "navProperty": "cr_ProcessId",
+          "label": "Confidential",
+          "hops": [
+            {
+              "fromTable": "cr_action",
+              "toTable": "cr_actionprocess",
+              "relationshipSchemaName": "cr_cr_actionprocess_cr_action_processid",
+              "direction": "outgoing",
+              "fromField": "cr_processid",
+              "toField": "cr_actionprocessid",
+              "referencingEntityNavigationPropertyName": "cr_ProcessId",
+              "referencedEntityNavigationPropertyName": "cr_cr_actionprocess_cr_action_processid"
+            },
+            {
+              "fromTable": "cr_actionprocess",
+              "toTable": "cr_actionsubarea",
+              "relationshipSchemaName": "cr_cr_actionsubarea_cr_actionprocess_subareaid",
+              "direction": "outgoing",
+              "fromField": "cr_subareaid",
+              "toField": "cr_actionsubareaid",
+              "referencingEntityNavigationPropertyName": "cr_SubareaId",
+              "referencedEntityNavigationPropertyName": "cr_cr_actionsubarea_cr_actionprocess_subareaid"
+            },
+            {
+              "fromTable": "cr_actionsubarea",
+              "toTable": "cr_actionarea",
+              "relationshipSchemaName": "cr_cr_actionarea_cr_actionsubarea_areaid",
+              "direction": "outgoing",
+              "fromField": "cr_areaid",
+              "toField": "cr_actionareaid",
+              "referencingEntityNavigationPropertyName": "cr_AreaId",
+              "referencedEntityNavigationPropertyName": "cr_cr_actionarea_cr_actionsubarea_areaid"
+            }
+          ]
+        },
+        "related:cr_processid.cr_subareaid.cr_areaid.cr_name": {
+          "navProperty": "cr_ProcessId",
+          "label": "Area",
+          "hops": [
+            {
+              "fromTable": "cr_action",
+              "toTable": "cr_actionprocess",
+              "relationshipSchemaName": "cr_cr_actionprocess_cr_action_processid",
+              "direction": "outgoing",
+              "fromField": "cr_processid",
+              "toField": "cr_actionprocessid",
+              "referencingEntityNavigationPropertyName": "cr_ProcessId",
+              "referencedEntityNavigationPropertyName": "cr_cr_actionprocess_cr_action_processid"
+            },
+            {
+              "fromTable": "cr_actionprocess",
+              "toTable": "cr_actionsubarea",
+              "relationshipSchemaName": "cr_cr_actionsubarea_cr_actionprocess_subareaid",
+              "direction": "outgoing",
+              "fromField": "cr_subareaid",
+              "toField": "cr_actionsubareaid",
+              "referencingEntityNavigationPropertyName": "cr_SubareaId",
+              "referencedEntityNavigationPropertyName": "cr_cr_actionsubarea_cr_actionprocess_subareaid"
+            },
+            {
+              "fromTable": "cr_actionsubarea",
+              "toTable": "cr_actionarea",
+              "relationshipSchemaName": "cr_cr_actionarea_cr_actionsubarea_areaid",
+              "direction": "outgoing",
+              "fromField": "cr_areaid",
+              "toField": "cr_actionareaid",
+              "referencingEntityNavigationPropertyName": "cr_AreaId",
+              "referencedEntityNavigationPropertyName": "cr_cr_actionarea_cr_actionsubarea_areaid"
+            }
+          ]
+        }
+      },
+      "hideEmptyFields": true,
+      "linkedPageIds": [
+        "page_1782305720944"
+      ]
+    },
+    {
+      "kind": "detail",
+      "pageId": "page_1784463499287",
+      "dataSource": {
+        "mode": "anchor",
+        "hops": [
+          {
+            "fromTable": "cr_action",
+            "toTable": "pe_staffappointment",
+            "relationshipSchemaName": "cr_pe_staffappointment_cr_action_relatedstaffappointmentid",
+            "direction": "outgoing",
+            "fromField": "cr_relatedstaffappointmentid",
+            "toField": "pe_staffappointmentid",
+            "referencingEntityNavigationPropertyName": "cr_RelatedStaffAppointmentId",
+            "referencedEntityNavigationPropertyName": "cr_pe_staffappointment_cr_action_relatedstaffappointmentid"
+          }
+        ],
+        "filterGroups": []
+      },
+      "id": "view_1784525833705",
+      "order": 1,
+      "createdAt": "2026-07-20T05:37:13.705Z",
+      "updatedAt": "2026-07-20T05:38:03.411Z",
+      "label": "related staff appointment",
+      "title": "appointment details",
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_displaytitle"
+              },
+              {
+                "kind": "field",
+                "field": "pe_enddate"
+              },
+              {
+                "kind": "field",
+                "field": "pe_holdnote"
+              },
+              {
+                "kind": "field",
+                "field": "pe_isprimary"
+              },
+              {
+                "kind": "field",
+                "field": "pe_name"
+              },
+              {
+                "kind": "field",
+                "field": "pe_occupancy"
+              },
+              {
+                "kind": "field",
+                "field": "pe_position"
+              },
+              {
+                "kind": "field",
+                "field": "pe_staffmember"
+              },
+              {
+                "kind": "field",
+                "field": "pe_startdate"
+              },
+              {
+                "kind": "field",
+                "field": "pe_status"
+              },
+              {
+                "kind": "field",
+                "field": "pe_systemgenerated"
+              }
+            ]
+          }
+        ]
+      },
+      "formFields": [
+        {
+          "field": "cr_displaytitle",
+          "label": "Display title",
+          "order": 0
+        },
+        {
+          "field": "pe_enddate",
+          "label": "End Date",
+          "order": 1
+        },
+        {
+          "field": "pe_holdnote",
+          "label": "Hold Note",
+          "order": 2
+        },
+        {
+          "field": "pe_isprimary",
+          "label": "Is Primary",
+          "order": 3
+        },
+        {
+          "field": "pe_name",
+          "label": "Appointment",
+          "order": 4
+        },
+        {
+          "field": "pe_occupancy",
+          "label": "Occupancy",
+          "order": 5
+        },
+        {
+          "field": "pe_position",
+          "label": "Position",
+          "order": 6
+        },
+        {
+          "field": "pe_staffmember",
+          "label": "Staff Member",
+          "order": 7
+        },
+        {
+          "field": "pe_startdate",
+          "label": "Start Date",
+          "order": 8
+        },
+        {
+          "field": "pe_status",
+          "label": "Status",
+          "order": 9
+        },
+        {
+          "field": "pe_systemgenerated",
+          "label": "System Generated",
+          "order": 10
+        }
+      ]
+    },
+    {
+      "kind": "updateForm",
+      "pageId": "page_1784463499287",
+      "dataSource": {
+        "mode": "anchor",
+        "hops": [
+          {
+            "fromTable": "cr_action",
+            "toTable": "pe_position",
+            "relationshipSchemaName": "cr_pe_position_cr_action_relatedposition",
+            "direction": "outgoing",
+            "fromField": "cr_relatedposition",
+            "toField": "pe_positionid",
+            "referencingEntityNavigationPropertyName": "cr_Relatedposition",
+            "referencedEntityNavigationPropertyName": "cr_pe_position_cr_action_relatedposition"
+          }
+        ],
+        "filterGroups": []
+      },
+      "id": "view_1784525904660",
+      "order": 2,
+      "createdAt": "2026-07-20T05:38:24.660Z",
+      "updatedAt": "2026-07-20T07:12:56.438Z",
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "pe_name"
+              },
+              {
+                "kind": "field",
+                "field": "cr_startingwhen"
+              },
+              {
+                "kind": "field",
+                "field": "cr_statuslifecycle"
+              },
+              {
+                "kind": "field",
+                "field": "cr_department"
+              },
+              {
+                "kind": "field",
+                "field": "cr_directorate"
+              },
+              {
+                "kind": "field",
+                "field": "cr_isexecutive"
+              },
+              {
+                "kind": "field",
+                "field": "cr_ismanager"
+              },
+              {
+                "kind": "field",
+                "field": "cr_issupervisor"
+              },
+              {
+                "kind": "field",
+                "field": "cr_iscoordinator"
+              }
+            ],
+            "title": "testing only to update position"
+          }
+        ]
+      },
+      "formFields": [
+        {
+          "field": "pe_name",
+          "label": "Name",
+          "order": 0
+        },
+        {
+          "field": "cr_startingwhen",
+          "label": "Starting When",
+          "order": 1
+        },
+        {
+          "field": "cr_statuslifecycle",
+          "label": "Status Lifecycle",
+          "order": 2
+        },
+        {
+          "field": "cr_department",
+          "label": "Department",
+          "order": 3
+        },
+        {
+          "field": "cr_directorate",
+          "label": "Directorate",
+          "order": 4
+        },
+        {
+          "field": "cr_isexecutive",
+          "label": "Is Executive",
+          "order": 5
+        },
+        {
+          "field": "cr_ismanager",
+          "label": "Is Manager",
+          "order": 6
+        },
+        {
+          "field": "cr_issupervisor",
+          "label": "Is Supervisor",
+          "order": 7
+        },
+        {
+          "field": "cr_iscoordinator",
+          "label": "Is Coordinator",
+          "order": 8
+        }
+      ],
+      "submitButtons": [
+        {
+          "id": "btn-mrsvzsh7-0",
+          "label": "Save",
+          "afterSubmit": {
+            "kind": "returnToParent"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "table",
+      "pageId": "page_1784463499287",
+      "dataSource": {
+        "mode": "anchor",
+        "hops": [
+          {
+            "fromTable": "cr_action",
+            "toTable": "pe_emailrecord",
+            "relationshipSchemaName": "pe_cr_action_pe_emailrecord_regarding_cr_action",
+            "direction": "incoming",
+            "fromField": "cr_actionid",
+            "toField": "pe_regarding_cr_action",
+            "referencingEntityNavigationPropertyName": "pe_Regarding_cr_action",
+            "referencedEntityNavigationPropertyName": "pe_cr_action_pe_emailrecord_regarding_cr_action"
+          }
+        ],
+        "filterGroups": []
+      },
+      "id": "view_1784700089111",
+      "order": 3,
+      "createdAt": "2026-07-22T06:01:29.111Z",
+      "updatedAt": "2026-07-22T06:34:33.942Z",
+      "title": "Emails sent",
+      "columnOrder": [
+        "link:page_1784701744541",
+        "pe_sentat",
+        "pe_to",
+        "pe_name",
+        "pe_body",
+        "pe_sendername"
+      ],
+      "fields": [
+        "pe_sentat",
+        "pe_to",
+        "pe_name",
+        "pe_body",
+        "pe_sendername"
+      ],
+      "linkedPageIds": [
+        "page_1784701744541"
+      ],
+      "columnConfig": {
+        "link:page_1784701744541": {
+          "label": "View",
+          "labelMode": "text",
+          "labelIcon": "fluent:Mail:filled"
+        }
+      }
+    }
+  ],
+  "configVersion": 2,
+  "createdAt": "2026-07-19T12:18:19.287Z",
+  "updatedAt": "2026-08-01T12:44:43.746Z",
+  "kind": "singleRecord",
+  "parentPageId": "page_1782305720944",
+  "primaryTable": "cr_action",
+  "showBreadcrumbs": true,
+  "showBackLink": true,
+  "pageRules": [
+    {
+      "id": "rule_1785588112128_0",
+      "when": [],
+      "then": {
+        "kind": "notify",
+        "message": "Welcome to viewing this action",
+        "severity": "info"
+      }
+    }
+  ]
+}

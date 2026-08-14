@@ -16,7 +16,7 @@
       "id": "view_1784091361190",
       "order": 0,
       "createdAt": "2026-07-15T04:56:01.190Z",
-      "updatedAt": "2026-07-15T04:56:24.468Z",
+      "updatedAt": "2026-07-19T10:21:07.277Z",
       "formFields": [
         {
           "field": "cr_positionid",
@@ -37,8 +37,59 @@
           "field": "cr_financialyearid",
           "label": "Financial Year",
           "order": 3
+        },
+        {
+          "field": "cr_currentstage",
+          "label": "Current Stage",
+          "order": 4
         }
-      ]
+      ],
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "field",
+                "field": "cr_positionid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_staffmemberuserid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_supervisorpositionid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_financialyearid"
+              },
+              {
+                "kind": "field",
+                "field": "cr_currentstage"
+              },
+              {
+                "kind": "pageLink",
+                "id": "pagelink-mrrn9sln-3",
+                "pageId": "page_1784115688445",
+                "label": "Draft Goals"
+              }
+            ],
+            "title": "Performance Plan"
+          }
+        ]
+      },
+      "linkedPageIds": [
+        "page_1784115688445"
+      ],
+      "lookupConfig": {
+        "cr_positionid": {
+          "displayColumn": "cr_displaytitle",
+          "navProperty": "cr_PositionId",
+          "targetPageId": "page_1783000363434"
+        }
+      }
     },
     {
       "kind": "updateForm",
@@ -305,7 +356,7 @@
   ],
   "configVersion": 2,
   "createdAt": "2026-07-15T03:21:40.962Z",
-  "updatedAt": "2026-07-17T01:08:04.406Z",
+  "updatedAt": "2026-07-19T10:21:07.278Z",
   "kind": "singleRecord",
   "parentPageId": "page_1784085534317",
   "primaryTable": "cr_performanceplan"

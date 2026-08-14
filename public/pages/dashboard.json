@@ -1,0 +1,519 @@
+{
+  "id": "page_1785190904029",
+  "appId": "8dd58c87-1849-f111-bec5-002248e415a7",
+  "name": "Dashboard",
+  "slug": "dashboard",
+  "inNav": true,
+  "views": [
+    {
+      "kind": "dashboard",
+      "pageId": "page_1785190904029",
+      "id": "view_1785190921332",
+      "order": 1,
+      "createdAt": "2026-07-27T22:22:01.332Z",
+      "updatedAt": "2026-08-06T01:58:28.149Z",
+      "dashboardConfig": {
+        "summaries": [
+          {
+            "table": "cr_action",
+            "label": "My Actions",
+            "scope": "userConnected",
+            "hops": [
+              {
+                "fromTable": "systemuser",
+                "toTable": "pe_position",
+                "relationshipSchemaName": "pe_systemuser_pe_position_currentincumbentuser",
+                "direction": "incoming",
+                "fromField": "systemuserid",
+                "toField": "pe_currentincumbentuser",
+                "referencingEntityNavigationPropertyName": "pe_CurrentIncumbentUser",
+                "referencedEntityNavigationPropertyName": "pe_systemuser_pe_position_currentincumbentuser"
+              },
+              {
+                "fromTable": "pe_position",
+                "toTable": "cr_action",
+                "relationshipSchemaName": "cr_pe_position_cr_action_ownerposition",
+                "direction": "incoming",
+                "fromField": "pe_positionid",
+                "toField": "cr_ownerposition",
+                "referencingEntityNavigationPropertyName": "cr_Ownerposition",
+                "referencedEntityNavigationPropertyName": "cr_pe_position_cr_action_ownerposition"
+              }
+            ],
+            "baseCondition": [
+              {
+                "conditions": [
+                  {
+                    "field": "cr_delete",
+                    "operator": "ne",
+                    "value": "true"
+                  }
+                ]
+              }
+            ],
+            "targetPageId": "page_1782298650290",
+            "columns": [
+              {
+                "label": "Open",
+                "tiles": [
+                  {
+                    "label": "Overdue",
+                    "severity": "critical",
+                    "condition": [
+                      {
+                        "conditions": [
+                          {
+                            "field": "cr_originalduedate",
+                            "operator": "beforeToday",
+                            "value": ""
+                          },
+                          {
+                            "field": "cr_datecompleted",
+                            "operator": "null",
+                            "value": ""
+                          }
+                        ]
+                      }
+                    ],
+                    "drillTargetPageId": "page_1785310042533"
+                  },
+                  {
+                    "label": "Due soon",
+                    "severity": "warning",
+                    "drillTargetPageId": "page_1785310042533"
+                  }
+                ]
+              },
+              {
+                "label": "Completed",
+                "baseCondition": [
+                  {
+                    "conditions": [
+                      {
+                        "field": "cr_completionstatus",
+                        "operator": "eq",
+                        "value": "5"
+                      }
+                    ]
+                  }
+                ],
+                "tiles": [
+                  {
+                    "label": "Last 30 days -TEST",
+                    "severity": "positive",
+                    "condition": [
+                      {
+                        "conditions": [
+                          {
+                            "field": "cr_datecompleted",
+                            "operator": "afterRelative",
+                            "value": "31:days:before"
+                          }
+                        ]
+                      }
+                    ],
+                    "drillTargetPageId": "page_1785310042533"
+                  },
+                  {
+                    "label": "Last week",
+                    "severity": "positive",
+                    "condition": [
+                      {
+                        "conditions": [
+                          {
+                            "field": "cr_datecompleted",
+                            "operator": "afterRelative",
+                            "value": "8:days:before"
+                          }
+                        ]
+                      }
+                    ],
+                    "drillTargetPageId": "page_1785310042533"
+                  }
+                ]
+              },
+              {
+                "label": "Overall",
+                "tiles": [
+                  {
+                    "label": "% Completed",
+                    "measure": {
+                      "fn": "ratio",
+                      "numerator": [
+                        {
+                          "conditions": [
+                            {
+                              "field": "cr_completionstatus",
+                              "operator": "eq",
+                              "value": "5"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "label": "Average days to close",
+                    "icon": "fluent:DataTrending",
+                    "severity": "info",
+                    "measure": {
+                      "fn": "avg",
+                      "column": "cr_daystoclose"
+                    },
+                    "condition": [
+                      {
+                        "conditions": [
+                          {
+                            "field": "cr_datecompleted",
+                            "operator": "notNull",
+                            "value": ""
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "table": "cr_performanceplan",
+            "label": "All Performance Plans",
+            "baseCondition": [
+              {
+                "conditions": [
+                  {
+                    "field": "cr_delete",
+                    "operator": "ne",
+                    "value": "true"
+                  }
+                ]
+              }
+            ],
+            "targetPageId": "page_1784115561329",
+            "columns": [
+              {
+                "label": "Goal Setting",
+                "baseCondition": [
+                  {
+                    "conditions": [
+                      {
+                        "field": "cr_currentstage",
+                        "operator": "eq",
+                        "value": "100"
+                      }
+                    ]
+                  }
+                ],
+                "tiles": [
+                  {
+                    "label": "Overdue",
+                    "severity": "critical",
+                    "condition": [
+                      {
+                        "conditions": [
+                          {
+                            "field": "cr_datecurrentstagedue",
+                            "operator": "beforeToday",
+                            "value": ""
+                          }
+                        ]
+                      }
+                    ],
+                    "drillTargetPageId": "page_1785981280338"
+                  },
+                  {
+                    "label": "Due soon",
+                    "severity": "warning",
+                    "condition": [
+                      {
+                        "conditions": [
+                          {
+                            "field": "cr_datecurrentstagedue",
+                            "operator": "afterRelative",
+                            "value": "1:days:before"
+                          },
+                          {
+                            "field": "cr_datecurrentstagedue",
+                            "operator": "beforeRelative",
+                            "value": "60:days:after"
+                          }
+                        ]
+                      }
+                    ],
+                    "drillTargetPageId": "page_1785981280338"
+                  }
+                ]
+              },
+              {
+                "label": "Mid Year",
+                "baseCondition": [
+                  {
+                    "conditions": [
+                      {
+                        "field": "cr_currentstage",
+                        "operator": "eq",
+                        "value": "300"
+                      }
+                    ]
+                  }
+                ],
+                "tiles": [
+                  {
+                    "label": "Overdue",
+                    "severity": "critical",
+                    "condition": [
+                      {
+                        "conditions": [
+                          {
+                            "field": "cr_datecurrentstagedue",
+                            "operator": "beforeToday",
+                            "value": ""
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "label": "Due soon",
+                    "severity": "warning",
+                    "condition": [
+                      {
+                        "conditions": [
+                          {
+                            "field": "cr_datecurrentstagedue",
+                            "operator": "afterRelative",
+                            "value": "1:days:before"
+                          },
+                          {
+                            "field": "cr_datecurrentstagedue",
+                            "operator": "beforeRelative",
+                            "value": "60:days:after"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "table": "pe_position",
+            "label": "Positions",
+            "icon": "fluent:People",
+            "targetPageId": "page_1783026455504",
+            "columns": [
+              {
+                "label": "Proposed",
+                "baseCondition": [
+                  {
+                    "conditions": [
+                      {
+                        "field": "cr_statuslifecycle",
+                        "operator": "eq",
+                        "value": "200"
+                      }
+                    ]
+                  }
+                ],
+                "tiles": [
+                  {
+                    "label": "New last 2 weeks",
+                    "condition": [
+                      {
+                        "conditions": [
+                          {
+                            "field": "createdon",
+                            "operator": "afterRelative",
+                            "value": "15:days:before"
+                          }
+                        ]
+                      }
+                    ],
+                    "drillTargetPageId": "page_1785981233414"
+                  },
+                  {
+                    "label": "All",
+                    "drillTargetPageId": "page_1785981233414"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "table": "cr_action",
+            "label": "Actions All",
+            "baseCondition": [
+              {
+                "conditions": [
+                  {
+                    "field": "cr_delete",
+                    "operator": "ne",
+                    "value": "true"
+                  }
+                ]
+              }
+            ],
+            "columns": [
+              {
+                "label": "Open",
+                "baseCondition": [
+                  {
+                    "conditions": [
+                      {
+                        "field": "cr_datecompleted",
+                        "operator": "null",
+                        "value": ""
+                      }
+                    ]
+                  }
+                ],
+                "tiles": [
+                  {
+                    "label": "Not Overdue",
+                    "condition": [
+                      {
+                        "conditions": [
+                          {
+                            "field": "cr_targetdate",
+                            "operator": "afterToday",
+                            "value": ""
+                          }
+                        ]
+                      }
+                    ],
+                    "drillTargetPageId": "page_1785310488507"
+                  },
+                  {
+                    "label": "Overdue - TEST",
+                    "severity": "critical",
+                    "condition": [
+                      {
+                        "conditions": [
+                          {
+                            "field": "cr_targetdate",
+                            "operator": "beforeToday",
+                            "value": ""
+                          }
+                        ]
+                      }
+                    ],
+                    "drillTargetPageId": "page_1785310488507"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "table": "cr_action",
+            "label": "My Team's Actions",
+            "scope": "userConnected",
+            "hops": [
+              {
+                "fromTable": "systemuser",
+                "toTable": "pe_position",
+                "relationshipSchemaName": "pe_systemuser_pe_position_currentincumbentuser",
+                "direction": "incoming",
+                "fromField": "systemuserid",
+                "toField": "pe_currentincumbentuser",
+                "referencingEntityNavigationPropertyName": "pe_CurrentIncumbentUser",
+                "referencedEntityNavigationPropertyName": "pe_systemuser_pe_position_currentincumbentuser"
+              },
+              {
+                "fromTable": "pe_position",
+                "toTable": "pe_position",
+                "relationshipSchemaName": "pe_pe_position_pe_position_reportsto",
+                "direction": "incoming",
+                "fromField": "pe_positionid",
+                "toField": "pe_reportsto",
+                "referencingEntityNavigationPropertyName": "pe_ReportsTo",
+                "referencedEntityNavigationPropertyName": "pe_pe_position_pe_position_reportsto"
+              },
+              {
+                "fromTable": "pe_position",
+                "toTable": "cr_action",
+                "relationshipSchemaName": "cr_pe_position_cr_action_ownerposition",
+                "direction": "incoming",
+                "fromField": "pe_positionid",
+                "toField": "cr_ownerposition",
+                "referencingEntityNavigationPropertyName": "cr_Ownerposition",
+                "referencedEntityNavigationPropertyName": "cr_pe_position_cr_action_ownerposition"
+              }
+            ],
+            "baseCondition": [
+              {
+                "conditions": [
+                  {
+                    "field": "cr_delete",
+                    "operator": "ne",
+                    "value": "true"
+                  }
+                ]
+              }
+            ],
+            "columns": [
+              {
+                "label": "Open",
+                "baseCondition": [
+                  {
+                    "conditions": [
+                      {
+                        "field": "cr_closedon",
+                        "operator": "null",
+                        "value": ""
+                      }
+                    ]
+                  }
+                ],
+                "tiles": [
+                  {
+                    "label": "All",
+                    "drillTargetPageId": "page_1785470406462"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "kind": "pageLink",
+      "pageId": "page_1785190904029",
+      "label": "Map Testing",
+      "targetPageId": "page_1785981442523",
+      "id": "view_1785981504292",
+      "order": 0,
+      "createdAt": "2026-08-06T01:58:24.292Z",
+      "updatedAt": "2026-08-06T01:58:28.149Z"
+    }
+  ],
+  "configVersion": 2,
+  "createdAt": "2026-07-27T22:21:44.029Z",
+  "updatedAt": "2026-08-06T01:58:28.149Z",
+  "kind": "standard",
+  "showBreadcrumbs": true,
+  "showBackLink": true,
+  "pageRules": [
+    {
+      "id": "rule_1785588340525_0",
+      "when": [
+        {
+          "conditions": [
+            {
+              "field": "$currentUserRoles",
+              "operator": "hasRole",
+              "value": "Process Administrators"
+            }
+          ]
+        }
+      ],
+      "then": {
+        "kind": "notify",
+        "message": "You have admin rights - use them wisely.",
+        "severity": "warning"
+      }
+    }
+  ]
+}

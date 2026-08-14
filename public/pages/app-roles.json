@@ -277,6 +277,12 @@
   ],
   "configVersion": 2,
   "createdAt": "2026-07-10T01:40:05.908Z",
-  "updatedAt": "2026-07-10T01:47:16.573Z",
-  "kind": "standard"
+  "updatedAt": "2026-08-01T12:25:52.095Z",
+  "kind": "standard",
+  "showBreadcrumbs": true,
+  "showBackLink": true,
+  "roleAllowlist": [
+    "Process Administrators"
+  ],
+  "pageRules": []
 }

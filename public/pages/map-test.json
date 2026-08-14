@@ -1,0 +1,259 @@
+{
+  "id": "page_1785981442523",
+  "appId": "8dd58c87-1849-f111-bec5-002248e415a7",
+  "name": "Map test",
+  "slug": "map-test",
+  "inNav": false,
+  "views": [
+    {
+      "kind": "createForm",
+      "pageId": "page_1785981442523",
+      "dataSource": {
+        "mode": "direct",
+        "table": "cr_throwawaynew",
+        "filterGroups": []
+      },
+      "id": "view_1785989085168",
+      "order": 0,
+      "createdAt": "2026-08-06T04:04:45.168Z",
+      "updatedAt": "2026-08-14T10:34:48.348Z",
+      "layout": {
+        "sections": [
+          {
+            "id": "default",
+            "elements": [
+              {
+                "kind": "addressSet",
+                "id": "address-msgzsjhl-1",
+                "setId": "addr-msgzsjhk-0"
+              },
+              {
+                "kind": "field",
+                "field": "cr_secondimage"
+              },
+              {
+                "kind": "field",
+                "field": "cr_moneymoneymoney"
+              },
+              {
+                "kind": "field",
+                "field": "cr_appointmentcategoryid"
+              }
+            ]
+          }
+        ]
+      },
+      "formFields": [
+        {
+          "field": "cr_residentialline1",
+          "order": 0
+        },
+        {
+          "field": "cr_residentialline2",
+          "order": 1
+        },
+        {
+          "field": "cr_residentialsuburb",
+          "order": 2
+        },
+        {
+          "field": "cr_residentialstate",
+          "order": 3
+        },
+        {
+          "field": "cr_residentialpostcode",
+          "order": 4
+        },
+        {
+          "field": "cr_residentialcountry",
+          "order": 5
+        },
+        {
+          "field": "cr_residentiallatitude",
+          "order": 6
+        },
+        {
+          "field": "cr_residentiallongitude",
+          "order": 7
+        },
+        {
+          "field": "cr_residentialgeocodestatus",
+          "order": 8
+        },
+        {
+          "field": "cr_secondimage",
+          "label": "Second Image",
+          "order": 9
+        },
+        {
+          "field": "cr_moneymoneymoney",
+          "label": "Money",
+          "order": 10
+        },
+        {
+          "field": "cr_appointmentcategoryid",
+          "label": "update appointment category with current location",
+          "order": 11,
+          "candidateFilter": [
+            {
+              "conditions": [
+                {
+                  "field": "cr_addressline1",
+                  "operator": "null",
+                  "value": ""
+                },
+                {
+                  "field": "cr_addresslatitude",
+                  "operator": "null",
+                  "value": ""
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "addressSets": [
+        {
+          "id": "addr-msgzsjhk-0",
+          "columns": {
+            "line1": "cr_residentialline1",
+            "line2": "cr_residentialline2",
+            "suburb": "cr_residentialsuburb",
+            "state": "cr_residentialstate",
+            "postcode": "cr_residentialpostcode",
+            "country": "cr_residentialcountry",
+            "latitude": "cr_residentiallatitude",
+            "longitude": "cr_residentiallongitude",
+            "geocodeStatus": "cr_residentialgeocodestatus"
+          },
+          "label": "Residential Address"
+        }
+      ],
+      "submitButtons": [
+        {
+          "id": "btn-msgzsf1y-0",
+          "label": "Save",
+          "afterSubmit": {
+            "kind": "navigatePage",
+            "pageId": "page_1781153656304"
+          }
+        }
+      ],
+      "postSubmitActions": {
+        "rootActions": [
+          {
+            "type": "updateRecord",
+            "fields": {},
+            "addressCaptures": [
+              {
+                "target": {
+                  "kind": "capturedAddress",
+                  "targetTable": "cr_throwawaynew",
+                  "columns": {
+                    "line1": "cr_postalline1",
+                    "line2": "cr_postalline2",
+                    "suburb": "cr_postalsuburb",
+                    "state": "cr_postalstate",
+                    "postcode": "cr_postalpostcode",
+                    "country": "cr_postalcountry",
+                    "latitude": "cr_postallatitude",
+                    "longitude": "cr_postallongitude",
+                    "geocodeStatus": "cr_postalgeocodestatus"
+                  },
+                  "label": "Postal Adjusted Address"
+                }
+              }
+            ]
+          }
+        ],
+        "nodes": [
+          {
+            "arms": [
+              {
+                "test": [
+                  {
+                    "conditions": [
+                      {
+                        "field": "cr_appointmentcategoryid",
+                        "operator": "notNull",
+                        "value": ""
+                      }
+                    ]
+                  }
+                ],
+                "effects": [
+                  {
+                    "type": "updateRelated",
+                    "targetTable": "cr_appointmentcategory",
+                    "relationshipField": "cr_appointmentcategoryid",
+                    "fields": {},
+                    "addressCaptures": [
+                      {
+                        "target": {
+                          "kind": "capturedAddress",
+                          "targetTable": "cr_appointmentcategory",
+                          "columns": {
+                            "line1": "cr_addressline1",
+                            "line2": "cr_addressline2",
+                            "suburb": "cr_addresssuburb",
+                            "state": "cr_addressstate",
+                            "postcode": "cr_addresspostcode",
+                            "country": "cr_addresscountry",
+                            "latitude": "cr_addresslatitude",
+                            "longitude": "cr_addresslongitude",
+                            "geocodeStatus": "cr_addressgeocodestatus"
+                          },
+                          "label": "Address Address"
+                        }
+                      }
+                    ]
+                  }
+                ],
+                "children": []
+              }
+            ]
+          },
+          {
+            "arms": [
+              {
+                "test": [
+                  {
+                    "conditions": [
+                      {
+                        "field": "cr_actionprocessid",
+                        "operator": "null",
+                        "value": ""
+                      }
+                    ]
+                  }
+                ],
+                "effects": [
+                  {
+                    "type": "updateRecord",
+                    "fields": {
+                      "cr_actionprocessid": {
+                        "kind": "referenceRow",
+                        "table": "pe_actionprocess",
+                        "code": "draft-new-position",
+                        "valueLabel": "Draft new position"
+                      },
+                      "cr_block2": {
+                        "kind": "literal",
+                        "value": "'Draft new position' action process selected in form rules."
+                      }
+                    }
+                  }
+                ],
+                "children": []
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "configVersion": 2,
+  "createdAt": "2026-08-06T01:57:22.523Z",
+  "updatedAt": "2026-08-14T10:34:48.348Z",
+  "kind": "standard"
+}

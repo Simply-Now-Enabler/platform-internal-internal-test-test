@@ -275,19 +275,21 @@
       "id": "view_1782303138136",
       "order": 0,
       "createdAt": "2026-06-24T12:12:18.136Z",
-      "updatedAt": "2026-07-14T02:19:32.596Z",
+      "updatedAt": "2026-08-01T05:40:34.681Z",
       "label": "Actions",
       "title": "All Actions",
       "columnOrder": [
+        "link:page_1784463499287",
         "link:page_1782305720944",
+        "createdon",
+        "cr_targetdate",
         "cr_subareaid",
         "cr_processid",
         "cr_completionstatus",
         "cr_ownerposition",
         "ownerid",
         "related:cr_ownerposition.pe_currentincumbentuser",
-        "related:cr_ownerposition.pe_temporaryincumbentuser",
-        "cr_targetdate",
+        "pe_confidential",
         "cr_originalduedate",
         "cr_outcomeid",
         "cr_commentsinternal",
@@ -295,15 +297,18 @@
         "cr_previousactionid",
         "cr_commentsexternal",
         "cr_completedby",
-        "cr_datecompleted"
+        "cr_datecompleted",
+        "link:page_1784585723552"
       ],
       "fields": [
+        "createdon",
+        "cr_targetdate",
         "cr_subareaid",
         "cr_processid",
         "cr_completionstatus",
         "cr_ownerposition",
         "ownerid",
-        "cr_targetdate",
+        "pe_confidential",
         "cr_originalduedate",
         "cr_outcomeid",
         "cr_commentsinternal",
@@ -314,15 +319,22 @@
         "cr_datecompleted"
       ],
       "linkedPageIds": [
-        "page_1782305720944"
+        "page_1784463499287",
+        "page_1782305720944",
+        "page_1784585723552"
       ],
-      "sortField": "cr_targetdate",
-      "sortDir": "asc",
-      "rowClickPageId": "page_1782305720944",
+      "sortField": "createdon",
+      "sortDir": "desc",
+      "rowClickPageId": "page_1784463499287",
       "columnConfig": {
+        "link:page_1784463499287": {
+          "label": "Action",
+          "labelField": "cr_actionidnumber"
+        },
         "link:page_1782305720944": {
           "label": "Edit",
-          "labelField": "cr_actionidnumber"
+          "labelMode": "text",
+          "labelIcon": "fluent:Edit:filled"
         },
         "cr_ownerposition": {
           "label": "Owner position"
@@ -403,12 +415,17 @@
           ]
         }
       },
-      "relatedColumns": {}
+      "lookupConfig": {
+        "cr_previousactionid": {
+          "displayColumn": "cr_actionidnumber",
+          "navProperty": "cr_PreviousActionId"
+        }
+      }
     }
   ],
   "configVersion": 2,
   "createdAt": "2026-06-24T10:57:30.290Z",
-  "updatedAt": "2026-07-14T02:19:32.597Z",
+  "updatedAt": "2026-08-01T05:40:34.682Z",
   "kind": "standard",
   "showBreadcrumbs": true,
   "showBackLink": true

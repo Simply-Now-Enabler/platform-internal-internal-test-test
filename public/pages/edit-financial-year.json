@@ -80,8 +80,14 @@
   ],
   "configVersion": 2,
   "createdAt": "2026-07-15T03:17:09.622Z",
-  "updatedAt": "2026-07-15T03:17:54.599Z",
+  "updatedAt": "2026-08-01T12:58:37.359Z",
   "kind": "singleRecord",
   "parentPageId": "page_1784085385672",
-  "primaryTable": "cr_financialyear"
+  "primaryTable": "cr_financialyear",
+  "showBreadcrumbs": true,
+  "showBackLink": true,
+  "roleAllowlist": [
+    "Process Administrators"
+  ],
+  "pageRules": []
 }
